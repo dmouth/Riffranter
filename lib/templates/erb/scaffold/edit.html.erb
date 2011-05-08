@@ -1,0 +1,9 @@
+<h1>Edit <%= singular_table_name.underscore.gsub("_", " ").titleize %></h1>
+
+<%%= render 'form' %>
+
+<p>
+  <%%= link_to 'Show', @<%= singular_table_name %> %> |
+  <%%= link_to 'Back to Listing', <%= index_helper %>_path %> |
+  <%%= link_to 'New <%= human_name.underscore.gsub("_", " ").titleize %>', new_<%= singular_table_name %>_path %>  
+</p>

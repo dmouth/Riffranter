@@ -1,0 +1,5 @@
+<h1>New <%= singular_table_name.underscore.gsub("_", " ").titleize %></h1>
+
+<%%= render 'form' %>
+
+<p><%%= link_to 'Back to Listing', <%= index_helper %>_path %></p>

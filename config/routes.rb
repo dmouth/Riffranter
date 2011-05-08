@@ -1,6 +1,4 @@
 RiffRanter::Application.routes.draw do
-  resources :yadas
-
   root :to => "home#index"
 
   # The priority is based upon order of creation:
