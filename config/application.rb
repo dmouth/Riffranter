@@ -40,7 +40,12 @@ module RiffRanter
     config.filter_parameters += [:password]
     
     config.generators do |g|
-      g.test_framework :test_unit, :fixture => false
+      g.test_framework :shoulda
+      g.fixture_replacement :factory_girl
+      g.stylesheets false
     end
   end
-end
+end    
+
+require 'rails/generators'
+Rails::Generators.fallbacks[:shoulda] = :test_unit                                       

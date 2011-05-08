@@ -17,4 +17,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem "shoulda"                           
   gem "webrat"  
+  gem "rails3-generators"
 end
