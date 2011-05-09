@@ -7,8 +7,41 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div id="wrap">
+  	<div id="header"><h1>Simple 2 column CSS layout, final layout</h1></div>
+  	<div id="<%= content_for?(:right_column) ? "main-two-col" : "main-one-col" %>">
+      <%= yield %>
+  	</div>
+    <% if content_for? :right_column %>
+    	<div id="sidebar">
+    		<h2>Column 2</h2>
+    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris vel magna.</p>
+    		<ul>
+    			<li><a href="/">Link 1</a></li>
 
-<%= yield %>
+    			<li><a href="/">Link 2</a></li>
+    			<li><a href="/">Link 3</a></li>
+    			<li><a href="/">Link 4</a></li>
+    			<li><a href="/">Link 5</a></li>
+    			<li><a href="/">Link 6</a></li>
+    			<li><a href="/">Link 7</a></li>
 
+    			<li><a href="/">Link 8</a></li>
+    			<li><a href="/">Link 9</a></li>
+    			<li><a href="/">Link 10</a></li>
+    			<li><a href="/">Link 11</a></li>
+    			<li><a href="/">Link 12</a></li>
+    			<li><a href="/">Link 13</a></li>
+
+    			<li><a href="/">Link 14</a></li>
+    			<li><a href="/">Link 15</a></li>
+    		</ul>
+    	</div>                         
+  	<% end %>
+  	<div id="footer">
+  		<p>Footer</p>
+  	</div>
+
+  </div>
 </body>
 </html>
