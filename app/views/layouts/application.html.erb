@@ -1,47 +1,33 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
   <title>RiffRanter</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
-  <div id="wrap">
-  	<div id="header"><h1>Simple 2 column CSS layout, final layout</h1></div>
-  	<div id="<%= content_for?(:right_column) ? "main-two-col" : "main-one-col" %>">
-      <%= yield %>
-  	</div>
-    <% if content_for? :right_column %>
-    	<div id="sidebar">
-    		<h2>Column 2</h2>
-    		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris vel magna.</p>
-    		<ul>
-    			<li><a href="/">Link 1</a></li>
-
-    			<li><a href="/">Link 2</a></li>
-    			<li><a href="/">Link 3</a></li>
-    			<li><a href="/">Link 4</a></li>
-    			<li><a href="/">Link 5</a></li>
-    			<li><a href="/">Link 6</a></li>
-    			<li><a href="/">Link 7</a></li>
-
-    			<li><a href="/">Link 8</a></li>
-    			<li><a href="/">Link 9</a></li>
-    			<li><a href="/">Link 10</a></li>
-    			<li><a href="/">Link 11</a></li>
-    			<li><a href="/">Link 12</a></li>
-    			<li><a href="/">Link 13</a></li>
-
-    			<li><a href="/">Link 14</a></li>
-    			<li><a href="/">Link 15</a></li>
-    		</ul>
-    	</div>                         
-  	<% end %>
-  	<div id="footer">
-  		<p>Footer</p>
-  	</div>
-
-  </div>
-</body>
+  <body>
+    <div id="header">
+      <h1>Riff Ranter</h1>
+    </div>
+    <div class="<%= content_for?(:right_column) ? "colmask rightmenu" : "colmask" %>">
+    	<div class="colleft">
+    		<div class="col1">
+    			<!-- Column 1 start -->
+    			<%= yield %>
+    			<!-- Column 1 end -->
+    		</div>          
+    		<% if content_for?(:right_column) %>
+      		<div class="col2">
+      			<!-- Column 2 start -->
+      			 <%= yield(:right_column) %>
+      			<!-- Column 2 end -->
+      		</div>                        
+    		<% end %>
+    	</div>
+    </div>
+    <div id="footer">
+    	Legal Stuff
+    </div>
+  </body>
 </html>

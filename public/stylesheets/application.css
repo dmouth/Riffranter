@@ -1,64 +1,120 @@
-body,
-html {
+/* Put all styles in another sheet, if possible.  I'm not sure that this will be the CSS that we stay with. */
+
+body {
 	margin:0;
 	padding:0;
-	color:#000;
-	background:#a7a09a;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+	background:#fff;
+	width:1000px;    	/* Minimum width of layout - remove line if not required */
+					/* The min-width property does not work in old versions of Internet Explorer */
+	font-size:.75em;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
 }
-#wrap {
-	width:1000px;
-	margin:0;
-	background:#99c;
+a {
+	color:#369;
+}
+a:hover {
+	color:#fff;
+	background:#369;
+	text-decoration:none;
+}
+h1, h2, h3 {
+	margin:.8em 0 .2em 0;
+	padding:0;
+}
+p {
+	margin:.4em 0 .8em 0;
+	padding:0;
+}
+img {
+	margin:10px 0 5px;
+}
+#ads img {
+	display:block;
+	padding-top:10px;
+}
+
+/* Header styles */
+#header {
+	clear:both;
+	float:left;
+	width: 970px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 #header {
-	padding:5px 10px;
-	background:#ddd;
+	border-bottom:1px solid #eeeeee;
 }
-h1 {
-    margin:0;
-  }
-#nav {
-	padding:5px 10px;
-	background:#c99;
-}
-#nav ul {
+
+/* 'widths' sub menu */
+#layoutdims {
+	clear:both;
+	background:#eee;
+	border-top:4px solid #000;
 	margin:0;
-	padding:0;
-	list-style:none;
+	padding:6px 15px !important;
+	text-align:right;
 }
-#nav li {
-	display:inline;
-	margin:0;
-	padding:0;
+/* column container */
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
 }
-#main-two-col {
-  float:left;
-  width:750px;
-  padding:10px;
-  background:#9c9;
+
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;
+	position:relative;
 }
-#main-one-col {
-  width:1000px;
-  padding:10px;
-  background:#9c9;
+.col1,
+.col2,
+.col3 {
+	float:left;
+	position:relative;
+	padding:0 0 10px 0;
+	overflow:hidden;
 }
-h2 {
-	margin:0 0 1em;
+
+/* 2 Column (right menu) settings */
+.rightmenu {
+	background:#eee;		/* right column background colour */
 }
-#sidebar {
-	float:right;
-	width:250px;
-	padding:10px;
-	background:#99c;
+.rightmenu .colleft {
+  right:0px;      /* right column width */
+	background:#fff;		/* left column background colour */
 }
+.col1 {
+  width: 980px;      /* left column content width (left column width minus left and right padding) */
+  left:15px;     /* (right column width) plus (left column left padding) */
+}
+
+.rightmenu .col1 {
+  width: 780px;      /* left column content width (left column width minus left and right padding) */
+  left: 15px;     /* (right column width) plus (left column left padding) */
+}
+
+.rightmenu .col2 {
+	width:180px;			/* right column content width (right column width minus left and right padding) */
+	left: 30px;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+/* Footer styles */
 #footer {
 	clear:both;
-	padding:5px 10px;
-	background:#cc9;
+	float:left;
+	width: 970px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-top:1px solid #eeeeee;
+	text-align: center;
 }
 #footer p {
+	padding:10px;
 	margin:0;
-  }
-* html #footer {
-	height:1px;
 }

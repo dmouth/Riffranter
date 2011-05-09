@@ -40,7 +40,6 @@ module RiffRanter
     config.filter_parameters += [:password]
     
     config.generators do |g|
-      g.test_framework :shoulda
       g.fixture_replacement :factory_girl
       g.stylesheets false
     end
