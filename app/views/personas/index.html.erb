@@ -1,0 +1,25 @@
+<h1>Personas</h1>
+
+<p><%= link_to 'New Persona', new_persona_path %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Image</th>
+    <th></th>
+  </tr>
+
+<% @personas.each do |persona| %>
+  <tr>
+    <td><%= persona.name %></td>
+    <td><%= persona.title %></td>
+    <td><%= persona.image %></td>
+    <td><%= link_to 'Show', persona %> |
+    <%= link_to 'Edit', edit_persona_path(persona) %> |
+    <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<p><%= link_to 'New Persona', new_persona_path %></p>

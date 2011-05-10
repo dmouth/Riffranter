@@ -1,4 +1,6 @@
 RiffRanter::Application.routes.draw do
+  resources :personas
+
   root :to => "home#index"
 
   # The priority is based upon order of creation:

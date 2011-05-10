@@ -6,8 +6,8 @@ gem "mongrel"
 gem "mysql"
 gem "meta_where"
 gem "jquery-rails"
-
-
+gem "rmagick"
+gem "carrierwave"
 
 group :development, :test do
   gem "ruby-debug"
@@ -17,5 +17,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem "shoulda"                           
   gem "webrat"  
-  gem "rails3-generators"
+  gem "rails3-generators"     
 end

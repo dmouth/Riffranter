@@ -1,0 +1,23 @@
+<h1>Persona</h1>
+<p>
+  <b>Name:</b>
+  <%= @persona.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @persona.title %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @persona.image %>
+</p>
+
+
+<p>
+  <%= link_to 'Edit', edit_persona_path(@persona) %> |
+  <%= link_to 'New Persona', new_persona_path %> |
+  <%= link_to 'Back to Listing', personas_path %> 
+</p>
+
