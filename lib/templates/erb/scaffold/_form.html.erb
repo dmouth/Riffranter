@@ -14,8 +14,8 @@
 
   <% for attribute in attributes -%>
     <div class="field">
-      <%%= f.label :<%= attribute.name %> %><br />
-      <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+      <p><%%= f.label :<%= attribute.name %> %></p>
+      <p><%%= f.<%= attribute.field_type %> :<%= attribute.name %> %></p>
     </div>
   <% end -%>
     <div class="actions">

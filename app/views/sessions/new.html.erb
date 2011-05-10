@@ -1,0 +1,15 @@
+<%= page_title "Log In" %>
+
+<div class="default-form">
+  <%= form_tag sessions_path do %>
+    <div class="field">
+      <p><%= label_tag :email %></p>
+      <p><%= text_field_tag :email, params[:email] %></p>
+    </div>
+    <div class="field">
+      <p><%= label_tag :password %></p>
+      <p><%= password_field_tag :password %></p>
+    </div>
+    <p class="button"><%= submit_tag "Log in" %></p>
+  <% end %>
+</div>
