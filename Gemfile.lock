@@ -32,6 +32,7 @@ GEM
     arel (2.0.9)
     autotest-rails (4.1.0)
       ZenTest
+    bcrypt-ruby (2.1.4)
     builder (2.1.2)
     cgi_multipart_eof_fix (2.5.0)
     columnize (0.3.2)
@@ -110,6 +111,7 @@ PLATFORMS
 DEPENDENCIES
   ZenTest
   autotest-rails
+  bcrypt-ruby
   factory_girl_rails
   jquery-rails
   meta_where

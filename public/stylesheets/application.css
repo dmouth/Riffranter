@@ -1,4 +1,4 @@
-/* Put all styles in another sheet, if possible.  I'm not sure that this will be the CSS that we stay with. */
+/* Put all styles after the App Specific comment as everything above is subject to wholesale change. */
 
 body {
 	margin:0;
@@ -11,9 +11,11 @@ body {
 	font-size:.75em;
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
-a {
+a, a:visited{
 	color:#369;
+	text-decoration:none;
 }
+
 a:hover {
 	color:#fff;
 	background:#369;
@@ -45,6 +47,10 @@ img {
 }
 #header {
 	border-bottom:1px solid #eeeeee;
+} 
+
+#header h1{
+  float: left;
 }
 
 /* 'widths' sub menu */
@@ -79,7 +85,8 @@ img {
 	float:left;
 	position:relative;
 	padding:0 0 10px 0;
-	overflow:hidden;
+	overflow:hidden; 
+	padding-top: 15px;
 }
 
 /* 2 Column (right menu) settings */
@@ -118,3 +125,90 @@ img {
 	padding:10px;
 	margin:0;
 }
+
+/* =================================================================================================================== */
+/* = App Specific ==================================================================================================== */
+/* =================================================================================================================== */
+
+.error_messages{
+  width: 75%;
+  border: 1px solid red;
+  background: #FFEEEE;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.error_messages h2{
+  margin-top: 0;
+}
+
+.default-form .field{
+  margin-bottom: 5px;
+}
+
+.default-form .field p{
+  margin:0;
+}
+
+.default-form p{
+  margin:0;   
+  margin-top: 15px;
+}
+
+#flash_notice{
+  width: 750px;
+  border: 1px solid green;
+  background: #EEFFEE;
+  padding: 15px;
+  margin: 5px auto ;
+}
+
+#flash_alert{
+  width: 750px;
+  border: 1px solid red;
+  background: #FFEEEE;
+  padding: 15px;
+  margin: 5px auto ;
+}
+
+#user_nav{
+  float: right;
+  padding: 5px;
+  margin: 15px 0;
+  border: 1px solid #EEEEEE;
+}
+
+.index-table{
+  border: 1px solid #EEEEEE;
+}
+
+.index-table th{
+  background: #EEEEEE;
+}
+.index-table .even-row{
+  background: #EEEEEE;
+}                       
+
+#admin-menu{
+  margin: 5px 0;
+  background: #EEEEEE;
+  padding: 3px;
+  clear: both;       
+  margin-left: 15px;
+}
+
+#admin-menu ul{
+  display: block;
+  list-style: none;
+}
+
+.show-table{
+  border: 1px solid #EEEEEE;
+}
+
+.show-table th{
+  background: #EEEEEE;
+}
+.show-table .odd-row{
+  background: #EEEEEE;
+}                       

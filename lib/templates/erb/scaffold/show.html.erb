@@ -1,12 +1,10 @@
-<h1><%= singular_table_name.underscore.gsub("_", " ").titleize %></h1>
+<%%= page_title singular_table_name.underscore.gsub("_", " ").titleize %>
+
+<table cellpadding="5" cellspacing="0" class="show-table">
 <% for attribute in attributes -%>
-<p>
-  <b><%= attribute.human_name %>:</b>
-  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
-</p>
-
+  <tr><th><%= attribute.human_name %></th><td valign="top" class="<%%= cycle "odd-row", "even-row" %>"><%%= @<%= singular_table_name %>.<%= attribute.name %> %></td></tr>
 <% end -%>
-
+</table>
 <p>
   <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %> |
   <%%= link_to 'New <%= human_name.underscore.gsub("_", " ").titleize %>', new_<%= singular_table_name %>_path %> |
