@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :is_admin?, :only => [:index]
+  before_filter :is_admin?, :only => [:index, :new]
   before_filter :logged_in?
 
   def index
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def create      
+  def create
     @user = User.new(params[:user])
     if @user.save
       redirect_to root_url, :notice => "Signed up!"
