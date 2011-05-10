@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :is_admin?, :only => [:index, :new]
-  before_filter :logged_in?
+  before_filter :is_admin?, :only => :index
+  before_filter :logged_in?, :except => [:new, :create]
 
   def index
     @users = User.order(:last_name).order(:first_name)
