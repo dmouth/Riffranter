@@ -26,11 +26,7 @@
       </div>
     </div>            
     <%= admin_area do %>
-      <div id="admin-menu">
-        <ul>
-          <li><%= link_to "Users", users_path %></li>
-        </ul>
-      </div>
+      <%= render :partial => 'shared/admin_menu' %>
     <% end %>
     <div class="<%= content_for?(:right_column) ? "colmask rightmenu" : "colmask" %>">
       <% flash.each do |name, msg| %>

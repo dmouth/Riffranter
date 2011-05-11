@@ -190,17 +190,25 @@ img {
   background: #EEEEEE;
 }                       
 
-#admin-menu{
+#admin-menu{    
+  float: left;
   margin: 5px 0;
   background: #EEEEEE;
   padding: 3px;
   clear: both;       
   margin-left: 15px;
+  width: 100%;
 }
 
 #admin-menu ul{
   display: block;
   list-style: none;
+}
+
+#admin-menu li{
+  float: left;
+  padding: 3px;
+  margin: 0 10px 10px 0;
 }
 
 .show-table{

@@ -12,8 +12,8 @@
 		<td valign="top"><%= user.first_name %></td>
 		<td valign="top"><%= user.last_name %></td>
 		<td valign="top"><%= user.email %></td>
-		<td valign="top"><%= user.created_at %></td>
-		<td valign="top"><%= user.updated_at %></td>
+		<td valign="top"><%= l user.created_at %></td>
+		<td valign="top"><%= l user.updated_at %></td>
 	<td valign="top">
 		<%= link_to "Show", user %> |
 		<%= link_to "Edit", edit_user_url(user) %> |
