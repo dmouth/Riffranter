@@ -1,0 +1,17 @@
+<%= page_title "Category" %>
+
+<table cellpadding="5" cellspacing="0" class="show-table">
+  <tr><th>Name</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @category.name %></td></tr>
+  <tr>
+    <th>Personas</th>
+    <td valign="top" class="<%= cycle "odd-row", "even-row" %>">
+      <%= @category.personas.collect{|p| p.name}.to_sentence %>
+    </td>
+  </tr>
+</table>
+<p>
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'New Category', new_category_path %> |
+  <%= link_to 'Back to Listing', categories_path %> 
+</p>
+
