@@ -1,6 +1,4 @@
 class Persona < ActiveRecord::Base
-  # attr_accessible :image                                 
-  
   validates :name, :presence => true, :uniqueness => true
   validates :title, :presence => true
 

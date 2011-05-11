@@ -18,9 +18,9 @@ class ApplicationController < ActionController::Base
   # grabs requested URL and prompts for better (or any) login
   # works with sessions controller to do nice redirects
   def get_clearance 
-    cookies[:return_url] = request.fullpath
     flash[:alert] = "You must be logged or have administrator clearance to go there."
-    redirect_to log_in_url
+    cookies[:return_url] = request.fullpath
+    redirect_to(log_in_url)
   end
   
   def owner_or_admin? user

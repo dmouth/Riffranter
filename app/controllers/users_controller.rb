@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :is_admin?, :only => [:index]
-  before_filter :logged_in?
+  before_filter :is_admin?, :only => :index
+  before_filter :logged_in?, :except => [:new, :create]
 
   def index
     @users = User.order(:last_name).order(:first_name)
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def create      
+  def create
     @user = User.new(params[:user])
     if @user.save
       redirect_to root_url, :notice => "Signed up!"

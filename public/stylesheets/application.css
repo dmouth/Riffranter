@@ -69,6 +69,7 @@ img {
 	float:left;
 	width:100%;			/* width of whole page */
 	overflow:hidden;		/* This chops off any overhanging divs */
+	background: white;
 }
 
 /* common column settings */
@@ -91,7 +92,7 @@ img {
 
 /* 2 Column (right menu) settings */
 .rightmenu {
-	background:#eee;		/* right column background colour */
+	background:#FFFFFF;		/* right column background colour */
 }
 .rightmenu .colleft {
   right:0px;      /* right column width */

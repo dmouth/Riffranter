@@ -1,4 +1,5 @@
 RiffRanter::Application.routes.draw do
+  resources :categories
   resources :personas
 
 

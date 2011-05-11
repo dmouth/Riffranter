@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id                  
-      if !cookies[:return_url].nil?
+      if !cookies[:return_url].nil?     
         return_url = cookies[:return_url]
-        cookies[:return_url] = nil
-        redirect_to return_url
+        cookies.delete(:return_url)
+        redirect_to return_url, :notice => "Logged in!"
       else
         redirect_to root_url, :notice => "Logged in!"
       end
@@ -21,8 +21,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    cookies[:return_url] = nil
+    session[:user_id] = nil                           
+    cookies.delete(:return_url) if cookies.has_key? :return_url
     redirect_to root_url, :notice => "Logged out!"
   end
 end

@@ -1,0 +1,22 @@
+<h1>Categories</h1>
+
+<p><%= link_to 'New Category', new_category_path %></p>
+
+<table  cellpadding="5" cellspacing="0" class="index-table">
+  <tr>
+    <th>Name</th>       
+    <th>Personas</th>
+    <th></th>
+  </tr>
+<% @categories.each do |category| %>
+  <tr class="<%= cycle "odd-row", "even-row" %>">
+    <td><%= category.name %></td>
+    <td align="right"><%= category.personas.count %></td>
+    <td><%= link_to 'Show', category %> |
+    <%= link_to 'Edit', edit_category_path(category) %> |
+    <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<p><%= link_to 'New Category', new_category_path %></p>
