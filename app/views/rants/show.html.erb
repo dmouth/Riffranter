@@ -1,0 +1,24 @@
+<%= page_title "Rant" %>
+
+<table cellpadding="5" cellspacing="0" class="show-table">
+  <% if !@user %>
+    <tr><th>User</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @rant.user.full_name %></td></tr>
+  <% end %>
+  <tr><th>Persona</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @rant.persona.name %></td></tr>
+  <tr><th>Body</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @rant.body %></td></tr>
+  <tr><th>Ip</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @rant.ip %></td></tr>
+</table>
+
+<% if !@user %>
+  <p>
+    <%= link_to 'Edit', edit_rant_path(@rant) %> |
+    <%= link_to 'New Rant', new_rant_path %> |
+    <%= link_to 'Back to Listing', rants_path %> 
+  </p>
+<% else %>
+<p>
+  <%= link_to 'Edit', edit_user_rant_path(@user, @rant) %> |
+  <%= link_to 'New Rant', new_user_rant_path(@user) %> |
+  <%= link_to 'Back to Listing', user_rants_path(@user) %> 
+</p>
+<% end %>

@@ -1,0 +1,42 @@
+<div class="default-form">
+  <%= form_for(@rant) do |f| %>
+    <% if @rant.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@rant.errors.count, "error") %> prohibited this rant from being saved:</h2>
+
+        <ul>
+        <% @rant.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <% if current_user.admin? && !@user %>
+      <div class="field">
+        <p><%= f.label :user_id %></p>
+        <p><%= f.select :user_id, User.order(:last_name.asc, :first_name.asc).collect{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %></p>
+      </div>                           
+    <% else %>
+      <%= hidden_field_tag "rant[user_id]", @user.id %>
+    <% end %>
+    <div class="field">
+      <p><%= f.label :persona_id %></p>
+      <p><%= f.select :persona_id, Persona.order(:name).collect{|p| [p.name, p.id]} %></p>
+    </div>
+      <div class="field">
+      <p><%= f.label :body %></p>
+      <p><%= f.text_area :body %></p>
+    </div>
+    <% if current_user.admin? %>
+      <div class="field">
+        <p><%= f.label :ip %></p>
+        <p><%= f.label @rant.ip %></p>
+      </div>               
+    <% end %>              
+    <%= hidden_field_tag "rant[ip]", @rant.ip %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
