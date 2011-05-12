@@ -221,3 +221,23 @@ img {
 .show-table .odd-row{
   background: #EEEEEE;
 }                       
+
+/* Rant stuff */
+.home-page-rant{
+  border: 1px solid #EEEEEE;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.home-page-rant h1{
+  font-size: 100%;
+  font-weight:bold;
+  margin: 0;
+}
+
+.home-page-rant h2{
+  font-size: 100%;
+  font-weight:normal;
+  font-style: italic;
+  margin: 0;
+}
