@@ -1,56 +1,74 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-<head>
-  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-  
-  <script>
-  $(document).ready(function() {
-    $("#tabs").tabs();
-  });
-  </script>
-</head>
-<body style="font-size:62.5%;">
-  
-<div id="tabs"> 
-		<div style="float:right">
-	    <ul>
-	        <li><a href="#fragment-1"><span>Personas</span></a></li>
-	        <li><a href="#fragment-2"><span>Top Rants</span></a></li>
-	        <li><a href="#fragment-3"><span>Subjects</span></a></li>
-	        <li><a href="#fragment-4"><span>Characters</span></a></li>
-	        <li><a href="#fragment-5"><span>Directory</span></a></li>
-	    </ul>
-		</div>                 
-		<div style="float:left;height=2em;vertical-align:middle">
-			<img src="#" width='100' height='20'/>
-			<input type="text" length='20'>
-		</div>                          
-		<div style="clear:both" />
-    <div id="fragment-1">
-        <p>First tab is active by default:</p>
-        <pre><code>$('#example').tabs();</code></pre>
-    </div>
-    <div id="fragment-2">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    </div>
-    <div id="fragment-3">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    </div>
-    <div id="fragment-4">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    </div>
-    <div id="fragment-5">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    </div>
-</div>
-</body>
+	<head>
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript">
+</script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript">
+</script>
+		<script type="text/javascript">
+$(document).ready(function() {
+		$("#tabs").tabs();
+		});
+		</script>
+		<title></title>
+	</head>
+	<body style="font-size:62.5%;">
+		<div id="tabs" style="min-width:110em">
+			<div style="float:right">
+				<ul>
+					<li>
+						<a href="#fragment-1"><span>Personas</span></a>
+					</li>
+					<li>
+						<a href="#fragment-2"><span>Top Rants</span></a>
+					</li>
+					<li>
+						<a href="#fragment-3"><span>Subjects</span></a>
+					</li>
+					<li>
+						<a href="#fragment-4"><span>Characters</span></a>
+					</li>
+					<li>
+						<a href="#fragment-5"><span>Directory</span></a>
+					</li>
+				</ul>
+			</div>
+			<div style="float:left;height:30px;vertical-align:middle;display:table-cell;min-width:30em">
+				<p>
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<img src="#" width='100' height='20'>
+						</td>
+						<td>
+							<label for="search" style="padding:2em">Search</label><input style="width:50em" name="search" type="text" id="search" value="My Search Text" style="padding-left:2em" maxlength="200">
+						</td>
+					</tr>
+				</table>
+				</p>
+			</div>
+			<div style="clear:both">
+			<div id="fragment-1">
+				<p>
+					First tab is active by default:
+				</p>
+				<pre>
+<code>$('#example').tabs();</code>
+</pre>
+			</div>
+			<div id="fragment-2">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+			</div>
+			<div id="fragment-3">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+			</div>
+			<div id="fragment-4">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+			</div>
+			<div id="fragment-5">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+			</div>
+		</div>
+	</body>
 </html>
