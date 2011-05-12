@@ -3,22 +3,24 @@
 <p><%%= link_to 'New <%= human_name.underscore.gsub("_", " ").titleize %>', new_<%= singular_table_name %>_path %></p>
 
 
-<table cellpadding="5" cellspacing="0">
+<table cellpadding="5" cellspacing="0" class="index-table">
 	<tr>
     <% for attribute in attributes -%>
-        <th  valign="top"><%= attribute.human_name %></th>
+    <th valign="top"><%= attribute.human_name %></th>
     <% end -%>
     <th></th>
 	</tr>
   <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
-    <tr class="<%%= cycle "odd-row", "even-row" %>">
+  <tr class="<%%= cycle "odd-row", "even-row" %>">
   <% for attribute in attributes -%>
-      <td valign="top"><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
-      <td><%%= link_to 'Show', <%= singular_table_name %> %> |
-      <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %> |
-      <%%= link_to 'Destroy', <%= singular_table_name %>, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td valign="top"><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
   <% end -%>
-    </tr>
+    <td>
+      <%%= link_to 'Show', <%= singular_table_name %> %> |
+      <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %> |
+      <%%= link_to 'Destroy', <%= singular_table_name %>, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
   <%% end %>
 </table>
 

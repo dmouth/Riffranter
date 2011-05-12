@@ -1,7 +1,9 @@
 RiffRanter::Application.routes.draw do
+  resources :rants
   resources :categories
-  resources :personas
-
+  resources :personas do
+    resources :rants
+  end
 
   # ==============
   # = User Stuff =
@@ -10,7 +12,10 @@ RiffRanter::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "users#new", :as => "sign_up"
   
-  resources :users
+  resources :users do
+    resources :rants
+  end
+
   resources :sessions
 
   root :to => "home#index"

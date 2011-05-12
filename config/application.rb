@@ -48,3 +48,5 @@ end
 
 require 'rails/generators'
 Rails::Generators.fallbacks[:shoulda] = :test_unit                                       
+
+MetaWhere.operator_overload!

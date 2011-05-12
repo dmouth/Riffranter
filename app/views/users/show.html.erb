@@ -10,6 +10,7 @@
 	<tr><th valign="top"><%= User.human_attribute_name :admin %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.admin %></td></tr>
 </table>
 <p>
+  <%= link_to "Rants", user_rants_url(@user) %> |
   <%= link_to "Edit Profile", edit_user_url(@user) %> 
   <%= admin_area do %>
     | <%= link_to "Back to Listing", users_path %>
