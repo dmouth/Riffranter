@@ -2,7 +2,7 @@ module ApplicationHelper
   # options include :hide_browser_title, :hide_page_title
   def page_title title, options = {}
     hide_browser_title = options.has_key?(:hide_browser_title) ? options[:hide_browser_title] : false
-    hide_page_title = options.has_key?(:hide_page_title) ? options[:hide_hide_title] : false
+    hide_page_title = options.has_key?(:hide_page_title) ? options[:hide_page_title] : false
     
     if !hide_browser_title
       content_for(:browser_title) do

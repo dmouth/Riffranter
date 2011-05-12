@@ -1,21 +1,23 @@
-<h1>Personas</h1>
+<%= page_title "Personas" %>
 
 <p><%= link_to 'New Persona', new_persona_path %></p>
 
-<table>
+<table cellpadding="5" cellspacing="0" class="index-table">
   <tr>
     <th>Name</th>
     <th>Title</th>
     <th>Image</th>
+    <th>Categories</th>
     <th></th>
   </tr>
 
 <% @personas.each do |persona| %>
-  <tr>
-    <td><%= persona.name %></td>
-    <td><%= persona.title %></td>
-    <td><%= persona.image %></td>
-    <td><%= link_to 'Show', persona %> |
+  <tr class="<%= cycle "odd-row", "even-row" %>">
+    <td valign="top"><%= persona.name %></td>
+    <td valign="top"><%= persona.title %></td>
+    <td valign="top"><%= link_to "View", persona.image.to_s, :target => "_blank" %></td>
+    <td valign="top"><%= persona.categories.collect{|c| c.name}.to_sentence %></td>
+    <td valign="top"><%= link_to 'Show', persona %> |
     <%= link_to 'Edit', edit_persona_path(persona) %> |
     <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

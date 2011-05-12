@@ -1,0 +1,8 @@
+<div class="home-page-rant">
+  <h1><%= link_to rant.persona.name, rant.persona %></h1>
+  <h2><%= rant.persona.title %></h2>
+  <p><%= rant.body %></p>
+  <div id="rant-credit">
+    -- <%= link_to rant.user.full_name, rant.user %>
+  </div>
+</div>

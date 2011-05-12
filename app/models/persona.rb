@@ -1,6 +1,9 @@
 class Persona < ActiveRecord::Base
+  has_and_belongs_to_many :categories, :order => :name
   validates :name, :presence => true, :uniqueness => true
   validates :title, :presence => true
+  
+  has_many :rants
 
   mount_uploader :image, ImageUploader
 end

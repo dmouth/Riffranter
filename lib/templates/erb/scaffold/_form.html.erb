@@ -12,7 +12,7 @@
       </div>
     <%% end %>
 
-  <% for attribute in attributes -%>
+  <% for attribute in attributes %>
     <div class="field">
       <p><%%= f.label :<%= attribute.name %> %></p>
       <p><%%= f.<%= attribute.field_type %> :<%= attribute.name %> %></p>

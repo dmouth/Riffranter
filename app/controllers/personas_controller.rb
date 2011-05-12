@@ -1,4 +1,6 @@
 class PersonasController < ApplicationController
+  before_filter :logged_in?
+  before_filter :is_admin?, :except => [:index, :show]
   # GET /personas
   # GET /personas.xml
   def index

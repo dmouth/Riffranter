@@ -1,23 +1,17 @@
-<h1>Persona</h1>
-<p>
-  <b>Name:</b>
-  <%= @persona.name %>
-</p>
+<%= page_title "Persona" %>
 
+<table cellpadding="5" cellspacing="0" class="show-table">
+	<tr><th valign="top"><%= User.human_attribute_name :name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @persona.name %></td></tr>
+	<tr><th valign="top"><%= User.human_attribute_name :title %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @persona.title %></td></tr>
+	<tr><th valign="top"><%= User.human_attribute_name :categories %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @persona.categories.collect{|c| c.name}.to_sentence %></td></tr>
+	<tr><th valign="top"><%= User.human_attribute_name :image %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= image_tag @persona.image_url(:thumb).to_s %></td></tr>
+	<tr><th valign="top"><%= User.human_attribute_name :created_at %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= l @persona.created_at %></td></tr>
+	<tr><th valign="top"><%= User.human_attribute_name :updated_at %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= l @persona.updated_at %></td></tr>
+</table>
 <p>
-  <b>Title:</b>
-  <%= @persona.title %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= image_tag @persona.image_url(:thumb).to_s %>
-</p>
-
-
-<p>
-  <%= link_to 'Edit', edit_persona_path(@persona) %> |
-  <%= link_to 'New Persona', new_persona_path %> |
+  <%= admin_area do %>
+    <%= link_to 'Edit', edit_persona_path(@persona) %> |
+    <%= link_to 'New Persona', new_persona_path %> |
+  <% end %>
   <%= link_to 'Back to Listing', personas_path %> 
 </p>
-
