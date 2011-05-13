@@ -13,13 +13,14 @@
 
 <% @personas.each do |persona| %>
   <tr class="<%= cycle "odd-row", "even-row" %>">
-    <td valign="top"><%= persona.name %></td>
+    <td valign="top"><%= link_to persona.name, persona %></td>
     <td valign="top"><%= persona.title %></td>
     <td valign="top"><%= link_to "View", persona.image.to_s, :target => "_blank" %></td>
     <td valign="top"><%= persona.categories.collect{|c| c.name}.to_sentence %></td>
-    <td valign="top"><%= link_to 'Show', persona %> |
-    <%= link_to 'Edit', edit_persona_path(persona) %> |
-    <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td valign="top">
+      <%= link_to 'Edit', edit_persona_path(persona) %> |
+      <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>

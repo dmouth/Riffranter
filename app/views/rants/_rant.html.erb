@@ -3,6 +3,6 @@
   <h2><%= rant.persona.title %></h2>
   <p><%= rant.body %></p>
   <div id="rant-credit">
-    -- <%= link_to rant.user.full_name, rant.user %>
+    By <%= link_to rant.user.full_name, rant.user %> about <%= time_ago_in_words rant.created_at %> ago.
   </div>
 </div>

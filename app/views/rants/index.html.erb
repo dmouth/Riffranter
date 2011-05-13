@@ -1,15 +1,19 @@
 <h1> 
   <% if @user %>
     <%= page_title "#{@user.full_name}'s Rants" %>
+  <% elsif @persona %>
+    <%= page_title "#{@persona.name}'s Rants" %>
   <% else %>
     <%= page_title "Rants" %>
   <% end %>
 </h1>
 
-<% if !@user %>
-  <p><%= link_to 'New Rant', new_rant_path %></p>
-<% else %>
+<% if @user %>
   <p><%= link_to 'New Rant', new_user_rant_path(@user) %></p>
+<% elsif @persona %>
+  <p><%= link_to 'New Rant', new_persona_rant_path(@persona) %></p>
+<% else %>
+  <p><%= link_to 'New Rant', new_rant_path %></p>
 <% end %>
 
 <table cellpadding="5" cellspacing="0"  class="index-table">
@@ -17,7 +21,9 @@
     <% if !@user %>	  
       <th valign="top">User</th>
     <% end %>
-    <th valign="top">Persona</th>
+    <% if !@persona %>
+      <th valign="top">Persona</th>
+    <% end %>
     <th valign="top">Body</th>
     <th valign="top">Ip</th>
     <th></th>
@@ -26,20 +32,35 @@
     <tr class="<%= cycle "odd-row", "even-row" %>">
     <% if !@user %>  	
       <td valign="top"><%= link_to rant.user.full_name, rant.user %></td>
+    <% end %>  
+    <% if !@persona %>
+      <td valign="top"><%= link_to rant.persona.name, rant.persona %></td>
     <% end %>
-    <td valign="top"><%= link_to rant.persona.name, rant.persona %></td>
     <td valign="top"><%= truncate(rant.body, :length => 50) %></td>
     <td valign="top"><%= rant.ip %></td>
-    <td><%= link_to 'Show', rant %> |
+    <td>
+      <% if @user %>
+        <%= link_to 'Show', user_rant_path(@user, rant) %> |
+        <%= link_to 'Edit', edit_user_rant_path(@user, rant) %> |
+        <%= link_to 'Destroy', user_rant_path(@user, rant), :confirm => 'Are you sure?', :method => :delete %>
+      <% elsif @persona %>
+        <%= link_to 'Show', persona_rant_path(@persona, rant) %> |
+        <%= link_to 'Edit', edit_persona_rant_path(@persona, rant) %> |
+        <%= link_to 'Destroy', persona_rant_path(@persona, rant), :confirm => 'Are you sure?', :method => :delete %>
+      <% else %>
+        <%= link_to 'Show', rant %> |
         <%= link_to 'Edit', edit_rant_path(rant) %> |
         <%= link_to 'Destroy', rant, :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>
     </td>
     </tr>
   <% end %>
 </table>
 
-<% if !@user %>
-  <p><%= link_to 'New Rant', new_rant_path %></p>
-<% else %>
+<% if @user %>
   <p><%= link_to 'New Rant', new_user_rant_path(@user) %></p>
+<% elsif @persona %>
+  <p><%= link_to 'New Rant', new_persona_rant_path(@persona) %></p>
+<% else %>
+  <p><%= link_to 'New Rant', new_rant_path %></p>
 <% end %>

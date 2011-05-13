@@ -9,6 +9,7 @@
 	<tr><th valign="top"><%= User.human_attribute_name :updated_at %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= l @persona.updated_at %></td></tr>
 </table>
 <p>
+  <%= link_to "Rants", persona_rants_url(@persona) %> |
   <%= admin_area do %>
     <%= link_to 'Edit', edit_persona_path(@persona) %> |
     <%= link_to 'New Persona', new_persona_path %> |
