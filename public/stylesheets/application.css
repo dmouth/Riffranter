@@ -264,4 +264,34 @@ img {
 .home-page-rant .body{
   margin: 0;
   clear: both;
+}   
+
+/* ===================== */
+/* = User widget stuff = */
+/* ===================== */
+
+#user-widget{
+  border: 1px solid #EEEEEE;
+  padding: 0 5px 0 5px;
+  width: 165px;
+} 
+
+#user-widget h1{
+  margin: 5px 0 0 5px;
+  font-size: 130%;
+}          
+
+#user-widget h2{
+  margin: 5px 0 0 0;
+  font-size: 110%;
+}          
+
+.user-widget-follow{
+  margin: 5px;
+}
+
+.user-widget-account-controls{
+  text-align: center;
+  border-top: 1px solid #EEEEEE;
+  padding: 5px;
 }
