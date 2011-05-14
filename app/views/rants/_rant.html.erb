@@ -6,6 +6,7 @@
     <div class="title">
       <h1><%= link_to rant.persona.name, rant.persona %></h1>
       <h2><%= rant.persona.title %></h2>
+      <h2><%= raw rant.persona.categories.collect{|c| link_to c.name, c}.to_sentence %></h2>
     </div>
   </div>       
   <div class="body">
