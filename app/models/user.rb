@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   
   has_many :rants
+  has_many :followed_personas, :order => :name
   
   def self.authenticate(email, password)
     user = find_by_email(email)

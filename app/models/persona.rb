@@ -4,6 +4,7 @@ class Persona < ActiveRecord::Base
   validates :title, :presence => true
   
   has_many :rants
+  has_many :following_users
 
   mount_uploader :image, ImageUploader
 end
