@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :current_user
+  helper_method :owner_or_admin?
   
   def is_admin?          
     if !current_user || (current_user && !current_user.admin?)

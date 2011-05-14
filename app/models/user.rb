@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :admin
+  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :admin, :followed_persona_ids
   
   attr_accessor :password
   before_save :encrypt_password
@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   
   has_many :rants
-  has_many :followed_personas, :order => :name
+  has_and_belongs_to_many :followed_personas, :order => :name, :class_name => "Persona", :join_table => :personas_users
   
   def self.authenticate(email, password)
     user = find_by_email(email)

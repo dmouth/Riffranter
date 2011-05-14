@@ -23,8 +23,12 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     get_clearance if !owner_or_admin?(@user)
 
+    # make sure that we reset the collection.  HTML returns nothing if no check boxes are selected, making it impossible 
+    # for a user to clear all of the boxes
+    @user.followed_persona_ids ||= [] 
+
     if @user.update_attributes(params[:user])
-      redirect_to @user
+      redirect_to @user, :notice => "Profile updated successfully."
     else
       render :edit
     end
