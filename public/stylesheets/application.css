@@ -226,7 +226,7 @@ img {
 .home-page-rant{
   border: 1px solid #EEEEEE;
   margin-bottom: 5px;
-  padding: 5px;
+  padding: 0px 5px 5px 5px;
 }
 
 .home-page-rant h1{
@@ -240,4 +240,28 @@ img {
   font-weight:normal;
   font-style: italic;
   margin: 0;
+}
+
+.home-page-rant .header{
+  
+}
+
+.home-page-rant .photo{
+  float: left;
+}
+
+.home-page-rant img{
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+.home-page-rant .title{
+  padding-top: 10px;
+  padding-left: 10px;
+  float: left;
+}
+
+.home-page-rant .body{
+  margin: 0;
+  clear: both;
 }

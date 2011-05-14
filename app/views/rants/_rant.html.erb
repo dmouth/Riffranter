@@ -1,7 +1,16 @@
 <div class="home-page-rant">
-  <h1><%= link_to rant.persona.name, rant.persona %></h1>
-  <h2><%= rant.persona.title %></h2>
-  <p><%= rant.body %></p>
+  <div class="header">
+    <div class="photo">
+      <%= image_tag rant.persona.image_url(:tiny).to_s %>  
+    </div>
+    <div class="title">
+      <h1><%= link_to rant.persona.name, rant.persona %></h1>
+      <h2><%= rant.persona.title %></h2>
+    </div>
+  </div>       
+  <div class="body">
+    <p><%= rant.body %></p>
+  </div>
   <div id="rant-credit">
     By <%= link_to rant.user.full_name, rant.user %> about <%= time_ago_in_words rant.created_at %> ago.
   </div>
