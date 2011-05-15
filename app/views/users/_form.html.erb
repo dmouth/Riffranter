@@ -36,6 +36,15 @@
         <p><%= f.check_box :admin %></p>
        </div>           
      <% end %>
+     <div class="field">
+      <p><%= f.label :followed_personas %></p>
+      <% for persona in Persona.order(:name).all %>
+        <p>
+          <%= check_box_tag "user[followed_persona_ids][]", persona.id, @user.followed_persona_ids.include?(persona.id)  %>
+          <%= persona.name %>
+        </p>
+      <% end %>
+     </div>  
     <p class="button"><%= f.submit %></p>
   <% end %>
 </div>                       

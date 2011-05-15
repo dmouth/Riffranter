@@ -1,9 +1,8 @@
 <div class="default-form">
-  <%= form_for(@rant) do |f| %>
+  <%= form_for(@form_url) do |f| %>
     <% if @rant.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@rant.errors.count, "error") %> prohibited this rant from being saved:</h2>
-
         <ul>
         <% @rant.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -12,7 +11,7 @@
       </div>
     <% end %>
     
-    <% if current_user.admin? && !@user %>
+    <% if !@user %>
       <div class="field">
         <p><%= f.label :user_id %></p>
         <p><%= f.select :user_id, User.order(:last_name.asc, :first_name.asc).collect{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %></p>
@@ -20,11 +19,15 @@
     <% else %>
       <%= hidden_field_tag "rant[user_id]", @user.id %>
     <% end %>
-    <div class="field">
-      <p><%= f.label :persona_id %></p>
-      <p><%= f.select :persona_id, Persona.order(:name).collect{|p| [p.name, p.id]} %></p>
-    </div>
+    <% if !@persona %>
       <div class="field">
+        <p><%= f.label :persona_id %></p>
+        <p><%= f.select :persona_id, Persona.order(:name).collect{|p| [p.name, p.id]} %></p>
+      </div>   
+    <% else %>
+      <%= hidden_field_tag "rant[persona_id]", @persona.id %>
+    <% end %>
+    <div class="field">
       <p><%= f.label :body %></p>
       <p><%= f.text_area :body %></p>
     </div>

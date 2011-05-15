@@ -1,5 +1,9 @@
-<h1>New Rant</h1>
-
+<% if @user && @persona %>
+  <%= page_title "New Rant from #{@user.full_name} on #{@persona.name}" %>
+<% else %>
+  <%= page_title "New Rant" %>
+<% end %>
+  
 <%= render 'form' %>
 
 <p><%= link_to 'Back to Listing', rants_path %></p>

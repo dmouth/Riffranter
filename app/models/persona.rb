@@ -4,6 +4,7 @@ class Persona < ActiveRecord::Base
   validates :title, :presence => true
   
   has_many :rants
+  has_and_belongs_to_many :following_users, :class_name => "User", :order => [:last_name.asc, :first_name.asc], :join_table => :personas_users
 
   mount_uploader :image, ImageUploader
 end

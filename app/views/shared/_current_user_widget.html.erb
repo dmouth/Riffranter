@@ -1,0 +1,16 @@
+<%= content_tag :div, :id => "user-widget" do %>
+  <h1><%= current_user.full_name %></h1>
+  <%#= image_tag current_user.image_url(:tiny).to_s %> 
+  
+  <%= content_tag :div, :id => "followed-users", :class => "user-widget-follow" do %>
+    <% if current_user.followed_personas.count > 0 %>
+      <h2>Following Personas</h2>                   
+      <%= raw current_user.followed_personas.collect{|p| link_to p.name, p}.join(" | ") %>
+    <% end %>
+  <% end %>  
+  
+  <%= content_tag :div, :class => "user-widget-account-controls" do %>
+    <%= link_to "My Profile", current_user %> |
+    <%= link_to "Log out", log_out_url %>
+  <% end %>
+<% end %>
