@@ -3,21 +3,74 @@ html{
 }                      
 
 body{
-  font-size:62.5%;
+  font-size:.75em;
   width:1000px;
   text-align:center;
   margin:auto;
   background-color:white;
-} 
+}                        
+
+a, a:visited{
+  color:blue;
+  text-decoration :none;
+}                      
+
+a:hover{
+  text-decoration: underline;
+}
 
 #tabs-page{
   min-width:330px;
   min-height:50em;
 }                 
 
-#tabs{
-  float:right;
-}             
+/* begin css tabs */
+
+#tabs-div{
+  float: right;
+}
+
+ul#tabs { /* general settings */
+  text-align: left; /* set to left, right or center */
+  margin: 1em 0 1em 0; /* set margins as desired */
+  font: bold 11px verdana, arial, sans-serif; /* set font as desired */
+  border-bottom: 1px solid #EEEEEE; /* set border COLOR as desired */
+  list-style-type: none;
+  padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
+}
+
+ul#tabs li { /* do not change */
+  display: inline;
+}
+
+ul#tabs li.selected-tab { /* settings for selected tab */
+  border-bottom: 1px solid #EEEEEE; /* set border color to page background color */
+  background-color: #FFFFFF; /* set background color to match above border color */
+}
+
+ul#tabs li.selected-tab a { /* settings for selected tab link */
+  background-color: #fff; /* set selected tab background color as desired */
+  color: #000; /* set selected tab link color as desired */
+  position: relative;
+  top: 1px;
+  padding-top: 4px; /* must change with respect to padding (X) above and below */
+}
+
+ul#tabs li a { /* settings for all tab links */
+  padding: 3px 4px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+  border: 1px solid #EEEEEE; /* set border COLOR as desired; usually matches border color specified in #tabnav */
+  background-color: #EEEEEE; /* set unselected tab background color as desired */
+  color: black; /* set unselected tab link color as desired */
+  margin-right: 0px; /* set additional spacing between tabs as desired */
+  text-decoration: none;
+  border-bottom: none;
+}
+
+ul#tabs a:hover { /* settings for hover effect */
+  background: #FFFFFF; /* set desired hover color */
+}
+
+/* end css tabs */        
 
 #search-bar{
   float:left;

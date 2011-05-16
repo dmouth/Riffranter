@@ -5,11 +5,17 @@ $(function(){
 // ==============
 // = Tabs stuff =
 // ==============
-$(document).ready(function() {
-	$("#tabs-page").tabs();
-
-	$("#tabs a").click(function(){
-    $("#tabs li").removeClass("active");
-    $(this).parent().addClass("active");
-	})
-});
+// $(function() {
+//   $("#tabs-page").tabs({
+//     select: function(event, ui){
+//       var url = $.data(ui.tab, 'load.tabs');
+//       if(url){
+//         location.href = url;
+//         return false;
+//       },
+//       load: function(){
+//         return true;
+//       }
+//     }  
+//   }); 
+// });

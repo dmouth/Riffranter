@@ -33,8 +33,8 @@ module ApplicationHelper
     "tab-#{text.downcase.gsub(/\s/, "-")}"
   end
   
-  def tab_url(text, url, options = {:class => "user-tab"})
-    local_options = {:id => tab_url_id(text)}
-    link_to text, url, local_options.merge(options)
+  def tab_url(text, url)
+    local_options = {:id => tab_url_id(text)}                   
+    link_to text, url, local_options
   end
 end

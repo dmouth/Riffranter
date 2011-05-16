@@ -1,16 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-  <title>RiffRanter <%= content_for?(:browser_title) ? "(#{yield(:browser_title)})" : ""  %></title>
-  <%= stylesheet_link_tag "application" %>
-  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" %>
-  <%= yield(:stylesheets) %>
-</head>    
+  <head>
+    <title>RiffRanter <%= content_for?(:browser_title) ? "(#{yield(:browser_title)})" : ""  %></title>
+    <%= stylesheet_link_tag "two-column", "application", "jquery-ui-1.8.12" %>
+    <%= yield(:stylesheets) %>
+  </head>    
   <body>
     <div id="tabs-page">
-      <div id="tabs">
+      <div id="tabs-div">
         <%= render :partial => 'layouts/tabs' %>
-      </div>
+      </div>    
       <div id="search-bar">
         <%= render :partial => 'layouts/search_bar' %>
       </div>
@@ -20,7 +19,7 @@
             <tr> 
               <!-- left col -->
               <td valign="top" colspan="3">
-                <div id="content">    
+                <div id="content">          
                   <% if content_for?(:page_title) %>
                     <h1><%= yield :page_title %></h1>
                   <% end %>
@@ -32,7 +31,7 @@
               <td valign="top" width="25%">
                 <div id="right-content">
                   <!-- Begin my user widget -->
-                  <%= render :partial => 'shared/user_widget_2' %>
+                  <%= render :partial => 'shared/current_user_widget' %>
                   <%= render :partial => 'shared/module_div' %>
                 </div>
               </td>
@@ -41,10 +40,10 @@
           <div class="tent-pole"></div>
         </div>
       </div>
-      <div id="legal-footer">
-        <span>Our company accepts no liability for the content of this email, or for the consequences of any actions taken on the basis of the information provided, unless that information is subsequently confirmed in writing. If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.</span>
-      </div>
-    </div>  
+    </div>              
+    <div id="legal-footer">
+      <span>Our company accepts no liability for the content of this email, or for the consequences of any actions taken on the basis of the information provided, unless that information is subsequently confirmed in writing. If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.</span>
+    </div>
   </body>
   <%= render :partial => 'layouts/javascripts' %>
 </html>
