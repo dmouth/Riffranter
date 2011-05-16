@@ -2,56 +2,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
   <title>RiffRanter <%= content_for?(:browser_title) ? "(#{yield(:browser_title)})" : ""  %></title>
-
   <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" %>
   <%= yield(:stylesheets) %>
-
-  <%= javascript_include_tag "jquery.min.js", "rails", "application" %>
-  <%= yield(:javascripts) %>
-
-  <%= csrf_meta_tag %>
-</head>
+</head>    
   <body>
-    <div id="header">
-      <h1>Riff Ranter</h1>
-      <div id="user_nav">
-        <% if current_user %>   
-          Logged in as <%= current_user.full_name %>
-          <%= link_to "Edit Profile", edit_user_url(current_user) %> | 
-          <%= link_to "Log Out", log_out_path %>
-        <% else %>
-          <%= link_to "Sign Up", sign_up_path %> or
-          <%= link_to "Log In", log_in_path %>
-        <% end %>
+    <div id="tabs-page">
+      <div id="tabs">
+        <%= render :partial => 'layouts/tabs' %>
       </div>
-    </div>            
-    <%= admin_area do %>
-      <%= render :partial => 'shared/admin_menu' %>
-    <% end %>
-    <div class="<%= content_for?(:right_column) ? "colmask rightmenu" : "colmask" %>">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}", :class => "flash-message" %>
-      <% end %>    	
-      <div class="colleft">
-    		<div class="col1">
-    			<!-- Column 1 start -->
-    			<% if content_for? :page_title %>
-            <h1><%= yield :page_title %></h1>
-          <% end %>
-    			<%= yield %>
-    			<!-- Column 1 end -->
-    		</div>          
-    		<% if content_for?(:right_column) %>
-      		<div class="col2">
-      			<!-- Column 2 start -->
-      			 <%= yield(:right_column) %>
-      			<!-- Column 2 end -->
-      		</div>                        
-    		<% end %>
-    	</div>
-    </div>
-    <div id="footer">
-    	Legal Stuff
-    </div>
+      <div id="search-bar">
+        <%= render :partial => 'layouts/search_bar' %>
+      </div>
+      <div style="clear:both">
+        <div id="body-div">
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr> 
+              <!-- left col -->
+              <td valign="top" colspan="3">
+                <div id="content">    
+                  <% if content_for?(:page_title) %>
+                    <h1><%= yield :page_title %></h1>
+                  <% end %>
+
+                  <%= yield %>
+                </div>
+              </td>        
+              <!-- right col -->
+              <td valign="top" width="25%">
+                <div id="right-content">
+                  <!-- Begin my user widget -->
+                  <%= render :partial => 'shared/user_widget_2' %>
+                  <%= render :partial => 'shared/module_div' %>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <div class="tent-pole"></div>
+        </div>
+      </div>
+      <div id="legal-footer">
+        <span>Our company accepts no liability for the content of this email, or for the consequences of any actions taken on the basis of the information provided, unless that information is subsequently confirmed in writing. If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.</span>
+      </div>
+    </div>  
   </body>
+  <%= render :partial => 'layouts/javascripts' %>
 </html>

@@ -1,0 +1,16 @@
+<%
+  urls = [
+      ["Personas", personas_url],
+      ["Top Rants", rants_url],
+      ["Categories", categories_url],
+      ["User Directory", users_url],
+    ]
+ %>
+
+<ul>
+  <% for url in urls %>
+    <%= content_tag :li do %>
+      <%= tab_url(url[0], url[1]) %>
+    <% end %>
+  <% end %>
+</ul>
