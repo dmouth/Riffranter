@@ -235,6 +235,12 @@ ul#tabs a:hover { /* settings for hover effect */
   margin: 0;
 }
 
+.home-page-rant h3{
+  font-size: 100%;
+  font-weight:normal;
+  margin: 0;
+}
+
 .home-page-rant .header{
   
 }
@@ -254,9 +260,15 @@ ul#tabs a:hover { /* settings for hover effect */
   float: left;
 }
 
-.home-page-rant .body{
-  margin: 0;
+.home-page-rant .rant-body{
+  margin: 55px 0 0 0;
   clear: both;
+}   
+
+.home-page-rant .rant-controls{
+  clear: both;
+  margin-top: 10px;
+  text-align: right;
 }   
 
 /* ===================== */

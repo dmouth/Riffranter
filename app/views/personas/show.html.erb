@@ -1,7 +1,13 @@
-<%= page_title "Persona" %>
+<%= page_title @persona.name %>
+
+<%= render :partial => "shared/persona_rant_widget" %>
+
+<h2>Latest Rants</h2>
+<% for rant in @persona.rants.order(:created_at.desc) %>
+  <%= render rant %>
+<% end %>
 
 <table cellpadding="5" cellspacing="0" class="show-table">
-	<tr><th valign="top"><%= User.human_attribute_name :name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @persona.name %></td></tr>
 	<tr><th valign="top"><%= User.human_attribute_name :title %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @persona.title %></td></tr>
 	<tr><th valign="top"><%= User.human_attribute_name :categories %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @persona.categories.collect{|c| c.name}.to_sentence %></td></tr>
 	<tr><th valign="top"><%= User.human_attribute_name :image %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= image_tag @persona.image_url(:thumb).to_s %></td></tr>
