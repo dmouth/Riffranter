@@ -8,7 +8,11 @@
   <body>
     <div id="tabs-page">
       <div id="tabs-div">
-        <%= render :partial => 'layouts/tabs' %>
+        <% if current_user? %>
+          <%= render :partial => 'layouts/tabs' %>
+        <% else %>
+          <%= render :partial => "layouts/old_user_nav" %>
+        <% end %>    
       </div>    
       <div id="search-bar">
         <%= render :partial => 'layouts/search_bar' %>
@@ -29,10 +33,10 @@
               </td>        
               <!-- right col -->
               <td valign="top" width="25%">
-                <div id="right-content">
-                  <!-- Begin my user widget -->
-                  <%= render :partial => 'shared/current_user_widget' %>
-                  <%= render :partial => 'shared/module_div' %>
+                <div id="right-content">                                
+                  <% if current_user? %>
+                    <%= render :partial => 'shared/current_user_widget' %>
+                  <% end %>
                 </div>
               </td>
             </tr>

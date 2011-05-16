@@ -168,7 +168,7 @@ ul#tabs a:hover { /* settings for hover effect */
 #user_nav{
   float: right;
   padding: 5px;
-  margin: 15px 0;
+  margin: 15px 25px;
   border: 1px solid #EEEEEE;
 }
 
