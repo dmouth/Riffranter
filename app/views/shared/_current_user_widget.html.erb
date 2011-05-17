@@ -9,8 +9,8 @@
     <% end %>
   <% end %>  
 
-  <%= content_tag :div, :id => "followed-personas", :class => "user-widget-follow" do %>
-    <% if current_user.followed_personas.count > 0 %>
+  <%= content_tag :div, :id => "followed-users", :class => "user-widget-follow" do %>
+    <% if current_user.followed_users.count > 0 %>
       <h2>Following Users</h2>                   
       <%= raw current_user.followed_users.collect{|u| link_to u.full_name, u}.join(" | ") %>
     <% end %>
