@@ -43,4 +43,23 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+  
+  def follow                                      
+    throw "Illegal attempt to follow user!" if params[:id].to_i != current_user.id
+
+    @followed_user = User.find params[:follow_id] 
+    
+    current_user.followed_users << @followed_user
+    current_user.followed_user_ids.uniq!  
+    current_user.save
+  end
+
+  def unfollow                                      
+    throw "Illegal attempt to unfollow user!" if params[:id].to_i != current_user.id
+
+    @followed_user = User.find params[:follow_id] 
+    
+    current_user.followed_users.delete @followed_user
+    current_user.save
+  end
 end

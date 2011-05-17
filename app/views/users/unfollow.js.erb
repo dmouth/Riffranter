@@ -1,0 +1,2 @@
+$("<%= ".user-#{current_user.id}-unfollowed-user-#{@followed_user.id}" %>").html("<%= escape_javascript(follow_user_link(@followed_user))%>");                                                           
+$("#user-widget-container").html("<%= escape_javascript(render :partial => "shared/current_user_widget")%>");                                                          

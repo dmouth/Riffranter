@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :admin, :followed_persona_ids
+  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :admin, :followed_persona_ids, :followed_user_ids, :following_user_ids
   
   attr_accessor :password
   before_save :encrypt_password
@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   
   has_many :rants
   has_and_belongs_to_many :followed_personas, :class_name => "Persona", :join_table => :personas_users
+  has_and_belongs_to_many :following_users, :join_table => "users_users", :foreign_key => "followee_id", :class_name => "User", :association_foreign_key => "follower_id"
+  has_and_belongs_to_many :followed_users, :join_table => "users_users", :foreign_key => "follower_id", :class_name => "User", :association_foreign_key => "followee_id"
   
   def self.authenticate(email, password)
     user = find_by_email(email)
