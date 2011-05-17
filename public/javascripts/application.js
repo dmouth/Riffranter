@@ -1,3 +1,8 @@
+jQuery.ajaxSetup({ 
+  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+});             
+
+
 $(function(){
   $(".flash-message").fadeOut(2000);
 })   

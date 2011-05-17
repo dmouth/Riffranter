@@ -72,12 +72,12 @@ class RantsController < ApplicationController
     
     respond_to do |format|      
       if @rant.save
-        format.html do
-          redirect_to(@form_url, :notice => 'Rant was successfully created.') 
-        end
+        format.html { redirect_to(@form_url, :notice => 'Rant was successfully created.') }
+        format.js
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @rant.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @rant.errors, :status => :unprocessable_entity }  
+        format.js
       end
     end
   end

@@ -1,10 +1,10 @@
 class Persona < ActiveRecord::Base
-  has_and_belongs_to_many :categories, :order => :name
   validates :name, :presence => true, :uniqueness => true
   validates :title, :presence => true
   
   has_many :rants
   has_and_belongs_to_many :following_users, :class_name => "User", :join_table => :personas_users
+  has_and_belongs_to_many :categories, :order => :name
 
   mount_uploader :image, ImageUploader
 end
