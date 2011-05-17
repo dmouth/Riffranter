@@ -17,7 +17,19 @@ module ApplicationHelper
         title
       end
     end
-  end    
+  end  
+  
+  # ==========================================================
+  # = Follow user and persona links, which can be kinda long =
+  # ==========================================================
+  
+  def follow_user_link followed_user
+    link_to "Follow User", follow_user_url(current_user), "data-current-user-id" => current_user.id, "data-follow-id" => followed_user.id, :class => "follow-user-link user-#{current_user.id}-followed-user-#{followed_user.id}"  
+  end  
+
+  def unfollow_user_link followed_user
+    link_to "Unfollow User", unfollow_user_url(current_user), "data-current-user-id" => current_user.id, "data-follow-id" => followed_user.id, :class => "unfollow-user-link user-#{current_user.id}-unfollowed-user-#{followed_user.id}"  
+  end  
   
   # ======================================================
   # = Wrapper to hide things that only admins should see =

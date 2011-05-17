@@ -1,6 +1,16 @@
 jQuery.ajaxSetup({ 
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
-});             
+});          
+
+// ================
+// = Follow Users =
+// ================
+$(function(){
+  $(".follow-user-link").click(function(){
+    $.post("/users/" + $(this).data("current-user-id") + "/follow", {follow_id: $(this).data("follow-id")});
+    return false;
+  });
+});   
 
 
 $(function(){

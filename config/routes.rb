@@ -2,6 +2,9 @@ RiffRanter::Application.routes.draw do
   resources :rants
   resources :categories
   resources :personas do
+    member do
+      post :follow
+    end     
     resources :rants
   end
 
@@ -14,6 +17,10 @@ RiffRanter::Application.routes.draw do
   
   resources :users do
     resources :rants
+    member do
+      post :follow
+      post :unfollow
+    end
   end
 
   resources :sessions
