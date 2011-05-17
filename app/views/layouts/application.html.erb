@@ -36,7 +36,9 @@
               <td valign="top" width="25%">
                 <div id="right-content">                                
                   <% if current_user? %>
-                    <%= render :partial => 'shared/current_user_widget' %>
+                    <div id="user-widget-container">
+                      <%= render :partial => 'shared/current_user_widget' %>
+                    </div>
                   <% end %>
                 </div>
               </td>
