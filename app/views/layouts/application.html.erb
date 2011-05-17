@@ -23,7 +23,8 @@
             <tr> 
               <!-- left col -->
               <td valign="top" colspan="3">
-                <div id="content">          
+                <div id="content"> 
+									<%= render :partial => "layouts/flash_messages" %>         
                   <% if content_for?(:page_title) %>
                     <h1><%= yield :page_title %></h1>
                     <hr>
