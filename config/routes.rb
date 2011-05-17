@@ -4,6 +4,7 @@ RiffRanter::Application.routes.draw do
   resources :personas do
     member do
       post :follow
+      post :unfollow
     end     
   end
 

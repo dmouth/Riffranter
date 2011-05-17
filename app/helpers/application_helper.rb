@@ -24,6 +24,8 @@ module ApplicationHelper
   # ==========================================================
   
   def follow_user_link followed_user
+    return if followed_user == current_user
+    
     if current_user.followed_user_ids.include?(followed_user.id)
       internal_unfollow_user_link(followed_user)
     else
@@ -32,11 +34,27 @@ module ApplicationHelper
   end
   
   def internal_follow_user_link followed_user
-    link_to "Follow User", follow_user_url(current_user), "data-current-user-id" => current_user.id, "data-follow-id" => followed_user.id, :class => "follow-user-link user-#{current_user.id}-followed-user-#{followed_user.id}"  
+    link_to "Follow User", follow_user_url(current_user), "data-follow-id" => followed_user.id, :class => "follow-user-link user-#{current_user.id}-followed-user-#{followed_user.id}"  
   end  
 
   def internal_unfollow_user_link followed_user
-    link_to "Unfollow User", unfollow_user_url(current_user), "data-current-user-id" => current_user.id, "data-follow-id" => followed_user.id, :class => "unfollow-user-link user-#{current_user.id}-unfollowed-user-#{followed_user.id}"  
+    link_to "Unfollow User", unfollow_user_url(current_user), "data-follow-id" => followed_user.id, :class => "unfollow-user-link user-#{current_user.id}-unfollowed-user-#{followed_user.id}"  
+  end  
+
+  def follow_persona_link followed_persona
+    if current_user.followed_persona_ids.include?(followed_persona.id)
+      internal_unfollow_persona_link(followed_persona)
+    else
+      internal_follow_persona_link(followed_persona)
+    end
+  end
+  
+  def internal_follow_persona_link followed_persona
+    link_to "Follow Persona", follow_persona_url(followed_persona), "data-current-user-id" => current_user.id, :class => "follow-persona-link user-#{current_user.id}-followed-persona-#{followed_persona.id}"  
+  end  
+
+  def internal_unfollow_persona_link followed_persona
+    link_to "Unfollow Persona", unfollow_persona_url(followed_persona), "data-current-user-id" => current_user.id, :class => "unfollow-persona-link user-#{current_user.id}-unfollowed-persona-#{followed_persona.id}"  
   end  
   
   # ======================================================

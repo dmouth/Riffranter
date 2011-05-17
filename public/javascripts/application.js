@@ -17,6 +17,21 @@ $(function(){
   });
 });   
 
+// ===================
+// = Follow Personas =
+// ===================
+$(function(){
+  $(".follow-persona-link").live("click", function(){
+    $.post($(this).attr("href"), {current_user_id: $(this).data("current-user-id")});
+    return false;
+  });
+
+  $(".unfollow-persona-link").live("click", function(){
+    $.post($(this).attr("href"), {current_user_id: $(this).data("current-user-id")});
+    return false;
+  });
+});   
+
 // =========================
 // = General site behavior =
 // =========================

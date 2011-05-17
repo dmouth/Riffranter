@@ -18,7 +18,7 @@
     <td valign="top"><%= link_to "View", persona.image.to_s, :target => "_blank" %></td>
     <td valign="top"><%= persona.categories.collect{|c| c.name}.to_sentence %></td>
     <td valign="top">
-      <%= link_to 'Rants', persona_rants_path(persona) %> |
+      <%= follow_persona_link(persona) %> |      
       <%= link_to 'Edit', edit_persona_path(persona) %> |
       <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %>
     </td>

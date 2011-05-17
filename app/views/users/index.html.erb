@@ -13,7 +13,11 @@
 		<td valign="top"><%= l user.created_at %></td>
 		<td valign="top"><%= l user.updated_at %></td>
 	<td valign="top">
-		<%= link_to "Rants", user_rants_url(user) %> |
+		
+		<% if user != current_user %>
+      <%= follow_user_link user %> |
+    <% end %>
+    
 		<%= link_to "Edit", edit_user_url(user) %>
 	</td>
 	</tr>

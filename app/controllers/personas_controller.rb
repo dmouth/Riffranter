@@ -82,4 +82,23 @@ class PersonasController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def follow
+    throw "Illegal attempt to follow user!" if params[:current_user_id].to_i != current_user.id
+
+    @persona = Persona.find params[:id] 
+    
+    current_user.followed_personas << @persona
+    current_user.followed_persona_ids.uniq!  
+    current_user.save
+  end
+  
+  def unfollow
+    throw "Illegal attempt to unfollow persona" if current_user.id != params[:current_user_id].to_i
+
+    @persona = Persona.find params[:id]
+    
+    current_user.followed_personas.delete @persona
+    current_user.save
+  end
 end
