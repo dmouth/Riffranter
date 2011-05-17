@@ -1,3 +1,8 @@
+<%
+	my_option = local_assigns.has_key?(:my_option) ? local_assigns[:my_option] : false # deafult va or whatever
+	# render :partial => "my partial", :locals => {:my_option => true } #from caller
+%>
+
 <div class="home-page-rant">
   <div class="header">
     <div class="photo">
