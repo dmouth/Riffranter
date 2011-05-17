@@ -13,25 +13,7 @@
   <% end %>
 </table>
 
-<% if @user %>
-  <p>
-    <%= link_to 'Edit', edit_user_rant_path(@user, @rant) %> |
-    <%= link_to 'Destroy', [@user, @rant], :confirm => 'Are you sure?', :method => :delete %> |
-    <%= link_to 'New Rant', new_user_rant_path(@user) %> |
-    <%= link_to 'Back to Listing', user_rants_path(@user) %> 
-  </p>
-<% elsif @persona %>  
-<p>
-  <%= link_to 'Edit', edit_persona_rant_path(@persona, @rant) %> |
-  <%= link_to 'Destroy', [@persona, @rant], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to 'New Rant', new_persona_rant_path(@persona) %> |
-  <%= link_to 'Back to Listing', persona_rants_path(@persona) %> 
-</p>
-<% else %>
-  <p>
-    <%= link_to 'Edit', edit_rant_path(@rant) %> |
-    <%= link_to 'Destroy', @rant, :confirm => 'Are you sure?', :method => :delete %> |
-    <%= link_to 'New Rant', new_rant_path %> |
-    <%= link_to 'Back to Listing', rants_path %> 
-  </p>
-<% end %>
+<%= link_to 'Edit', edit_rant_path(@rant) %> |
+<%= link_to 'Destroy', @rant, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to 'New Rant', new_rant_path %> |
+<%= link_to 'Back to Listing', rants_path %> 

@@ -5,7 +5,6 @@ RiffRanter::Application.routes.draw do
     member do
       post :follow
     end     
-    resources :rants
   end
 
   # ==============
@@ -16,7 +15,6 @@ RiffRanter::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   
   resources :users do
-    resources :rants
     member do
       post :follow
       post :unfollow

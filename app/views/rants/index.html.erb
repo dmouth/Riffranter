@@ -1,30 +1,9 @@
-<h1> 
-  <% if @user %>
-    <%= page_title "#{@user.full_name}'s Rants" %>
-  <% elsif @persona %>
-    <%= page_title "#{@persona.name}'s Rants" %>
-  <% else %>
-    <%= page_title "Rants" %>
-  <% end %>
-</h1>
+<%= page_title "Rants" %>
 
-<% if @user %>
-  <p><%= link_to 'New Rant', new_user_rant_path(@user) %></p>
-<% elsif @persona %>
-  <p><%= link_to 'New Rant', new_persona_rant_path(@persona) %></p>
-<% else %>
-  <p><%= link_to 'New Rant', new_rant_path %></p>
-<% end %>
+<p><%= link_to 'New Rant', new_rant_path %></p>
 
 <% for rant in @rants %>
   <%= render rant %>
 <% end %>
 
-
-<% if @user %>
-  <p><%= link_to 'New Rant', new_user_rant_path(@user) %></p>
-<% elsif @persona %>
-  <p><%= link_to 'New Rant', new_persona_rant_path(@persona) %></p>
-<% else %>
-  <p><%= link_to 'New Rant', new_rant_path %></p>
-<% end %>
+<p><%= link_to 'New Rant', new_rant_path %></p>

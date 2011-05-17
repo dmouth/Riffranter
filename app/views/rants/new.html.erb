@@ -1,8 +1,4 @@
-<% if @user && @persona %>
-  <%= page_title "New Rant from #{@user.full_name} on #{@persona.name}" %>
-<% else %>
-  <%= page_title "New Rant" %>
-<% end %>
+<%= page_title "New Rant" %>
   
 <%= render 'form' %>
 

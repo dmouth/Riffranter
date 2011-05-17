@@ -30,19 +30,9 @@
     <% end %>
 
     <%= admin_area do %>
-      <% if @user %>
-        <%= link_to 'Show', user_rant_path(@user, rant) %> |
-        <%= link_to 'Edit', edit_user_rant_path(@user, rant) %> |
-        <%= link_to 'Destroy', user_rant_path(@user, rant), :confirm => 'Are you sure?', :method => :delete %>
-      <% elsif @persona %>    
-        <%= link_to 'Show', persona_rant_path(@persona, rant) %> |
-        <%= link_to 'Edit', edit_persona_rant_path(@persona, rant) %> |
-        <%= link_to 'Destroy', persona_rant_path(@persona, rant), :confirm => 'Are you sure?', :method => :delete %>
-      <% else %>
-        <%= link_to 'Show', rant %> |
-        <%= link_to 'Edit', edit_rant_path(rant) %> |
-        <%= link_to 'Destroy', rant, :confirm => 'Are you sure?', :method => :delete %>
-      <% end %>        
+      <%= link_to 'Show', rant %> |
+      <%= link_to 'Edit', edit_rant_path(rant) %> |
+      <%= link_to 'Destroy', rant, :confirm => 'Are you sure?', :method => :delete %>
     <% end %>                  
   </div>
 </div>
