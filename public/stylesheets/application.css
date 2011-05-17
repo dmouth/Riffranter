@@ -33,7 +33,7 @@ a:hover{
 ul#tabs { /* general settings */
   text-align: left; /* set to left, right or center */
   margin: 1em 0 1em 0; /* set margins as desired */
-  font: bold 11px verdana, arial, sans-serif; /* set font as desired */
+  font: 11px verdana, arial, sans-serif; /* set font as desired */
   border-bottom: 1px solid #EEEEEE; /* set border COLOR as desired */
   list-style-type: none;
   padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
@@ -46,6 +46,7 @@ ul#tabs li { /* do not change */
 ul#tabs li.selected-tab { /* settings for selected tab */
   border-bottom: 1px solid #EEEEEE; /* set border color to page background color */
   background-color: #FFFFFF; /* set background color to match above border color */
+  font-weight: bold;
 }
 
 ul#tabs li.selected-tab a { /* settings for selected tab link */
