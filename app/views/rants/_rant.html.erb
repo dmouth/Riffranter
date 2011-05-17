@@ -29,9 +29,9 @@
 
     <!-- Controls on user's own rant -->
     <% if current_user == rant.user and !current_user.admin? %>
-      | <%= link_to 'Show', user_rant_path(rant.user, rant) %> |
-      <%= link_to 'Edit', edit_user_rant_path(rant.user, rant) %> |
-      <%= link_to 'Destroy', user_rant_path(rant.user, rant), :confirm => 'Are you sure?', :method => :delete %>
+      | <%= link_to 'Show', rant %> |
+      <%= link_to 'Edit', edit_rant_path(rant) %> |
+      <%= link_to 'Destroy', rant_path(rant), :confirm => 'Are you sure?', :method => :delete %>
     <% end %>
 
     <%= admin_area do %>
