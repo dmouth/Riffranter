@@ -26,7 +26,11 @@ class ApplicationController < ActionController::Base
   end
   
   def owner_or_admin? user
-    current_user.admin? || user == current_user
+    if user.is_a? User
+      current_user.admin? || user == current_user
+    else
+      current_user.admin? || user.id == current_user.id
+    end
   end
   
   private

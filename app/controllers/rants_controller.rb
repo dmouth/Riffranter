@@ -1,7 +1,3 @@
-# ============================================================================================
-# = A very complicated controller.  This can be nested under User or Persona, or standalone. =
-# ============================================================================================
-
 class RantsController < ApplicationController
   before_filter :logged_in?
   # GET /rants
@@ -25,8 +21,9 @@ class RantsController < ApplicationController
   end
 
   # GET /rants/1/edit
-  def edit
+  def edit  
     @rant = Rant.find(params[:id])
+    get_clearance if !owner_or_admin?(@rant.user_id)
   end
 
   # POST /rants
@@ -49,6 +46,8 @@ class RantsController < ApplicationController
   # PUT /rants/1.xml
   def update
     @rant = Rant.find(params[:id]) 
+    get_clearance if !owner_or_admin?(@rant.user_id)
+    
     
     respond_to do |format|
       if @rant.update_attributes(params[:rant])
@@ -65,6 +64,7 @@ class RantsController < ApplicationController
   # DELETE /rants/1.xml
   def destroy
     @rant = Rant.find(params[:id])
+    get_clearance if !owner_or_admin?(@rant.user_id)
     @rant.destroy
 
     respond_to do |format|
