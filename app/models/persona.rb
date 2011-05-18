@@ -1,4 +1,6 @@
 class Persona < ActiveRecord::Base
+  has_friendly_id :name, :use_slug => true, :approximate_ascii => true, :max_length => 50
+
   validates :name, :presence => true, :uniqueness => true
   validates :title, :presence => true
   
