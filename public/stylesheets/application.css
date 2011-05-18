@@ -301,3 +301,26 @@ ul#tabs a:hover { /* settings for hover effect */
   border-top: 1px solid #EEEEEE;
   padding: 5px;
 }
+
+#persona-rant-widget{
+  
+}
+
+#persona-rant-widget .rant-text{
+
+}
+
+#persona-rant-widget .persona-selector{
+
+}
+
+#persona-rant-widget .persona-selector h1{
+  font-size: 120%;
+  margin: 3px 0 0 0;
+  text-align: center;
+}
+
+
+#persona-rant-widget .persona-selector img{
+  border: 1px solid black;
+}

@@ -10,7 +10,9 @@
 
 	<% if !@persona.nil? %>
 	  <%= page_title "Riff Ranter - #{@persona.name}" %>
-	  <%= render :partial => "shared/persona_rant_widget" %>
+	  <div id="rant-widget-container">
+  	  <%= render :partial => "shared/persona_rant_widget" %>
+	  </div>
 	<% else %>
   	<%= page_title "Riff Ranter" %>
   <% end %>                                      

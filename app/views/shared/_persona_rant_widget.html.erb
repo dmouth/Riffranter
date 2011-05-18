@@ -1,31 +1,18 @@
-<div>
-  <table width="100%">
+<%= content_tag :div, :id => "persona-rant-widget" do %>      
+  <table border="0" cellspacing="5" cellpadding="5">
     <tr>
-      <td colspan="3"></td>
-    </tr>
-    <tr>
-      <td colspan="2"><div class="textwrapper">
-          <textarea class="post" name="" cols="2" rows="5"></textarea>
-        </div></td>
-      <td width="110px" align="center" valign="center">
-        <div style="vertical-align:top">
+      <td valign="top">
+        <%= content_tag :div, :class => "rant-text" do %>
+          <%= text_area_tag "persona[rant]", nil, :size => "65x10" %>
+        <% end %>
+      </td>
+      <td valign="top">
+        <%= content_tag :div, :class => "persona-selector" do %>
           <%= image_tag @persona.image_url(:thumb).to_s, :height => "100" %>
-          <input type="button" value="Fancy Submit Button" />
-        </div></td>
+          <h1>Change Persona</h1>
+          <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %>
+        <% end %>
+      </td>
     </tr>
   </table>
-</div>  
-
-
-
-
-
-
-<%#= link_to "Mu Link", "/rants/new", "data-persona-id" => p.id %>
-<!-- $(function(){
-  $("mylik").click(function(){
-    pid = $(this).data("persona-id");
-    $.put("rants/new", {persona_id: pid})
-  }))
-})
-            -->
+<% end %>

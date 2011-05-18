@@ -1,0 +1,2 @@
+module PersonaRantWidgetHelper
+end

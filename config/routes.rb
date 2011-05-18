@@ -1,4 +1,6 @@
 RiffRanter::Application.routes.draw do
+  match "/prw/update_widget" => "persona_rant_widget#update_widget", :via => :get
+  
   resources :rants
   resources :categories
   resources :personas do

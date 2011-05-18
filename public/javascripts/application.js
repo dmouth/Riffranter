@@ -32,6 +32,15 @@ $(function(){
   });
 });   
 
+// ===============================================
+// = Generic persona rant widget (with selector) =
+// ===============================================
+$(function(){
+  $("#persona-rant-widget select").live("change", function(){
+    $.get("/prw/update_widget", {id: $(this).val()})
+  });
+})
+
 // =========================
 // = General site behavior =
 // =========================
