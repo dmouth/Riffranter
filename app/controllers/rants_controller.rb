@@ -23,7 +23,7 @@ class RantsController < ApplicationController
   # GET /rants/1/edit
   def edit  
     @rant = Rant.find(params[:id])
-    get_clearance if !owner_or_admin?(@rant.user_id)
+    get_cleaarance if !owner_or_admin?(@rant.user_id)
   end
 
   # POST /rants
