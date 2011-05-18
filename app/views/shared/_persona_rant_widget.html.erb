@@ -9,7 +9,6 @@
       <td valign="top">
         <%= content_tag :div, :class => "persona-selector" do %>
           <%= image_tag @persona.image_url(:thumb).to_s, :height => "100" %>
-          <h1>Change Persona</h1>
           <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %>
         <% end %>
       </td>
