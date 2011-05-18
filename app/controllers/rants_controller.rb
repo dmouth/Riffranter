@@ -7,7 +7,7 @@ class RantsController < ApplicationController
   # GET /rants
   # GET /rants.xml
   def index   
-    @rants = Rant.order(:created_at.desc).includes(:user, :persona)
+    @rants = Rant.order(:created_at.desc).includes(:user, :persona).limit(5).all
   end
 
   # GET /rants/1
@@ -71,5 +71,19 @@ class RantsController < ApplicationController
       format.html { redirect_to(rants_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def new_ajax
+    throw "Illegal attempt to create rant!" if params[:id].to_i != current_user.id
+    @persona = Persona.find params[:persona_id]
+    @text = params[:text]
+    @rant = Rant.create! do |r|
+      r.persona = @persona
+      r.user = current_user
+      r.body = @text    
+      r.ip = request.remote_ip
+    end
+    
+    @latest_rants = Rant.order(:created_at.desc).includes(:user, :persona).limit(5).all
   end
 end

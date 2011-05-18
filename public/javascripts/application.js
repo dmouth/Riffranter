@@ -39,6 +39,10 @@ $(function(){
   $("#persona-rant-widget select").live("change", function(){
     $.get("/prw/update_widget", {id: $(this).val()})
   });
+
+  $("#persona-rant-widget .submit-link").live("click", function(){
+    $.post("/rants/new_ajax", {id: $(this).data("current-user-id"), persona_id: $(this).data("persona-id"), text: $("#persona-rant-widget textarea").val()});
+  });
 })
 
 // =========================

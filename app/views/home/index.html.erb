@@ -16,11 +16,11 @@
 	<% else %>
   	<%= page_title "Riff Ranter" %>
   <% end %>                                      
-
+  
   <h1>Latest Rants</h1>
-  <% for rant in @rants %>
-    <%= render rant %>
-  <% end %>
+  <div id="latest-rants">
+    <%= render @rants %>
+  </div>
 
   <h1>Hot Rants</h1>
   <% for rant in @rants %>

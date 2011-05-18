@@ -4,6 +4,7 @@
     <title>RiffRanter <%= content_for?(:browser_title) ? "(#{yield(:browser_title)})" : ""  %></title>
     <%= stylesheet_link_tag "application", "jquery-ui-1.8.12" %>
     <%= yield(:stylesheets) %>
+    <%= csrf_meta_tag %>
   </head>    
   <body>
     <div id="tabs-page">
