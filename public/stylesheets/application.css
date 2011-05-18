@@ -8,6 +8,8 @@ body{
   text-align:center;
   margin:auto;
   background-color:white;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: .70em;
 }                        
 
 a, a:visited{
