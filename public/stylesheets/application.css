@@ -325,4 +325,51 @@ ul#tabs a:hover { /* settings for hover effect */
 
 #persona-rant-widget .persona-selector img{
   border: 1px solid black;
+}         
+
+.shadow-box {
+	text-align:center;
+	padding: 19px 19px 9px;
+	border:thin solid #666;
+	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif;
+	color: #37414B;
+	border-top: 1px solid #DDD;
+	text-shadow: #FBFBFB 0px 1px 0px;
+	margin-right:9px;
+	margin-left:9px;
+	-webkit-box-shadow: white 0px 1px 0px 0px inset;
+	vertical-align:baseline;
+	background-color: #F8F8F8;
+	border-bottom-color: #D6D9D9;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-collapse: separate;
+	border-left-color: #D6D9D9;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: #D6D9D9;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #D6D9D9;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+.padded-image {
+	width:auto;
+	padding: 5px 5px 5px;
+	background-color: #C8C8C8;
+	margin: auto;
+}
+.persona-name {
+	font-size:large;
+}
+.persona-title {
+	font-size: x-small;
+}
+.personal-details {
+	display:table-cell;
 }

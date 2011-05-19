@@ -3,27 +3,27 @@
 <p><%= link_to 'New Persona', new_persona_path %></p>
 
 <table cellpadding="5" cellspacing="0" class="index-table">
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Image</th>
-    <th>Categories</th>
-    <th></th>
-  </tr>
-
-<% @personas.each do |persona| %>
-  <tr class="<%= cycle "odd-row", "even-row" %>">
-    <td valign="top"><%= link_to persona.name, persona %></td>
-    <td valign="top"><%= persona.title %></td>
-    <td valign="top"><%= link_to "View", persona.image.to_s, :target => "_blank" %></td>
-    <td valign="top"><%= persona.categories.collect{|c| c.name}.to_sentence %></td>
-    <td valign="top">
-      <%= follow_persona_link(persona) %> |      
-      <%= link_to 'Edit', edit_persona_path(persona) %> |
-      <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %>
-    </td>
-  </tr>
-<% end %>
+	<% @personas.each do |persona| %>
+  <td><div class="shadow-box" style="width:120px" id="persona-list">
+      <div class="persona-name"><%= link_to persona.name, persona %></div>
+      <div class="persona-title"><%= persona.title %></div>
+      <div style="margin:auto">
+        <div class="shadow-box padded-image"> <%= image_tag persona.image.to_s, :height  => 100, :width  => 100 %></div>
+        <div style="persona-details">
+          <div>Categories</div>
+          <div>
+					<% persona.categories.each do |category| %>
+						<% link_to category.name, category %>
+  				<% end %>
+					</div>
+          <hr />
+          <div><%= follow_persona_link(persona) %></div>
+          <hr />
+          <div><%= link_to 'Edit', edit_persona_path(persona) %> | <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %></div>
+        </div>
+      </div>
+    </div></td>  	
+	<% end %>	
 </table>
 
 <p><%= link_to 'New Persona', new_persona_path %></p>

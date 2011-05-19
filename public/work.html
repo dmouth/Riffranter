@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+<title>RiffRanter (Personas)</title>
+<link href="/stylesheets/application.css?1305689122" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/jquery-ui-1.8.12.css?1305591725" media="screen" rel="stylesheet" type="text/css" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="JokxO3oKXf35jeDCBfjrm2/KSogUo9KZ/xwW0M4mcz8="/>
+<style type="text/css" media="screen">
+.shadow-box {
+	text-align:center;
+	padding: 19px 19px 9px;
+	border:thin solid #666;
+	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif;
+	color: #37414B;
+	border-top: 1px solid #DDD;
+	text-shadow: #FBFBFB 0px 1px 0px;
+	margin-right:9px;
+	margin-left:9px;
+	-webkit-box-shadow: white 0px 1px 0px 0px inset;
+	vertical-align:baseline;
+	background-color: #F8F8F8;
+	border-bottom-color: #D6D9D9;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-collapse: separate;
+	border-left-color: #D6D9D9;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: #D6D9D9;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #D6D9D9;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+.padded-image {
+	width:auto;
+	padding: 5px 5px 5px;
+	background-color: #C8C8C8;
+	margin: auto;
+}
+.persona-name {
+	font-size:large;
+}
+.persona-title {
+	font-size: x-small;
+}
+.personal-details {
+	display:table-cell;
+}
+.personal-details a {
+	margin-left: 3px;
+}
+</style>
+<script src="SpryAssets/SpryCollapsiblePanel.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="CollapsiblePanel1" class="CollapsiblePanel">
+  <div class="CollapsiblePanelTab" tabindex="0">Tab</div>
+  <div class="CollapsiblePanelContent">Content</div>
+</div>
+<div id="tabs-page">
+  <div id="tabs-div">
+    <ul id="tabs">
+      <li class=""> <a href="http://localhost:3000/" id="tab-home">Home</a> </li>
+      <li class="selected-tab"> <a href="http://localhost:3000/personas" id="tab-personas">Personas</a> </li>
+      <li class=""> <a href="http://localhost:3000/rants" id="tab-rants">Rants</a> </li>
+      <li class=""> <a href="http://localhost:3000/categories" id="tab-categories">Categories</a> </li>
+      <li class=""> <a href="http://localhost:3000/users" id="tab-users">Users</a>
+        <input style="width:30em; padding-left:2em" name="search" type="text" id="search" value="My Search Text" maxlength="200" />
+      </li>
+    </ul>
+  </div>
+  <div id="search-bar">
+    <p style="padding-left:10px;"></p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><a href="/"><img src="http://seafoodforthefuture.org/wp-content/uploads/2009/09/Look-for-our-logo-2.jpg" width='100' height='20'></a></td>
+        <td><label for="search" style="padding:2em">Search</label></td>
+      </tr>
+    </table>
+  </div>
+  <div style="clear:both">
+    <div id="body-div">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <!-- left col -->
+          <td valign="top" colspan="3"><div id="content">
+              <h1>Personas</h1>
+              <hr>
+              <p><a href="/personas/new">New Persona</a></p>
+              <table>
+                <tr>
+                  <td><div class="shadow-box" style="width:120px" id="persona-list">
+                      <div class="persona-name">Alan Gimsby</div>
+                      <div class="persona-title">Title of Whatever</div>
+                      <div style="margin:auto">
+                        <div class="shadow-box padded-image"> <img height="100" src="uploads/persona/image/1/thumb_dsc01568.jpg" /> </div>
+                        <div style="persona-details">
+                          <div>Categories</div>
+                          <div><a href="#">Men</a> <a href="#">Different</a> <a href="#">Wooly</a> <a href="#">Bovine</a> <a href="#">Trumpet</a> <a href="#">Overflow</a></div>
+                          <hr />
+                          <div><a href="http://localhost:3000/personas/2/unfollow" class="unfollow-persona-link user-2-unfollowed-persona-2" data-current-user-id="2">Unfollow Persona</a></div>
+                          <hr />
+                          <div> <a href="/personas/2/edit">Edit</a> | <a href="/personas/2" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a> </div>
+                        </div>
+                      </div>
+                    </div></td>
+                  <td><div class="shadow-box" style="width:120px" id="persona-list">
+                      <div class="persona-name">Alan Gimsby</div>
+                      <div class="persona-title">Title of Whatever</div>
+                      <div style="margin:auto">
+                        <div class="shadow-box padded-image"> <img height="100" src="uploads/persona/image/1/thumb_dsc01568.jpg" /> </div>
+                        <div style="persona-details">
+                          <div>Categories</div>
+                          <div><a href="#">Men</a> <a href="#">Different</a> <a href="#">Wooly</a> <a href="#">Bovine</a> <a href="#">Trumpet</a> <a href="#">Overflow</a></div>
+                          <hr />
+                          <div><a href="http://localhost:3000/personas/2/unfollow" class="unfollow-persona-link user-2-unfollowed-persona-2" data-current-user-id="2">Unfollow Persona</a></div>
+                          <hr />
+                          <div> <a href="/personas/2/edit">Edit</a> | <a href="/personas/2" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a> </div>
+                        </div>
+                      </div>
+                    </div></td>
+                  <td><div class="shadow-box" style="width:120px" id="persona-list">
+                      <div class="persona-name">Alan Gimsby</div>
+                      <div class="persona-title">Title of Whatever</div>
+                      <div style="margin:auto">
+                        <div class="shadow-box padded-image"> <img height="100" src="uploads/persona/image/1/thumb_dsc01568.jpg" /> </div>
+                        <div style="persona-details">
+                          <div>Categories</div>
+                          <div><a href="#">Men</a> <a href="#">Different</a> <a href="#">Wooly</a> <a href="#">Bovine</a> <a href="#">Trumpet</a> <a href="#">Overflow</a></div>
+                          <hr />
+                          <div><a href="http://localhost:3000/personas/2/unfollow" class="unfollow-persona-link user-2-unfollowed-persona-2" data-current-user-id="2">Unfollow Persona</a></div>
+                          <hr />
+                          <div> <a href="/personas/2/edit">Edit</a> | <a href="/personas/2" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a> </div>
+                        </div>
+                      </div>
+                    </div></td>
+                  <td><div class="shadow-box" style="width:120px" id="persona-list">
+                      <div class="persona-name">Alan Gimsby</div>
+                      <div class="persona-title">Title of Whatever</div>
+                      <div style="margin:auto">
+                        <div class="shadow-box padded-image"> <img height="100" src="uploads/persona/image/1/thumb_dsc01568.jpg" /> </div>
+                        <div style="persona-details">
+                          <div>Categories</div>
+                          <div><a href="#">Men</a> <a href="#">Different</a> <a href="#">Wooly</a> <a href="#">Bovine</a> <a href="#">Trumpet</a> <a href="#">Overflow</a></div>
+                          <hr />
+                          <div><a href="http://localhost:3000/personas/2/unfollow" class="unfollow-persona-link user-2-unfollowed-persona-2" data-current-user-id="2">Unfollow Persona</a></div>
+                          <hr />
+                          <div> <a href="/personas/2/edit">Edit</a> | <a href="/personas/2" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a> </div>
+                        </div>
+                      </div>
+                    </div></td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <table cellpadding="0" cellspacing="0" class="index-table">
+                <tr>
+                  <th>Name</th>
+                  <th>Title</th>
+                  <th>Image</th>
+                  <th>Categories</th>
+                  <th></th>
+                </tr>
+                <tr class="odd-row">
+                  <td valign="top"><a href="/personas/1">Abe Lincoln</a></td>
+                  <td valign="top">Replican Mutant</td>
+                  <td valign="top"><a href="/uploads/persona/image/1/dsc01568.jpg" target="_blank">View</a></td>
+                  <td valign="top">Guy</td>
+                  <td valign="top"><a href="http://localhost:3000/personas/1/unfollow" class="unfollow-persona-link user-2-unfollowed-persona-1" data-current-user-id="2">Unfollow Persona</a> | <a href="/personas/1/edit">Edit</a> | <a href="/personas/1" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
+                </tr>
+                <tr class="even-row">
+                  <td valign="top"><a href="/personas/2">Billy Hart</a></td>
+                  <td valign="top">Great Dummmer</td>
+                  <td valign="top"><a href="/uploads/persona/image/2/billy_hart1.jpeg" target="_blank">View</a></td>
+                  <td valign="top">Guy</td>
+                  <td valign="top"><a href="http://localhost:3000/personas/2/unfollow" class="unfollow-persona-link user-2-unfollowed-persona-2" data-current-user-id="2">Unfollow Persona</a> | <a href="/personas/2/edit">Edit</a> | <a href="/personas/2" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
+                </tr>
+              </table>
+              <p><a href="/personas/new">New Persona</a></p>
+            </div></td>
+          <!-- right col -->
+          <td valign="top" width="25%"><div id="right-content">
+              <div id="user-widget-container">
+                <div id="user-widget">
+                  <h1>Ray Parker</h1>
+                  <div class="user-widget-follow" id="followed-personas">
+                    <h2>Following Personas</h2>
+                    <a href="/personas/1">Abe Lincoln</a> | <a href="/personas/2">Billy Hart</a> </div>
+                  <div class="user-widget-follow" id="followed-users"></div>
+                  <div class="user-widget-account-controls"> <a href="/users/2">My Profile</a> | <a href="http://localhost:3000/log_out">Log out</a> </div>
+                </div>
+              </div>
+            </div></td>
+        </tr>
+      </table>
+      <div class="tent-pole"></div>
+    </div>
+  </div>
+</div>
+<div id="legal-footer"> <span>Our company accepts no liability for the content of this email, or for the consequences of any actions taken on the basis of the information provided, unless that information is subsequently confirmed in writing. If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.</span> </div>
+<script type="text/javascript">
+<!--
+var CollapsiblePanel1 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel1");
+//-->
+</script>
+</body>
+<script src="/javascripts/jquery.min.js?1304886204" type="text/javascript"></script>
+<script src="/javascripts/rails.js?1304886204" type="text/javascript"></script>
+<script src="/javascripts/jquery-ui-1.8.12-min.js?1305591725" type="text/javascript"></script>
+<script src="/javascripts/application.js?1305689122" type="text/javascript"></script>
+</html>
