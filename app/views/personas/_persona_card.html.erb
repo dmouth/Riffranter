@@ -1,13 +1,13 @@
-<div class="shadow-box" style="width:120px" id="persona-list">
+<div class="shadow-box" style="width:120px;height:270px" id="persona-list">
 	<div class="persona-name">
-		<%= link_to(persona.name, persona) if persona %>
+		<%= persona ? link_to(persona.name, persona) : link_to('New Persona', new_persona_path)  %>
 	</div>
 	<div class="persona-title">
 		<%= persona.title  if persona %>
 	</div>
 	<div style="margin:auto">
 		<div class="shadow-box padded-image">
-			<%= image_tag(persona.image.to_s, :height  => 100, :width  => 100)  if persona  %>
+			<%= image_tag(persona.image_url(:medium).to_s, :height  => 100, :width  => 100)  if persona  %>
 		</div>
 		<div style="persona-details">
 			<div>
