@@ -1,0 +1,31 @@
+<div class="shadow-box" style="width:120px" id="persona-list">
+	<div class="persona-name">
+		<%= link_to(persona.name, persona) if persona %>
+	</div>
+	<div class="persona-title">
+		<%= persona.title  if persona %>
+	</div>
+	<div style="margin:auto">
+		<div class="shadow-box padded-image">
+			<%= image_tag(persona.image.to_s, :height  => 100, :width  => 100)  if persona  %>
+		</div>
+		<div style="persona-details">
+			<div>
+				<%= pluralize(persona.categories.count, "Category") if persona%>
+			</div>
+			<div>
+				<%= raw persona.categories.collect{|p| link_to(p.name, p)}.join(" | ") if persona %>
+			</div>
+			<hr>
+			<div>
+				<%= follow_persona_link(persona) if persona %>
+			</div>
+			<hr>
+			<div>                                         
+				<% if persona %>
+					<%= link_to 'Edit', edit_persona_path(persona) %>| <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

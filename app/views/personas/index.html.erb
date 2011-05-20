@@ -3,26 +3,14 @@
 <p><%= link_to 'New Persona', new_persona_path %></p>
 
 <table cellpadding="5" cellspacing="0" class="index-table">
-	<% @personas.each do |persona| %>
-  <td><div class="shadow-box" style="width:120px" id="persona-list">
-      <div class="persona-name"><%= link_to persona.name, persona %></div>
-      <div class="persona-title"><%= persona.title %></div>
-      <div style="margin:auto">
-        <div class="shadow-box padded-image"> <%= image_tag persona.image.to_s, :height  => 100, :width  => 100 %></div>
-        <div style="persona-details">
-          <div>Categories</div>
-          <div>
-					<% persona.categories.each do |category| %>
-						<% link_to category.name, category %>
-  				<% end %>
-					</div>
-          <hr />
-          <div><%= follow_persona_link(persona) %></div>
-          <hr />
-          <div><%= link_to 'Edit', edit_persona_path(persona) %> | <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %></div>
-        </div>
-      </div>
-    </div></td>  	
+	<% for personasOut in @personas.in_groups_of(4, nil) %>
+	<tr>
+		<% for persona in personasOut %>
+	  <td>      
+			<%= render :partial => 'persona_card', :locals => {:persona => persona} %>
+			</td> 
+			<% end %>
+		</tr>  	
 	<% end %>	
 </table>
 
