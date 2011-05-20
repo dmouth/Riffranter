@@ -22,7 +22,7 @@
 			<hr>
 			<div>
 				<% if persona.is_a? Persona %>
-				<%= follow_persona_link(persona) if persona %>
+				  <%= follow_persona_link(persona) if persona %>
 				<% elsif persona.is_a? User %>
 					<%= follow_user_link(persona) if persona %>
 				<% end %>
