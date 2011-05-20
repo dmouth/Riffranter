@@ -5,7 +5,7 @@
   <tr>
     <th>Personas</th>
     <td valign="top" class="<%= cycle "odd-row", "even-row" %>">
-      <%= @category.personas.collect{|p| p.name}.to_sentence %>
+      <%= raw @category.personas.order(:name).collect{|p| link_to(p.name, p)}.to_sentence %>
     </td>
   </tr>
 </table>
