@@ -329,7 +329,7 @@ ul#tabs a:hover { /* settings for hover effect */
 
 .shadow-box {
 	text-align:center;
-	padding: 19px 19px 9px;
+	padding: 5px 5px 5px 5px;
 	border:thin solid #666;
 	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif;
 	color: #37414B;

@@ -1,7 +1,8 @@
 <%= page_title "Personas" %>
 
+<%= admin_area do %>
 <p><%= link_to 'New Persona', new_persona_path %></p>
-
+<% end %>
 <table cellpadding="5" cellspacing="0" class="index-table">
 	<% for personasOut in @personas.in_groups_of(4, nil) %>
 	<tr>
@@ -13,5 +14,8 @@
 		</tr>  	
 	<% end %>	
 </table>
+<%= admin_area do %>
 
-<p><%= link_to 'New Persona', new_persona_path %></p>
+<p><%= link_to 'New Persona', new_persona_path %></p>         
+
+<% end %>
