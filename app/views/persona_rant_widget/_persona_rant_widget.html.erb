@@ -1,18 +1,19 @@
-<%= content_tag :div, :id => "persona-rant-widget" do %>      
+<%= content_tag :div, :id => "persona-rant-widget", :class => "rant-widget-div" do %>      
   <table border="0" cellspacing="5" cellpadding="5">
     <tr>
       <td valign="top">
         <%= content_tag :div, :class => "rant-text" do %>
-          <%= text_area_tag "persona[rant]", nil, :size => "65x10" %>
+          <%= text_area_tag "persona[rant]", nil, :size => "65x10" %>  
+          <p><%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %></p>
         <% end %>
       </td>
       <td valign="top">
         <%= content_tag :div, :class => "persona-selector" do %>
-          <%= image_tag @persona.image_url(:medium).to_s %>
-          <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %>
+          <%= image_tag @persona.image_url(:medium).to_s %> <br>
+          <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %> <br>
+          <b><%= @persona.title %></b>
           <br>
           <%= follow_persona_link(@persona) %><br>
-          <%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %>
         <% end %>
       </td>
     </tr>

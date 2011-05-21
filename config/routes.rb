@@ -1,7 +1,8 @@
 RiffRanter::Application.routes.draw do
   match "/prw/update_widget" => "persona_rant_widget#update_widget", :via => :get
   
-  match "rants/new_ajax(.:format)" => "rants#new_ajax", :via => :post
+  match "persona_rant_widget/new_persona_rant(.:format)" => "persona_rant_widget#new_persona_rant", :via => :post
+  match "persona_rant_widget/new_rant(.:format)" => "persona_rant_widget#new_rant", :via => :post
   resources :rants
 
   resources :categories

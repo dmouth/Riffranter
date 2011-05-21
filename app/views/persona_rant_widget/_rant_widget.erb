@@ -1,17 +1,23 @@
-<%= content_tag :div, :id => "persona-rant-widget" do %>      
+<%= content_tag :div, :id => "rant-widget", :class => "rant-widget-div" do %>      
   <table border="0" cellspacing="5" cellpadding="5">
     <tr>
       <td valign="top">
         <%= content_tag :div, :class => "persona-selector" do %>
-          <%= image_tag @persona.image_url(:profile).to_s %>
-          <br>
+          <%= image_tag @persona.image_url(:profile).to_s %>         
+          <br>                                              
+          <b><%= @persona.title %></b><br><br>
           <%= follow_persona_link(@persona) %><br>
-          <%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %>
+          <%= admin_area do %>
+            <%= link_to 'Edit', edit_persona_path(@persona) %> |
+            <%= link_to 'New Persona', new_persona_path %>
+          <% end %>
+
         <% end %>
       </td>
       <td valign="top">
         <%= content_tag :div, :class => "rant-text" do %>
           <%= text_area_tag "persona[rant]", nil, :size => "65x10" %>
+          <p><%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %></p>
         <% end %>
       </td>
     </tr>
