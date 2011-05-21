@@ -1,3 +1,6 @@
+# RiffRanter example
+# rake carrierwave:reprocess class=Persona mounted_uploader=image
+
 ##
 # CarrierWave Amazon S3 File Reprocessor Rake Task
 #
@@ -87,7 +90,7 @@ namespace :carrierwave do
     puts "\nCarrier Wave Version Reprocessing!"
     puts "======================================="
     puts "Model:              #{CLASS}"
-    puts "Mounted Uploader:   #{MOUNTED_UPLOADER}"
+    puts "Mounted Uploader:   #{MOUNTED_UPLOADER}" 
     puts "Association:        #{ASSOCIATION}" if ASSOCIATION
     puts "Versions:           #{VERSIONS.empty? ? "all" : VERSIONS.join(', ')}\n\n"
     
@@ -128,14 +131,13 @@ namespace :carrierwave do
         ##
         # Output to console
         puts "Reprocessing: #{filename}"
-      
         ##
         # Read out the original file from the remote location
         # and write it out to the temp directory (TMP_PATH)
         # This file will be used as the base file to reprocess
         # the versions. Once all versions have been processed,
         # this temp file will be directly removed.
-        open(mounted_object.url) do |original_object|
+        open("public/"+ mounted_object.url) do |original_object|
           File.open(File.join(TMP_PATH, filename), 'w') do |temp_file|
             temp_file.write(original_object.read)
           end
