@@ -7,6 +7,7 @@ class UserTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: users
@@ -20,5 +21,6 @@ end
 #  created_at    :datetime
 #  updated_at    :datetime
 #  admin         :boolean(1)
+#  image         :string(255)
 #
 

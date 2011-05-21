@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :admin, :followed_persona_ids, :followed_user_ids, :following_user_ids
+  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :admin, :followed_persona_ids, :followed_user_ids, :following_user_ids, :image
   has_friendly_id :email, :use_slug => true, :approximate_ascii => true, :max_length => 50
+
+  mount_uploader :image, ImageUploader
   
   attr_accessor :password
   before_save :encrypt_password
@@ -41,6 +43,7 @@ class User < ActiveRecord::Base
     full_name
   end
 end
+
 # == Schema Information
 #
 # Table name: users
@@ -54,5 +57,6 @@ end
 #  created_at    :datetime
 #  updated_at    :datetime
 #  admin         :boolean(1)
+#  image         :string(255)
 #
 

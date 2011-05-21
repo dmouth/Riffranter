@@ -1,6 +1,6 @@
 <%= page_title @persona.name %>
 
-<%= render :partial => "shared/persona_rant_widget" %>
+<%= render :partial => "persona_rant_widget/rant_widget" %>
 
 <h2>Latest Rants</h2>
 <% for rant in @persona.rants.order(:created_at.desc) %>
@@ -10,7 +10,7 @@
 <table cellpadding="5" cellspacing="0" class="show-table">
 	<tr><th valign="top"><%= User.human_attribute_name :title %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @persona.title %></td></tr>
 	<tr><th valign="top"><%= User.human_attribute_name :categories %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @persona.categories.collect{|c| c.name}.to_sentence %></td></tr>
-	<tr><th valign="top"><%= User.human_attribute_name :image %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= image_tag @persona.image_url(:thumb).to_s %></td></tr>
+	<tr><th valign="top"><%= User.human_attribute_name :image %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= image_tag @persona.image_url(:profile).to_s %></td></tr>
 	<tr><th valign="top"><%= User.human_attribute_name :created_at %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= l @persona.created_at %></td></tr>
 	<tr><th valign="top"><%= User.human_attribute_name :updated_at %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= l @persona.updated_at %></td></tr>
 </table>

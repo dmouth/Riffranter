@@ -14,6 +14,7 @@ two:
   password_hash: MyString
   password_salt: MyString
 
+
 # == Schema Information
 #
 # Table name: users
@@ -27,5 +28,6 @@ two:
 #  created_at    :datetime
 #  updated_at    :datetime
 #  admin         :boolean(1)
+#  image         :string(255)
 #
 

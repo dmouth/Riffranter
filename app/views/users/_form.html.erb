@@ -1,5 +1,5 @@
 <div class="default-form">
-  <%= form_for @user do |f| %>
+  <%= form_for @user, :html => {:multipart => true} do |f| %>
     <% if @user.errors.any? %>
       <div class="error_messages">
         <h2>Form is invalid</h2>
@@ -29,7 +29,11 @@
      <div class="field">
       <p><%= f.label :password_confirmation %></p>
       <p><%= f.password_field :password_confirmation %></p>
-     </div>  
+     </div>   
+     <div class="field">
+       <%= f.label :image %><br />
+       <%= f.file_field :image %>
+     </div>     
      <%= admin_area do %>
        <div class="field">
         <p><%= f.label :admin %></p>
