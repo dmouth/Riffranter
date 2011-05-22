@@ -262,7 +262,7 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 .home-page-rant .title{
-  padding: 10px 5px 0px 5px;
+  padding: 0px;
 	margin-right:5px;
   float: left;   
 	border-right-style:solid;
