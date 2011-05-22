@@ -28,7 +28,11 @@
     <% else %>
       About <%= time_ago_in_words rant.created_at %> ago.
    <% end %>
-  </div>           
+  </div>     
+  
+  <div class="rating">
+    Rated at <%= rant.votes.average(:stars) %> after <%= pluralize(rant.votes.count, 'vote') %>.
+  </div>      
   
   <% if rant.user != current_user %>
     <%= render :partial => 'rants/rating_control', :locals => {:rant => rant} %>

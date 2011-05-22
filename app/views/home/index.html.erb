@@ -23,7 +23,7 @@
   </div>
 
   <h1>Hot Rants</h1>
-  <% for rant in @rants %>
+  <% for rant in Rant.find_by_sql("SELECT rants.*, avg(votes.stars) as rating FROM `rants` INNER JOIN `votes` ON `votes`.`rant_id` = `rants`.`id` group by rants.id order by rating desc limit 5") %>
     <%= render rant %>
   <% end %>
 
