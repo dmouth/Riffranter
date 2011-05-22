@@ -7,17 +7,21 @@ jQuery.ajaxSetup({
 // ============================
 $(function(){
   $(".rating-control").each(function(){
-    var rant_id = $(this).data("rant-id");  
-    var current_user_id = $(this).data("current-user-id");
-
-    $(this).stars({
-      oneVoteOnly: true,
-      callback: function(ui, type, value){
-        $.post("/rants/" + rant_id + "/add_vote", {value: value, current_user_id: current_user_id});
-      }
-    });
-  });  
-})
+    bindRatingControl(this);
+  });
+});                                
+                                                      
+function bindRatingControl(control){  
+  var rant_id = $(control).data("rant-id");  
+  var current_user_id = $(control).data("current-user-id");
+  
+  $(control).stars({
+    oneVoteOnly: true,
+    callback: function(ui, type, value){
+      $.post("/rants/" + rant_id + "/add_vote", {value: value, current_user_id: current_user_id});
+    }
+  });
+}
 
 // ================
 // = Follow Users =
