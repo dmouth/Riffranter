@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :admin, :followed_persona_ids, :followed_user_ids, :following_user_ids, :image
-  has_friendly_id :email, :use_slug => true, :approximate_ascii => true, :max_length => 50
+  # has_friendly_id :email, :use_slug => true, :approximate_ascii => true, :max_length => 50
 
   mount_uploader :image, ImageUploader
   
