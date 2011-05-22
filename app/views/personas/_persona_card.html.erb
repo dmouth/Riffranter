@@ -1,4 +1,7 @@
 <div class="shadow-box" style="width:120px;height:32em" id="persona-list">
+	<div class="shadow-box padded-image" style="height:100px">
+		<%= image_tag(persona.image_url(:medium).to_s, :height  => 100, :width  => 100)  if persona  %>
+	</div>
 	<div class="persona-name">
 		<%= persona ? link_to(persona.name, persona) : link_to('New Persona', new_persona_path)  %>
 	</div>
@@ -6,9 +9,6 @@
 		<%= persona.title  if persona %>
 	</div>
 	<div style="margin:auto">
-		<div class="shadow-box padded-image">
-			<%= image_tag(persona.image_url(:medium).to_s, :height  => 100, :width  => 100)  if persona  %>
-		</div>
 		<div class="persona-details">
 			<div>
         <%= pluralize(persona.following_users.count, "Following User") if persona %>
@@ -19,7 +19,9 @@
 			<div style="height:5em;overflow:auto">                        
 				<%= raw persona.categories.collect{|p| link_to(p.name, p)}.join(" | ") if persona %>
 			</div>
-			<hr>
+			<% if persona %>
+			<hr>          
+			<% end %>
 			<div>
 				<% if persona.is_a? Persona %>
 				  <%= follow_persona_link(persona) if persona %>
@@ -27,8 +29,10 @@
 					<%= follow_user_link(persona) if persona %>
 				<% end %>
 			</div>
-			<%= admin_area do %>
-			<hr>
+			<%= admin_area do %>      
+			<% if persona %>
+			<hr>          
+			<% end %>
 			<div>                                         
 				<% if persona %>
 					<%= link_to 'Edit', edit_persona_path(persona) %>| <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %>
