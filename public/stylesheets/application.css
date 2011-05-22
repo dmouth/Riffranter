@@ -222,7 +222,8 @@ ul#tabs a:hover { /* settings for hover effect */
 .home-page-rant{
   border: 1px solid #EEEEEE;
   margin-bottom: 5px;
-  padding: 0px 5px 5px 5px;
+  padding: 0px 5px 5px 5px;      
+	display:block;
 }
 
 .home-page-rant h1{
@@ -249,7 +250,9 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 .home-page-rant .photo{
-  float: left;
+  float: left; 
+	margin-right:10px;
+	margin-bottom:10px;
 }
 
 .home-page-rant img{
@@ -258,9 +261,13 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 .home-page-rant .title{
-  padding-top: 10px;
-  padding-left: 10px;
-  float: left;
+  padding: 10px 5px 0px 5px;
+	margin-right:5px;
+  float: left;   
+	border-right-style:solid;
+	border-right-width: thin;
+	border-bottom-style:solid;
+	border-bottom-width: thin;
 }
 
 .home-page-rant .rant-body{
@@ -268,10 +275,12 @@ ul#tabs a:hover { /* settings for hover effect */
   clear: both;
 }   
 
+.home-page-rant .rant-credit{    
+	display:table-cell;         
+}
 .home-page-rant .rant-controls{
-  clear: both;
-  margin-top: 10px;
-  text-align: right;
+	display:table-cell; 
+	text-align:right;
 }   
 
 /* ===================== */
@@ -305,7 +314,7 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 #persona-rant-widget{
-  
+  text-align:left;
 }
 
 #persona-rant-widget .rant-text{
