@@ -2,11 +2,13 @@
   @vote = rant.votes.find_by_user_id(current_user.id)       
 %>  
 
-<div class="rating-control" data-rant-id="<%= rant.id %>" data-current-user-id="<%= current_user.id %>"> 
-  <% (1..5).each do |i| %>      
-    <% checked = @vote.nil? ? false : @vote.stars == i %>
-    <%= radio_button_tag "rating", i, checked, :title => Vote::STAR_TITLES[i - 1], :disabled => (@vote.nil? ? nil : "disabled") %>
-  <% end %>
-</div>  
+<% if @vote.nil? %>
+  <div class="rating-control" data-rant-id="<%= rant.id %>" data-current-user-id="<%= current_user.id %>"> 
+    <% (1..5).each do |i| %>      
+      <% checked = @vote.nil? ? false : @vote.stars == i %>
+      <%= radio_button_tag "rating", i, checked, :title => Vote::STAR_TITLES[i - 1], :disabled => (@vote.nil? ? nil : "disabled") %>
+    <% end %>
+  </div>  
+<% end %>
 
      
