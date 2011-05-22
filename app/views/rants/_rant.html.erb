@@ -31,7 +31,7 @@
   </div>     
   
   <div class="rating">
-    Rated at <%= rant.votes.average(:stars) %> after <%= pluralize(rant.votes.count, 'vote') %>.
+    Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
   </div>      
   
   <% if rant.user != current_user %>
