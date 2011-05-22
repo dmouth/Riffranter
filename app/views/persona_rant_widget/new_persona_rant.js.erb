@@ -1,2 +1,6 @@
 $("#persona-rant-widget textarea").val("");
 $("#latest-rants").html("<%= escape_javascript(render @latest_rants) %>"); 
+
+<% for rant in @latest_rants %>
+  bindRatingControl($('.rating-control[data-rant-id="<%= rant.id %>"]'));
+<% end %>

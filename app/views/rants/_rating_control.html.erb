@@ -7,4 +7,6 @@
     <% checked = @vote.nil? ? false : @vote.stars == i %>
     <%= radio_button_tag "rating", i, checked, :title => Vote::STAR_TITLES[i - 1], :disabled => (@vote.nil? ? nil : "disabled") %>
   <% end %>
-</div>       
+</div>  
+
+     

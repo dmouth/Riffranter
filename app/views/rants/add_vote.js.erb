@@ -1,2 +1,2 @@
-$('.home-page-rant[data-rant-id="<%= @rant.id %>"]').html("<%=escape_javascript(render @rant)%>");
+$('.home-page-rant[data-rant-id="<%= @rant.id %>"]').replaceWith("<%=escape_javascript(render @rant)%>");
 bindRatingControl($('.rating-control[data-rant-id="<%= @rant.id %>"]'));
