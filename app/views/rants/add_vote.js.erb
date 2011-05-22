@@ -1,2 +1,2 @@
-$('.home-page-rant[data-rant-id="<%= @rant.id %>"]').replaceWith("<%=escape_javascript(render @rant)%>");
+$('.home-page-rant[data-rant-id="<%= @rant.id %>"]').replaceWith("<%= escape_javascript(render :partial => "rants/rant", :locals => {:show_user_icon => @show_user_icon, :rant => @rant})%>");
 bindRatingControl($('.rating-control[data-rant-id="<%= @rant.id %>"]'));

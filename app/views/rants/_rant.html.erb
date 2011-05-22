@@ -2,7 +2,7 @@
 	show_user_icon = local_assigns.has_key?(:show_user_icon) ? local_assigns[:show_user_icon] : false 
 %>
 
-<div class="home-page-rant" data-rant-id="<%= rant.id %>">
+<div class="home-page-rant" data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>">
   <div class="header">
     <div class="photo">
       <% image_src = show_user_icon ? rant.user : rant.persona %>

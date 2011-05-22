@@ -75,7 +75,8 @@ class RantsController < ApplicationController
   
   def add_vote                   
     throw "Illegal attempt to vote" if params[:current_user_id].to_i != current_user.id
-    @rant = Rant.find params[:id]
+    @rant = Rant.find params[:id]  
+    @show_user_icon = params[:show_user_icon] == "true" ? true : false
     @rant.votes.create! do |v|
       v.stars = params[:value]
       v.user_id = current_user.id      
