@@ -2,6 +2,11 @@ jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 });          
 
+
+$(function(){
+  $(".rating-control").stars();
+})
+
 // ================
 // = Follow Users =
 // ================
