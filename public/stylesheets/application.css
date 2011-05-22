@@ -80,7 +80,8 @@ ul#tabs a:hover { /* settings for hover effect */
   height:30px;
   vertical-align:middle;
   display:table-cell;
-  min-width:30em
+  min-width:30em;
+	padding-bottom:1em;
 } 
 
 #content{
@@ -295,7 +296,7 @@ ul#tabs a:hover { /* settings for hover effect */
 
 #user-widget h1{
   margin: 5px 0 0 5px;
-  font-size: 130%;
+  font-size: 2em;
 }          
 
 #user-widget h2{
@@ -374,7 +375,8 @@ ul#tabs a:hover { /* settings for hover effect */
 	margin: auto;
 }
 .persona-name {
-	font-size:large;
+	font-size:1.3em;
+	height: 2.6em;
 }
 .persona-title {
 	font-size: x-small;
