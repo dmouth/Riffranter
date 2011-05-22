@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110521183600) do
+ActiveRecord::Schema.define(:version => 20110522025312) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -86,5 +86,16 @@ ActiveRecord::Schema.define(:version => 20110521183600) do
   end
 
   add_index "users_users", ["follower_id", "followee_id"], :name => "index_users_users_on_follower_id_and_followee_id"
+
+  create_table "votes", :force => true do |t|
+    t.integer  "rant_id"
+    t.integer  "user_id"
+    t.integer  "stars"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["rant_id"], :name => "index_votes_on_rant_id"
+  add_index "votes", ["user_id"], :name => "index_votes_on_user_id"
 
 end

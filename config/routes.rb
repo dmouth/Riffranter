@@ -3,7 +3,11 @@ RiffRanter::Application.routes.draw do
   
   match "persona_rant_widget/new_persona_rant(.:format)" => "persona_rant_widget#new_persona_rant", :via => :post
   match "persona_rant_widget/new_rant(.:format)" => "persona_rant_widget#new_rant", :via => :post
-  resources :rants
+  resources :rants do
+    member do
+      post :add_vote
+    end
+  end
 
   resources :categories
   resources :personas do

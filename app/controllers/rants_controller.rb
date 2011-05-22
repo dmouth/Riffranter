@@ -72,4 +72,14 @@ class RantsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def add_vote                   
+    throw "Illegal attempt to vote" if params[:current_user_id].to_i != current_user.id
+    rant = Rant.find params[:id]
+    rant.votes.create! do |v|
+      v.stars = params[:value]
+      v.user_id = current_user.id      
+    end
+    render :nothing => true
+  end    
 end

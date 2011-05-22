@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true
   validates_confirmation_of :password
   
-  has_many :rants
+  has_many :rants         
+  has_many :votes
   has_and_belongs_to_many :followed_personas, :class_name => "Persona", :join_table => :personas_users
   has_and_belongs_to_many :following_users, :join_table => "users_users", :foreign_key => "followee_id", :class_name => "User", :association_foreign_key => "follower_id"
   has_and_belongs_to_many :followed_users, :join_table => "users_users", :foreign_key => "follower_id", :class_name => "User", :association_foreign_key => "followee_id"

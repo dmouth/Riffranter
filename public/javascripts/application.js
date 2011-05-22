@@ -2,9 +2,21 @@ jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 });          
 
-
+// ============================
+// = Rating control for rants =
+// ============================
 $(function(){
-  $(".rating-control").stars();
+  $(".rating-control").each(function(){
+    var rant_id = $(this).data("rant-id");  
+    var current_user_id = $(this).data("current-user-id");
+
+    $(this).stars({
+      oneVoteOnly: true,
+      callback: function(ui, type, value){
+        $.post("/rants/" + rant_id + "/add_vote", {value: value, current_user_id: current_user_id});
+      }
+    });
+  });  
 })
 
 // ================

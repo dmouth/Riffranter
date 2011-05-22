@@ -30,18 +30,9 @@
    <% end %>
   </div>           
   
-  <div class="rating-control">
-    <input type="radio" name="newrate" value="1" title="Very poor" />
-    <input type="radio" name="newrate" value="2" title="Poor" />
-    <input type="radio" name="newrate" value="3" title="Not that bad" />
-    <input type="radio" name="newrate" value="4" title="Fair" />
-    <input type="radio" name="newrate" value="5" title="Average" checked="checked" />
-    <input type="radio" name="newrate" value="6" title="Almost good" />
-    <input type="radio" name="newrate" value="7" title="Good" />
-    <input type="radio" name="newrate" value="8" title="Very good" />
-    <input type="radio" name="newrate" value="9" title="Excellent" />
-    <input type="radio" name="newrate" value="10" title="Perfect" />
-  </div>       
+  <% if rant.user != current_user %>
+    <%= render :partial => 'rants/rating_control', :locals => {:rant => rant} %>
+  <% end %>
   
   <div class="rant-controls">                        
     <% if rant.user != current_user %>
