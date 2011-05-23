@@ -7,6 +7,10 @@ RiffRanter::Application.routes.draw do
     member do
       post :add_vote
     end
+    
+    collection do
+      get :latest
+    end
   end
 
   resources :categories

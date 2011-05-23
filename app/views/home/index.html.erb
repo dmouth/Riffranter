@@ -35,4 +35,8 @@
   <%= content_for :right_column do %>
     <%= render :partial => 'shared/current_user_widget' %>
   <% end %>
+<% end %>     
+
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag "rants_feed" %>
 <% end %>
