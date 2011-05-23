@@ -12,6 +12,14 @@ body{
   font-size: .70em;
 }                        
 
+textarea {
+	border: 3px solid #cccccc;
+	padding: 5px;
+	background-image: url(/images/bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
 a, a:visited{
   color:blue;
   text-decoration :none;
