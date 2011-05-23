@@ -279,6 +279,7 @@ ul#tabs a:hover { /* settings for hover effect */
 	border-right-width: thin;
 	border-bottom-style:solid;
 	border-bottom-width: thin;
+	width:120px;
 }
 
 .home-page-rant .rant-body{
