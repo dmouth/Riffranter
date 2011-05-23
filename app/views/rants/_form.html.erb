@@ -1,4 +1,4 @@
-<div class="default-form">
+<div id="edit-rant" class="shadow-box">
   <%= form_for(@rant) do |f| %>
     <% if @rant.errors.any? %>
       <div id="error_explanation">
@@ -18,7 +18,7 @@
       <p><%= f.select :persona_id, Persona.order(:name).collect{|p| [p.name, p.id]} %></p>
     </div>   
     <div class="field">
-      <p><%= f.label :body %></p>
+      <p><%= f.label "My Rant" %></p>
       <p><%= f.text_area :body %></p>
     </div>
     <% if current_user.admin? %>

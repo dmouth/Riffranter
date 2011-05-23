@@ -8,7 +8,8 @@ body{
   text-align:center;
   margin:auto;
   background-color:white;
-	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif;
+/*	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif; */
+	font: normal 87.5%/1.428 "Georgia", Georgia, sans-serif;
   font-size: .70em;
 }                        
 
@@ -38,6 +39,7 @@ a:hover{
 
 #tabs-div{
   float: right;
+	font-size: 1.7em;
 }
 
 ul#tabs { /* general settings */
@@ -390,4 +392,15 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 .personal-details {
 	display:table-cell;
+}             
+
+#edit-rant {
+	text-align:left;
+} 
+
+
+#edit-rant textarea {
+	
+	width:95%;
+	height:12em;
 }
