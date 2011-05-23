@@ -1,7 +1,12 @@
 $("#latest-rants").html("<%= escape_javascript(render @rants)%>");
+
 <% if @flash_rant %>
   $("#latest-rants .home-page-rant").each(function(){
     if($(this).data("rant-id") > <%= params[:last_id]%>)
       $(this).effect("highlight", {}, 3000);
   });
+<% end %>
+
+<% for rant in @rants_rants %>
+  bindRatingControl($('#latest-rants .rating-control[data-rant-id="<%= rant.id %>"]'));
 <% end %>
