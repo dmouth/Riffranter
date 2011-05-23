@@ -8,9 +8,17 @@ body{
   text-align:center;
   margin:auto;
   background-color:white;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
+	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif;
   font-size: .70em;
 }                        
+
+textarea {
+	border: 3px solid #cccccc;
+	padding: 5px;
+	background-image: url(/images/bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
 
 a, a:visited{
   color:blue;
@@ -35,7 +43,7 @@ a:hover{
 ul#tabs { /* general settings */
   text-align: left; /* set to left, right or center */
   margin: 1em 0 1em 0; /* set margins as desired */
-  font: 11px verdana, arial, sans-serif; /* set font as desired */
+/*  font: 11px verdana, arial, sans-serif;  set font as desired */
   border-bottom: 1px solid #EEEEEE; /* set border COLOR as desired */
   list-style-type: none;
   padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
@@ -262,7 +270,7 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 .home-page-rant .title{
-  padding: 10px 5px 0px 5px;
+  padding: 0px;
 	margin-right:5px;
   float: left;   
 	border-right-style:solid;
@@ -341,7 +349,6 @@ ul#tabs a:hover { /* settings for hover effect */
 	text-align:center;
 	padding: 5px 5px 5px 5px;
 	border:thin solid #666;
-	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif;
 	color: #37414B;
 	border-top: 1px solid #DDD;
 	text-shadow: #FBFBFB 0px 1px 0px;

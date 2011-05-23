@@ -20,9 +20,16 @@
       <%= f.label :title %><br />
       <%= f.text_field :title %>
     </div>
-    <div class="field">
-      <%= f.label :image %><br />
-      <%= f.file_field :image %>
+    <div class="field" style="display:table">
+			<div style="display:table-row">
+      		<div style="display:table-cell">
+						<%= f.label :image %><br />
+	      		<%= f.file_field :image %>
+					</div>
+					<div style="display:table-cell">
+						<%  %>
+					</div> 
+			</div>
     </div>
     <div class="field">
       <p><%= f.label :categories %></p>
