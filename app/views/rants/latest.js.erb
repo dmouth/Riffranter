@@ -7,6 +7,6 @@ $("#latest-rants").html("<%= escape_javascript(render @rants)%>");
   });
 <% end %>
 
-<% for rant in @rants_rants %>
+<% for rant in @rants %>
   bindRatingControl($('#latest-rants .rating-control[data-rant-id="<%= rant.id %>"]'));
 <% end %>
