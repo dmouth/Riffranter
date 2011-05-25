@@ -32,6 +32,9 @@ class RantsController < ApplicationController
     @rant = Rant.new(params[:rant])
     respond_to do |format|      
       if @rant.save
+        # This definitely needs to be moved to a outside process
+        UserMailer.follower_update(@rant).deliver
+        
         format.html { redirect_to(@rant, :notice => 'Rant was successfully created.') }
         format.js
       else
