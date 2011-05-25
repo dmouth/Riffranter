@@ -1,17 +1,16 @@
 <%= page_title "Category" %>
 
-<table cellpadding="5" cellspacing="0" class="show-table">
-  <tr><th>Name</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @category.name %></td></tr>
-  <tr>
-    <th>Personas</th>
-    <td valign="top" class="<%= cycle "odd-row", "even-row" %>">
-      <%= raw @category.personas.order(:name).collect{|p| link_to(p.name, p)}.to_sentence %>
-    </td>
-  </tr>
+<table cellpadding="5" cellspacing="0" class="index-table">
+	<% for personasOut in @category.personas.order(:name).in_groups_of(4, nil) %>
+	<tr>
+		<% for persona in personasOut %>
+	  <td>      
+			<%= render :partial => '/personas/persona_card', :locals => {:persona => persona, :show_new  => false} %>
+			</td> 
+			<% end %>
+		</tr>  	
+	<% end %>	
 </table>
-<p>
-  <%= link_to 'Edit', edit_category_path(@category) %> |
-  <%= link_to 'New Category', new_category_path %> |
-  <%= link_to 'Back to Listing', categories_path %> 
-</p>
+
+<%= link_to 'Back to Listing', categories_path %> 
 
