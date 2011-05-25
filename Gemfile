@@ -10,6 +10,7 @@ gem "bcrypt-ruby", :require => "bcrypt"
 gem "rmagick"
 gem "carrierwave"
 gem "friendly_id", "~> 3.2.1"
+gem "delayed_job"
 
 group :development, :test do
   gem "ruby-debug"

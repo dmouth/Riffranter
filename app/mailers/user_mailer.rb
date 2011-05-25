@@ -7,5 +7,5 @@ class UserMailer < ActionMailer::Base
     for @user in users
       mail(:to => "#{@user.full_name} <#{@user.email}>", :subject => "#{rant.persona.name} says...").deliver
     end
-  end
+  end  
 end
