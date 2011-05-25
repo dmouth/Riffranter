@@ -1,4 +1,4 @@
-<div class="shadow-box" style="width:120px;height:32em" id="persona-list">
+<div class="shadow-box" style="width:120px;height:27em" id="persona-list">
 	<div class="shadow-box padded-image" style="height:100px">
 		<%= image_tag(persona.image_url(:medium).to_s, :height  => 100, :width  => 100)  if persona  %>
 	</div>
@@ -35,7 +35,7 @@
 			<% end %>
 			<div>                                         
 				<% if persona %>
-					<%= link_to 'Edit', edit_persona_path(persona) %>| <%= link_to 'Destroy', persona, :confirm => 'Are you sure?', :method => :delete %>
+					<%= link_to 'Edit', edit_persona_path(persona) %>| <%= link_to 'Delete', persona, :confirm => 'Are you sure?', :method => :delete %>
 				<% end %>
 			</div>
 			<% end %>

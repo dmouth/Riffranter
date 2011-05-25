@@ -44,13 +44,13 @@
 		    <% if current_user == rant.user and !current_user.admin? %>
 		      <%= link_to 'Show', rant %> |
 		      <%= link_to 'Edit', edit_rant_path(rant) %> |
-		      <%= link_to 'Destroy', rant_path(rant), :confirm => 'Are you sure?', :method => :delete %>
+		      <%= link_to 'Delete', rant_path(rant), :confirm => 'Are you sure?', :method => :delete %>
 		    <% end %>
 
 		    <%= admin_area do %>
 		      <%= link_to 'Show', rant %> |
 		      <%= link_to 'Edit', edit_rant_path(rant) %> |
-		      <%= link_to 'Destroy', rant, :confirm => 'Are you sure?', :method => :delete %>
+		      <%= link_to 'Delete', rant, :confirm => 'Are you sure?', :method => :delete %>
 		    <% end %>                  
 		  </div>
 		</div> 	
