@@ -1,3 +1,10 @@
+<% show_new = local_assigns.has_key?(:show_new) ? local_assigns[:show_new] : true %>
+
+<%#= debug local_assigns %>
+
+<% if (!show_new && persona.nil?) || (persona.nil? && !current_user.admin?) %>       
+<% else %>
+	
 <div class="shadow-box" style="width:120px;height:27em" id="persona-list">
 	<div class="shadow-box padded-image" style="height:100px">
 		<%= image_tag(persona.image_url(:medium).to_s, :height  => 100, :width  => 100)  if persona  %>
@@ -8,7 +15,8 @@
 	<div class="persona-title">
 		<%= persona.title  if persona %>
 	</div>
-	<div style="margin:auto">
+	<div style="margin:auto">              
+		<% if persona %>
 		<div class="persona-details">
 			<div>
         <%= pluralize(persona.following_users.count, "Following User") if persona %>
@@ -39,6 +47,8 @@
 				<% end %>
 			</div>
 			<% end %>
-		</div>
+		</div>       
+		<% end %>
 	</div>
 </div>
+<% end %>
