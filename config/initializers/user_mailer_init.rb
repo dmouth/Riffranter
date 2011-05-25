@@ -10,5 +10,5 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true
 }
 
-ActionMailer::Base.default_url_options[:host] = Rails.env.development? ? "localhost:3000" : "riff@nibbleandbytesoftware.com"
+ActionMailer::Base.default_url_options[:host] = Rails.env.development? ? "localhost:3000" : "riff.nibbleandbytesoftware.com"
 Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development? 
