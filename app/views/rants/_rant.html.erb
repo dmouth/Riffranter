@@ -10,12 +10,13 @@
 	      <%= image_tag image_src.image_url(:tiny).to_s %>  
         <div style="font-size:1.3em"><%= link_to rant.persona.name, rant.persona %></div>
         <div><%= rant.persona.title %></div>
-	    </div>
-      <% if !show_user_icon %>
-        <div style="font-size:.9em"><%= raw rant.persona.categories.collect{|c| link_to c.name, c}.to_sentence %></div>
-      <% else %>
-        <h1><%= link_to rant.user.name, rant.user %></h1>
-      <% end %>
+	    </div> 
+	
+      <%# if !show_user_icon %>
+        <!-- <div style="font-size:.9em"><%= raw rant.persona.categories.collect{|c| link_to c.name, c}.to_sentence %></div> -->
+      <%# else %>
+        <!-- ><h1><%= link_to rant.user.name, rant.user %></h1> -->
+      <%# end %>
     </div>
 		<!-- div class="rant-body" -->
 	  	<p><%= rant.body %></p>
@@ -43,13 +44,13 @@
 		    <% if current_user == rant.user and !current_user.admin? %>
 		      <%= link_to 'Show', rant %> |
 		      <%= link_to 'Edit', edit_rant_path(rant) %> |
-		      <%= link_to 'Destroy', rant_path(rant), :confirm => 'Are you sure?', :method => :delete %>
+		      <%= link_to 'Delete', rant_path(rant), :confirm => 'Are you sure?', :method => :delete %>
 		    <% end %>
 
 		    <%= admin_area do %>
 		      <%= link_to 'Show', rant %> |
 		      <%= link_to 'Edit', edit_rant_path(rant) %> |
-		      <%= link_to 'Destroy', rant, :confirm => 'Are you sure?', :method => :delete %>
+		      <%= link_to 'Delete', rant, :confirm => 'Are you sure?', :method => :delete %>
 		    <% end %>                  
 		  </div>
 		</div> 	

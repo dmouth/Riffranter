@@ -1,22 +1,29 @@
-<h1>Categories</h1>
-
+<%= page_title "Categories" %>
+<% admin_area do %>
 <p><%= link_to 'New Category', new_category_path %></p>
-
-<table  cellpadding="5" cellspacing="0" class="index-table">
-  <tr>
-    <th>Name</th>       
-    <th>Personas</th>
-    <th></th>
-  </tr>
-<% @categories.each do |category| %>
-  <tr class="<%= cycle "odd-row", "even-row" %>">
-    <td><%= category.name %></td>
-    <td align="right"><%= category.personas.count %></td>
-    <td><%= link_to 'Show', category %> |
-    <%= link_to 'Edit', edit_category_path(category) %> |
-    <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
 <% end %>
-</table>
-
+<div class='shadow-box'>
+	<table  cellpadding="5" cellspacing="0" class="index-table" width="100%">
+		<% for categories in @categories.in_groups_of(4, nil) %>
+	  <tr class="<%= cycle "odd-row", "even-row" %>">
+			<% categories.each do |category| %>
+	    <td width="25%'">
+				<%  if category %>
+						<%= link_to "#{category.name} (#{category.personas.count})", category %>
+					<% admin_area do %>
+			   		<div>                        
+							<%= link_to 'Show', category %> |
+					    <%= link_to 'Edit', edit_category_path(category) %> |
+					    <%= link_to 'Delete', category, :confirm => 'Are you sure?', :method => :delete %>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>         
+		</td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
+<% admin_area do %>
 <p><%= link_to 'New Category', new_category_path %></p>
+<% end %>
