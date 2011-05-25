@@ -26,6 +26,8 @@ class PersonaRantWidgetController < ApplicationController
       r.user = current_user
       r.body = @text    
       r.ip = request.remote_ip
-    end
+    end                            
+    # This definitely needs to be moved to a outside process
+    UserMailer.follower_update(@rant).deliver
   end
 end
