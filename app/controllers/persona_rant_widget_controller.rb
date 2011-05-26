@@ -28,6 +28,6 @@ class PersonaRantWidgetController < ApplicationController
       r.ip = request.remote_ip
     end                            
     # This definitely needs to be moved to a outside process
-    UserMailer.follower_update(@rant).deliver
+    UserMailer.delay.follower_update(@rant)
   end
 end
