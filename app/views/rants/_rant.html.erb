@@ -1,6 +1,6 @@
 <%
-	show_user_icon = local_assigns.has_key?(:show_user_icon) ? local_assigns[:show_user_icon] : false 
-  image_src = show_user_icon ? rant.user : rant.persona 
+  show_user_icon = local_assigns.has_key?(:show_user_icon) ? local_assigns[:show_user_icon] : false
+  image_src = show_user_icon ? rant.user : rant.persona
 %>
 
 <div class="shadow-box home-page-rant" style="text-align:left" data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>">
@@ -16,22 +16,22 @@
 					    <% else %>
 					      About <%= time_ago_in_words rant.created_at %> ago.
 					   <% end %>
-					  </div>     
-					</div> 	
-				</div>  
+					  </div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div style="clear:both"></div>
 		<div style="display:inline;float:left;padding:10px;margin-right:10px;font-weight:bold;border-bottom: 1px solid #000000;border-right: 1px solid #000000;">
 			<%= image_tag image_src.image_url(:tiny).to_s %>
-		</div>                        
+		</div>
    	<%= rant.body %>
 	</div>
 	<div style="clear:both"></div>
   <div class="rating" style="display:inline">
     Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
   </div>
-  <div class="rant-controls" style="float:right">                        
+  <div class="rant-controls" style="float:right">
     <% if rant.user != current_user %>
       <%= follow_user_link rant.user %> |
     <% end %>
@@ -44,14 +44,15 @@
     <% if current_user == rant.user and !current_user.admin? %>
       <%= link_to 'Show', rant %> |
       <%= link_to 'Edit', edit_rant_path(rant) %> |
+      <%= delete_rant_link(rant) %>
       <%= link_to 'Delete', rant_path(rant), :confirm => 'Are you sure?', :method => :delete %>
     <% end %>
 
     <%= admin_area do %>
       <%= link_to 'Show', rant %> |
       <%= link_to 'Edit', edit_rant_path(rant) %> |
-      <%= link_to 'Delete', rant, :confirm => 'Are you sure?', :method => :delete %>
-    <% end %>                  
+      <%= delete_rant_link(rant) %>
+    <% end %>
   </div>
 	<div style="clear:both"></div>
 </div>
