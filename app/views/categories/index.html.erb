@@ -27,6 +27,8 @@
 	</table>
 </div>
 
+<p>&nbsp;</p>
+
 <h1>Latest Rants by Category</h1>
 <div class="directory">
   Go to: <%= raw @categories.collect{|c| link_to c.name, "##{c.name.gsub(/\s/, "_").downcase}"}.join(" | ") %>
