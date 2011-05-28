@@ -29,7 +29,11 @@
 	</div>
 	<div style="clear:both"></div>
   <div class="rating" style="display:inline">
-    Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
+    <% if rant.user != current_user && rant.votes.where(:user_id >> current_user.id).count == 0 %>
+     <%= render :partial => 'rants/rating_control', :locals => {:rant => rant} %>
+    <% else %>
+      - Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
+   <% end %>
   </div>
   <div class="rant-controls" style="float:right">
     <% if rant.user != current_user %>
