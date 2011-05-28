@@ -1,10 +1,10 @@
-<%= content_tag :div, :id => "rant-widget", :class => "rant-widget-div shadow-box" do %>      
+<%= content_tag :div, :id => "rant-widget", :class => "rant-widget-div shadow-box" do %>
   <table border="0" cellspacing="5" cellpadding="5">
     <tr>
       <td valign="top">
         <%= content_tag :div, :class => "persona-selector" do %>
-          <%= image_tag @persona.image_url(:profile).to_s %>         
-          <br>                                              
+          <%= image_tag @persona.image_url(:profile).to_s %>
+          <br>
           <b><%= @persona.title %></b><br><br>
           <%= follow_persona_link(@persona) %><br>
           <%= admin_area do %>

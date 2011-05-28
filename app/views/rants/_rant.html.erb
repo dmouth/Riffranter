@@ -1,6 +1,7 @@
 <%
   show_user_icon = local_assigns.has_key?(:show_user_icon) ? local_assigns[:show_user_icon] : false
   image_src = show_user_icon ? rant.user : rant.persona
+  link_url = show_user_icon ? user_url(rant.user) : persona_url(rant.persona)
 %>
 
 <div class="shadow-box home-page-rant" style="text-align:left" data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>">
@@ -23,7 +24,7 @@
 		</div>
 		<div style="clear:both"></div>
 		<div style="display:inline;float:left;padding:10px;margin-right:10px;font-weight:bold;border-bottom: 1px solid #000000;border-right: 1px solid #000000;">
-			<%= image_tag image_src.image_url(:tiny).to_s %>
+      <%= link_to(image_tag(image_src.image_url(:tiny).to_s), link_url, :border => 0) %>
 		</div>
    	<%= rant.body %>
 	</div>
