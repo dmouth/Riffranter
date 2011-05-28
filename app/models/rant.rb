@@ -11,7 +11,7 @@ end
 
 # == Schema Information
 #
-# Table name: rants
+# Table name: rants                                                                                                                                                                `
 #
 #  id         :integer(4)      not null, primary key
 #  user_id    :integer(4)
