@@ -1,0 +1,7 @@
+<%
+  show_user_icon = local_assigns.has_key?(:show_user_icon) ? local_assigns[:show_user_icon] : false
+%>
+
+<% for rant in rants %>
+  <%= render rant, :locals => {:show_user_icon => show_user_icon} %>
+<% end %>
