@@ -1,6 +1,6 @@
 html{
-  background-color:#CCC  
-}                      
+  background-color:#CCC
+}
 
 body{
   font-size:.75em;
@@ -11,7 +11,7 @@ body{
 /*	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif; */
 	font: normal 87.5%/1.428 "Georgia", Georgia, sans-serif;
   font-size: .70em;
-}                        
+}
 
 textarea {
 	border: 3px solid #cccccc;
@@ -24,7 +24,7 @@ textarea {
 a, a:visited{
   color:blue;
   text-decoration :none;
-}                      
+}
 
 a:hover{
   text-decoration: underline;
@@ -33,7 +33,7 @@ a:hover{
 #tabs-page{
   min-width:330px;
   min-height:50em;
-}                 
+}
 
 /* begin css tabs */
 
@@ -83,7 +83,7 @@ ul#tabs a:hover { /* settings for hover effect */
   background: #FFFFFF; /* set desired hover color */
 }
 
-/* end css tabs */        
+/* end css tabs */
 
 #search-bar{
   float:left;
@@ -92,16 +92,16 @@ ul#tabs a:hover { /* settings for hover effect */
   display:table-cell;
   min-width:30em;
 	padding-bottom:1em;
-} 
+}
 
 #content{
-  vertical-align:top; 
+  vertical-align:top;
   text-align: left;
   padding:15px;
 }
 
 #right-content{
-  vertical-align:top; 
+  vertical-align:top;
   text-align: left;
   padding:15px;
 }
@@ -115,10 +115,10 @@ ul#tabs a:hover { /* settings for hover effect */
 
 .tent-pole{
   clear:both;
-}            
+}
 
 .module-div{
-  border: #030 thin solid; 
+  border: #030 thin solid;
   width:100%;
   margin:5px;
   height:200px;
@@ -132,7 +132,7 @@ ul#tabs a:hover { /* settings for hover effect */
 .textwrapper {
 	margin:5px 0;
 	padding:3px;
-}     
+}
 
 /* =================================================================================================================== */
 /* = App Specific ==================================================================================================== */
@@ -159,7 +159,7 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 .default-form p{
-  margin:0;   
+  margin:0;
   margin-top: 15px;
 }
 
@@ -195,14 +195,14 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 .index-table .even-row{
   background: #EEEEEE;
-}                       
+}
 
-#admin-menu{    
+#admin-menu{
   float: left;
   margin: 5px 0;
   background: #EEEEEE;
   padding: 3px;
-  clear: both;       
+  clear: both;
   margin-left: 15px;
   width: 100%;
 }
@@ -227,13 +227,13 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 .show-table .odd-row{
   background: #EEEEEE;
-}                       
+}
 
 /* Rant stuff */
 .home-page-rant{
   border: 1px solid #EEEEEE;
   margin-bottom: 5px;
-  padding: 0px 5px 5px 5px;      
+  padding: 0px 5px 5px 5px;
 	display:block;
 }
 
@@ -257,11 +257,11 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 .home-page-rant .header{
-  
+
 }
 
 .home-page-rant .photo{
-  float: left; 
+  float: left;
 	margin-right:10px;
 	margin-bottom:10px;
 }
@@ -274,7 +274,7 @@ ul#tabs a:hover { /* settings for hover effect */
 .home-page-rant .title{
   padding: 0px;
 	margin-right:5px;
-  float: left;   
+  float: left;
 	border-right-style:solid;
 	border-right-width: thin;
 	border-bottom-style:solid;
@@ -285,15 +285,15 @@ ul#tabs a:hover { /* settings for hover effect */
 .home-page-rant .rant-body{
   margin: 55px 0 0 0;
   clear: both;
-}   
+}
 
-.home-page-rant .rant-credit{    
-	display:table-cell;         
+.home-page-rant .rant-credit{
+	display:table-cell;
 }
 .home-page-rant .rant-controls{
-	display:table-cell; 
+	display:table-cell;
 	text-align:right;
-}   
+}
 
 /* ===================== */
 /* = User widget stuff = */
@@ -303,17 +303,17 @@ ul#tabs a:hover { /* settings for hover effect */
   border: 1px solid #EEEEEE;
   padding: 0 5px 0 5px;
   width: 165px;
-} 
+}
 
 #user-widget h1{
   margin: 5px 0 0 5px;
   font-size: 2em;
-}          
+}
 
 #user-widget h2{
   margin: 5px 0 0 0;
   font-size: 110%;
-}          
+}
 
 .user-widget-follow{
   margin: 5px;
@@ -346,7 +346,7 @@ ul#tabs a:hover { /* settings for hover effect */
 
 #persona-rant-widget .persona-selector img{
   border: 1px solid black;
-}         
+}
 
 .shadow-box {
 	text-align:center;
@@ -393,15 +393,21 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 .personal-details {
 	display:table-cell;
-}             
+}
 
 #edit-rant {
 	text-align:left;
-} 
+}
 
 
 #edit-rant textarea {
-	
+
 	width:95%;
 	height:12em;
+}
+
+.directory{
+  width: 100%;
+  text-align: center;
+  padding: 15px 15px 0px 15px;
 }

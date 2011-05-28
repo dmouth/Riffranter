@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.xml
   def index
-    @categories = Category.order(:name).all
+    @categories = Category.order(:name).includes(:personas => :following_users).all
 
     respond_to do |format|
       format.html # index.html.erb
