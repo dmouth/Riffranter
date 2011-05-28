@@ -17,7 +17,9 @@
   <% end %>
 
   <h1>Latest Rants</h1>
-  <%= render :partial => 'shared/rant_collection', :locals => {:rants => @rants} %>
+  <div id="latest-rants">
+    <%= render :partial => 'shared/rant_collection', :locals => {:rants => @rants} %>
+  </div>
 
   <h1>Hot Rants</h1>
   <%= render :partial => 'shared/rant_collection', :locals => {:rants => @hot_rants} %>
