@@ -471,6 +471,12 @@ ul#tabs a:hover { /* settings for hover effect */
 	padding-left:5px;
 }
 
+.rant-by {
+	display:inline-block;
+	z-index:10;
+	padding-left:5px;
+}
+
 
 .rant-photo {          
 	display:block;  
