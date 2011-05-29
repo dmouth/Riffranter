@@ -411,3 +411,77 @@ ul#tabs a:hover { /* settings for hover effect */
   text-align: center;
   padding: 0px 15px 15px 15px;
 }
+
+
+/*   Clean from here down */
+.rant-display {
+}           
+.rant-title {
+	position:relative;
+	top:3px;
+	left:9px;       
+	display:inline;
+   z-index:10;
+	font-size:1.6em;
+	padding: 1px 1px 1px 1px;
+	border:thin solid #666;
+	border-top: 1px solid #DDD;
+	text-shadow: #FBFBFB 0px 1px 0px;
+	margin-right:9px;
+	margin-left:0px;
+	-webkit-box-shadow: white 0px 1px 0px 0px inset;
+	vertical-align:baseline;
+	background-color: #E8E8E8;
+	border-bottom-color: #FFFFFF;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-collapse: separate;
+	border-left-color: #C6C9C9;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: #C6C9C9;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #C6C9C9;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-top-style: solid;
+	border-top-width: 1px;      
+	
+}
+
+.rant-photo {
+	vertical-align:top;
+	text-align:left;
+	display:table-cell;
+}      
+
+.rant-controls {
+/*	position:relative;
+	top:10px;
+	left:9px;
+*/	
+	z-index:10;
+	float:right;
+	display:inline;
+}    
+
+.rating {
+	display:inline-block;
+	z-index:10;
+	padding-left:5px;
+}
+
+.rant-body {
+	color:#999999;
+	display:table-cell;
+	margin:auto;
+	text-align:center; 
+	padding:5px;
+}
+
+.clear {
+	clear:both;
+}

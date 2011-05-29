@@ -2,40 +2,28 @@
   show_user_icon = local_assigns.has_key?(:show_user_icon) ? local_assigns[:show_user_icon] : false
   image_src = show_user_icon ? rant.user : rant.persona
 %>
-
-<div class="shadow-box home-page-rant" style="text-align:left" data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>">
-	<div>
-		<div>
-      <div style="float:left;display:inline"><%= link_to rant.persona.name, rant.persona %>&nbsp;<%= rant.persona.title %></div>
-      <div style="float:right;display:block">
-				<div style="display:table;width:100%">
-					<div style="display:table-row;width:100%">
-					  <div id="rant-credit">
-					    <% if !show_user_icon %>
-					      By <%= link_to rant.user.full_name, rant.user %> about <%= time_ago_in_words rant.created_at %> ago.
-					    <% else %>
-					      About <%= time_ago_in_words rant.created_at %> ago.
-					   <% end %>
-					  </div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div style="clear:both"></div>
-		<div style="display:inline;float:left;padding:10px;margin-right:10px;font-weight:bold;border-bottom: 1px solid #000000;border-right: 1px solid #000000;">
-			<%= image_tag image_src.image_url(:tiny).to_s %>
-		</div>
-   	<%= rant.body %>
+<div>
+	<div class="rant-title">
+		<%= link_to rant.persona.name, rant.persona %>&nbsp;<%= rant.persona.title %>		
 	</div>
-	<div style="clear:both"></div>
-  <div class="rating" style="display:inline">
+  <div class="rating">
     <% if rant.user != current_user && rant.votes.where(:user_id >> current_user.id).count == 0 %>
      <%= render :partial => 'rants/rating_control', :locals => {:rant => rant} %>
     <% else %>
-      - Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
+      Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
    <% end %>
   </div>
-  <div class="rant-controls" style="float:right">
+ 	<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="shadow-box rant-widget" data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>"> 
+	<div class="rant-photo">
+		<%= image_tag image_src.image_url(:tiny).to_s %>
+	</div>       
+	<div class="rant-body"> 
+	 	<%= rant.body %> 	
+	</div>
+	<div class="rant-controls">
     <% if rant.user != current_user %>
       <%= follow_user_link rant.user %> |
     <% end %>
@@ -58,5 +46,5 @@
       <%= delete_rant_link(rant) %>
     <% end %>
   </div>
-	<div style="clear:both"></div>
+	<div class="clear"></div>
 </div>
