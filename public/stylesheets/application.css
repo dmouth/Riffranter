@@ -164,7 +164,7 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 #flash_notice{
-  width: 750px;
+  width: 600px;
   border: 1px solid green;
   background: #EEFFEE;
   padding: 15px;
@@ -172,7 +172,7 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 #flash_alert{
-  width: 750px;
+  width: 600px;
   border: 1px solid red;
   background: #FFEEEE;
   padding: 15px;
@@ -502,4 +502,4 @@ ul#tabs a:hover { /* settings for hover effect */
 
 .controlsOff {
 	display:none;
-}
+}                      
