@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
-  before_filter :is_admin?, :except => :index
-  before_filter :logged_in?, :only => :index
+  before_filter :is_admin?, :except => [:index, :show]
+  before_filter :logged_in?
   # GET /categories
   # GET /categories.xml
   def index
