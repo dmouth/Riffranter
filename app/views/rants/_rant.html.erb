@@ -2,6 +2,7 @@
   show_user_icon = local_assigns.has_key?(:show_user_icon) ? local_assigns[:show_user_icon] : false
   image_src = show_user_icon ? rant.user : rant.persona
 %>
+
 <div>
 	<div class="rant-title">
 		<%= link_to rant.persona.name, rant.persona %>&nbsp;<%= rant.persona.title %>		
@@ -20,9 +21,10 @@
 	<div class="rant-photo">
 		<%= image_tag image_src.image_url(:tiny).to_s %>
 	</div>       
-	<div class="rant-body"> 
+	<p class="rant-body"> 
 	 	<%= rant.body %> 	
-	</div>
+	</p>          
+	<div class="clear"></div>  
 	<div class="rant-controls">
     <% if rant.user != current_user %>
       <%= follow_user_link rant.user %> |

@@ -1,6 +1,15 @@
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
-});
+});                     
+
+$(function(){
+	$(".rant-widget").live("mouseover", function(){
+		$(this).children(".rant-controls").removeClass("controlsOff").addClass("controlsOn");    
+	});
+	$(".rant-widget").live("mouseout", function(){
+		$(this).children(".rant-controls").removeClass("controlsOn").addClass("controlsOff");
+	})
+})
 
 $(function(){
   $(".delete-rant-link").live("click", function(){
