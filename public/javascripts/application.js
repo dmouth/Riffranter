@@ -1,16 +1,25 @@
+// =======================================================
+// = Set up all axax calls to be .js -- saves on typing. =
+// =======================================================
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
-});                     
+});       
 
+// =============================================
+// = Hover-appearing controls on rants partial =
+// =============================================              
 $(function(){
-	$(".rant-widget").live("mouseover", function(){
+	$(".rant-partial .shadow-box").live("mouseover", function(){
 		$(this).children(".rant-controls").removeClass("controlsOff").addClass("controlsOn");    
 	});
-	$(".rant-widget").live("mouseout", function(){
+	$(".rant-partial .shadow-box").live("mouseout", function(){
 		$(this).children(".rant-controls").removeClass("controlsOn").addClass("controlsOff");
 	})
-})
+})     
 
+// ====================================================================
+// = Override delete link on partial to stay at the originating page. =
+// ====================================================================
 $(function(){
   $(".delete-rant-link").live("click", function(){
     $.post($(this).attr("href"), {method: "DELETE"}, function(data, textStatus){
