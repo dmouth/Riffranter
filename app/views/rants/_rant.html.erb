@@ -16,9 +16,9 @@
   		<div class="rant-by">
   			 	By
   				<% if rant.user != current_user %>
-  				<strong><%= rant.user.name  %> </strong>
+    				<strong><%= link_to rant.user, rant.user.name  %> </strong>
   				<% else %>
-  					<strong>Me</strong>
+  					<strong><%= link_to "Me", current_user %></strong>
   				<% end %>
   				&nbsp;
   		</div>
