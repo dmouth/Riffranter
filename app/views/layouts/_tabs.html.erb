@@ -1,16 +1,16 @@
 <%
   urls = [
-      ["Home", root_url, "HomeController"],
-      ["Personas", personas_url, "PersonasController"],
-      ["Rants", rants_url, "RantsController"],
-      ["Categories", categories_url, "CategoriesController"],
-      ["Users", users_url, "UsersController"],
+      ["Home", root_url, HomeController],
+      ["Personas", personas_url, PersonasController],
+      ["Rants", rants_url, RantsController],
+      ["Categories", categories_url, CategoriesController],
+      ["Users", users_url, UsersController],
     ]
  %>
 
 <ul id="tabs">
   <% for url in urls %>
-    <%= content_tag :li, :class => controller.is_a?(url[2].constantize) ? "selected-tab" : "" do %>
+    <%= content_tag :li, :class => controller.is_a?(url[2]) ? "selected-tab" : "" do %>
       <%= tab_url(url[0], url[1]) %>
     <% end %>
   <% end %>
