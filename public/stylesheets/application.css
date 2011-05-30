@@ -423,7 +423,7 @@ ul#tabs a:hover { /* settings for hover effect */
 	left:9px;       
 	display:inline;
    z-index:10;
-	font-size:1em;
+	font-size:1.2em;
 	padding: 1px 1px 1px 1px;
 	border:thin solid #666;
 	border-top: 1px solid #DDD;
