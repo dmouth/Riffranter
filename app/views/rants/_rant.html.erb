@@ -34,7 +34,7 @@
 <div class="clear"></div>
 <div class="shadow-box rant-widget" data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>"> 
 	<div class="rant-photo">
-		<%= image_tag image_src.image_url(:tiny).to_s %>
+		<%=  entity_image_url(image_src, :tiny) %>
 	</div>       
 	<p class="rant-body"> 
 	 	<%= rant.body %> 	

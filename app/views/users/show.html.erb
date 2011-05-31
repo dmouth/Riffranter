@@ -2,7 +2,7 @@
 
 
 <table cellpadding="5" cellspacing="0" class="show-table">
-	<tr><th valign="top"><%= User.human_attribute_name :image %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= image_tag @user.image_url(:profile).to_s %></td></tr>
+	<tr><th valign="top"><%= User.human_attribute_name :image %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= entity_image_url(@user, :profile) %></td></tr>
 	<tr><th valign="top"><%= User.human_attribute_name :first_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.first_name %></td></tr>
 	<tr><th valign="top"><%= User.human_attribute_name :last_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.last_name %></td></tr>
 	<tr><th valign="top"><%= User.human_attribute_name :email %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= mail_to @user.email %></td></tr>
