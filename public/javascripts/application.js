@@ -25,8 +25,8 @@ $(function(){
     if(confirm("Are you sure?")){
       $.post($(this).attr("href"), {method: "DELETE"});
       // window.location.href = $(this).data("return-url");
-      return false;
     }
+    return false;
   });
 });
 
