@@ -3,7 +3,7 @@ class RantsController < ApplicationController
   # GET /rants
   # GET /rants.xml
   def index
-    @rants = Rant.order(:created_at.desc).includes(:user, :persona).limit(5).all
+    @rants = Rant.order(:created_at.desc).includes(:user, :persona).all
   end
 
   # GET /rants/1
