@@ -4,66 +4,65 @@
 %>
 
 <div class='rant-partial'>
-  <div>
-  	<div class="rant-title">
-   		<% if !show_user_icon %> 
-   			<%= link_to rant.persona.name, rant.persona %>&nbsp;<%= rant.persona.title %>		  
-  		<% else %>
-  			<%= link_to rant.user.name, rant.user %>		  
-  		<% end %>
-  	</div>
-  	<% if !show_user_icon %> 
-  		<div class="rant-by">
-  			 	By
-  				<% if rant.user != current_user %>
+<div>
+	<div class="rant-title">
+ 		<% if !show_user_icon %> 
+ 			<%= link_to rant.persona.name, rant.persona %>&nbsp;<%= rant.persona.title %>		  
+		<% else %>
+			<%= link_to rant.user.name, rant.user %>		  
+		<% end %>
+	</div>
+	<% if !show_user_icon %> 
+		<div class="rant-by">
+			 	By
+				<% if rant.user != current_user %>
     				<strong><%= link_to rant.user.name, rant.user  %> </strong>
-  				<% else %>
+				<% else %>
   					<strong><%= link_to "Me", current_user %></strong>
-  				<% end %>
-  				&nbsp;
-  		</div>
-  	<% end %>
-    <div class="rating">
-      <% if rant.user != current_user && rant.votes.where(:user_id >> current_user.id).count == 0 %>
-       <%= render :partial => 'rants/rating_control', :locals => {:rant => rant} %>
-      <% else %>
-        Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
-     <% end %>
-    </div>
-   	<div class="clear"></div>
+				<% end %>
+				&nbsp;
+		</div>
+	<% end %>
+  <div class="rating">
+    <% if rant.user != current_user && rant.votes.where(:user_id >> current_user.id).count == 0 %>
+     <%= render :partial => 'rants/rating_control', :locals => {:rant => rant} %>
+    <% else %>
+      Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
+   <% end %>
   </div>
-  <div class="clear"></div>
-  <div class="shadow-box" data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>"> 
-  	<div class="rant-photo">
-  		<%= image_tag image_src.image_url(:tiny).to_s %>
-  	</div>       
-  	<p class="rant-body"> 
-  	 	<%= rant.body %> 	
-  	</p>          
-  	<div class="clear"></div>  
-  	<div class="rant-controls">
-      <% if rant.user != current_user %>
-        <%= follow_user_link rant.user %> |
-      <% end %>
-
-      <% if !show_user_icon %>
-        <%= follow_persona_link rant.persona %> |
-      <% end %>
-
-      <!-- Controls on user's own rant -->
-      <% if current_user == rant.user and !current_user.admin? %>
-        <%= link_to 'Show', rant %> |
-        <%= link_to 'Edit', edit_rant_path(rant) %> |
-        <%= delete_rant_link(rant) %>
-        <%= link_to 'Delete', rant_path(rant), :confirm => 'Are you sure?', :method => :delete %>
-      <% end %>
-
-      <%= admin_area do %>
-        <%= link_to 'Show', rant %> |
-        <%= link_to 'Edit', edit_rant_path(rant) %> |
-        <%= delete_rant_link(rant) %>
-      <% end %>
-    </div>
-  	<div class="clear"></div>
-  </div>
+ 	<div class="clear"></div>
 </div>
+<div class="clear"></div>
+  <div class="shadow-box" data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>"> 
+	<div class="rant-photo">
+		<%=  entity_image_url(image_src, :tiny) %>
+	</div>       
+	<p class="rant-body"> 
+	 	<%= rant.body %> 	
+	</p>          
+	<div class="clear"></div>  
+	<div class="rant-controls">
+    <% if rant.user != current_user %>
+      <%= follow_user_link rant.user %> |
+    <% end %>
+
+    <% if !show_user_icon %>
+      <%= follow_persona_link rant.persona %> |
+    <% end %>
+
+    <!-- Controls on user's own rant -->
+    <% if current_user == rant.user and !current_user.admin? %>
+      <%= link_to 'Show', rant %> |
+      <%= link_to 'Edit', edit_rant_path(rant) %> |
+      <%= delete_rant_link(rant) %>
+      <%= link_to 'Delete', rant_path(rant), :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+
+    <%= admin_area do %>
+      <%= link_to 'Show', rant %> |
+      <%= link_to 'Edit', edit_rant_path(rant) %> |
+      <%= delete_rant_link(rant) %>
+    <% end %>
+  </div>
+	<div class="clear"></div>
+</div></div>

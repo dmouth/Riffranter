@@ -7,9 +7,9 @@
           <p><%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %></p>
         <% end %>
       </td>
-      <td valign="top">
-        <%= content_tag :div, :class => "persona-selector" do %>
-          <%= link_to(image_tag(@persona.image_url(:medium).to_s), persona_url(@persona), :border => 0) %> <br>
+      <td valign="top"> 
+        <%= content_tag :div, :class => "persona-selector" do %>  
+          <%= entity_image_url(@persona, :medium) %> <br>
           <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %> <br>
           <b><%= @persona.title %></b>
           <br>

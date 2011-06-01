@@ -80,4 +80,12 @@ module ApplicationHelper
     the_rant = rant.class == rant ? rant.id : rant
     link_to 'Delete', the_rant, :confirm => 'Are you sure?', :method => :delete, :class => "delete-rant-link", "data-return-url" => request.fullpath
   end
+  
+  # =================================================================================
+  # = Entity is a instance with an image, the size is a symbol like :tiny or :thumb =
+  # =================================================================================
+  def entity_image_url(entity, size)               
+    url = entity.image_url(size).nil? ? "default-#{size}.jpg" : entity.image_url(size).to_s   
+    link_to image_tag(url), entity, :border => 0
+  end
 end
