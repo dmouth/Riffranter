@@ -22,12 +22,11 @@ $(function(){
 // ====================================================================
 $(function(){
   $(".delete-rant-link").live("click", function(){
-    $.post($(this).attr("href"), {method: "DELETE"}, function(data, textStatus){
-      if(textStatus != "success")
-        alert("An error occurred communicating with the server.  Check your Internet connection.");
-    });
-    window.location.href = $(this).data("return-url");
-    return false;
+    if(confirm("Are you sure?")){
+      $.post($(this).attr("href"), {method: "DELETE"});
+      // window.location.href = $(this).data("return-url");
+      return false;
+    }
   });
 });
 
