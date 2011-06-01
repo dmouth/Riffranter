@@ -3,5 +3,5 @@
 %>
 
 <% for rant in rants %>
-  <%= render rant, :locals => {:show_user_icon => show_user_icon} %>
+  <%= render :partial => "rants/rant", :locals => {:show_user_icon => show_user_icon, :rant => rant} %>
 <% end %>

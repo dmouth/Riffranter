@@ -1,6 +1,6 @@
 $("#rant-widget textarea").val("");
-$("#latest-rants").html("<%= escape_javascript(render @latest_rants) %>");    
-$("#latest-rants").children(":first").effect("highlight", {}, 3000);
+$("#latest-rants").html("<%= escape_javascript(render :partial => "shared/rant_collection", :locals => {:show_user_icon => true, :rants => @latest_rants}) %>");    
+$("#latest-rants").children(":first").children(".shadow-box").effect("highlight", {}, 3000);
 
 <% for rant in @latest_rants %>
   bindRatingControl($('.rating-control[data-rant-id="<%= rant.id %>"]'));

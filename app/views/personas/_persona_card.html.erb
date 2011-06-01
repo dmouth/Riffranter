@@ -7,7 +7,7 @@
 	
 <div class="shadow-box" style="width:120px;height:27em" id="persona-list">
 	<div class="shadow-box padded-image" style="height:100px">
-		<%= entity_image_url(persona, :medium) %>
+		<%= entity_image_url(persona, :medium) if persona %>
 	</div>
 	<div class="persona-name">
 		<%= persona ? link_to(persona.name, persona) : link_to('New Persona', new_persona_path)  %>

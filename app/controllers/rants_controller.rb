@@ -3,7 +3,7 @@ class RantsController < ApplicationController
   # GET /rants
   # GET /rants.xml
   def index
-    @rants = Rant.order(:created_at.desc).includes(:user, :persona).limit(5).all
+    @rants = Rant.order(:created_at.desc).includes(:user, :persona).all
   end
 
   # GET /rants/1
@@ -65,7 +65,7 @@ class RantsController < ApplicationController
 
   # DELETE /rants/1
   # DELETE /rants/1.xml
-  def destroy
+  def destroy   
     @rant = Rant.find(params[:id])
     get_clearance if !owner_or_admin?(@rant.user_id)
     @rant.destroy
@@ -73,7 +73,7 @@ class RantsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(rants_url) }
       format.xml  { head :ok }
-      format.js { render :nothing => true}
+      format.js #{ render :nothing => true}
     end
   end
 

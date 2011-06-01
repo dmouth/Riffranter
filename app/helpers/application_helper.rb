@@ -78,7 +78,7 @@ module ApplicationHelper
 
   def delete_rant_link rant
     the_rant = rant.class == rant ? rant.id : rant
-    link_to 'Delete', the_rant, :confirm => 'Are you sure?', :method => :delete, :class => "delete-rant-link", "data-return-url" => request.fullpath
+    link_to 'Delete', the_rant, :class => "delete-rant-link", "data-return-url" => request.fullpath
   end
   
   # =================================================================================

@@ -12,7 +12,7 @@ class PersonaRantWidgetController < ApplicationController
 
   def new_rant
     create_rant
-    @latest_rants = @persona.rants.order(:created_at.desc).includes(:user, :persona).limit(5).all
+    @latest_rants = @persona.rants.order(:created_at.desc).includes(:user, :persona).all
   end    
   
   private
