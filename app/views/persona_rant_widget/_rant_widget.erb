@@ -3,7 +3,7 @@
     <tr>
       <td valign="top">
         <%= content_tag :div, :class => "persona-selector" do %>
-          <%= entity_image_url(persona, :profile) %>
+          <%= entity_image_url(@persona, :profile) %>
           <br>
           <b><%= @persona.title %></b><br><br>
           <%= follow_persona_link(@persona) %><br>
