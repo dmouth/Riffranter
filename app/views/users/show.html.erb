@@ -19,9 +19,7 @@
 <% end %>
 <h2>Latest Rants</h2>
 <div id="latest-rants">
-  <% for rant in @user.rants.order(:created_at.desc) %>
-    <%= render :partial => "rants/rant", :locals => {:show_user_icon => true, :rant => rant} %>
-  <% end %>
+  <%= render :partial => "shared/rant_collection", :locals => {:show_user_icon => false, :rants => @user.rants.order(:created_at.desc)} %>
 </div>
 
 <p>
