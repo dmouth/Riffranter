@@ -504,3 +504,11 @@ ul#tabs a:hover { /* settings for hover effect */
 .controlsOff {
 	display:none;
 }                      
+      
+.user-profile { 
+	float:left;
+} 
+
+.user-profile-info {
+	display:inline;
+}

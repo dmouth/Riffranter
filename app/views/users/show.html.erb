@@ -1,16 +1,29 @@
-<%= page_title "User Profile" %>
+<%= page_title "User Profile - #{@user.first_name} #{@user.last_name}" %>
 
+<% content_tag :div do %>
+	<% content_tag :div, :class  => "shadow-box user-profile" do %>
+		<%= entity_image_url(@user, :medium) %>
+	<% end %> 
+	<% content_tag :div, :class  => "user-profile-info" do %>         
+		<table cellpadding="5" cellspacing="0" class="show-table">
+			<tr><th valign="top"><%= User.human_attribute_name :first_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.first_name %></td></tr>
+			<tr><th valign="top"><%= User.human_attribute_name :last_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.last_name %></td></tr>
+		  <% if owner_or_admin? @user %>
+				<tr><th valign="top"><%= User.human_attribute_name :email %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= mail_to @user.email %></td></tr>
+			<% end %>
+			<tr><th valign="top"><%= User.human_attribute_name :followed_personas %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= raw @user.followed_personas.collect{|p| link_to p.name, p}.join(" | ") %></td></tr>
+		</table>
+	<% end %>
+<% end %>
+<% content_tag :div, :class  => "clear" do %>
+<% end %>
+<h2>Latest Rants</h2>
+<div id="latest-rants">
+  <% for rant in @user.rants.order(:created_at.desc) %>
+    <%= render :partial => "rants/rant", :locals => {:show_user_icon => true, :rant => rant} %>
+  <% end %>
+</div>
 
-<table cellpadding="5" cellspacing="0" class="show-table">
-	<tr><th valign="top"><%= User.human_attribute_name :image %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= entity_image_url(@user, :profile) %></td></tr>
-	<tr><th valign="top"><%= User.human_attribute_name :first_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.first_name %></td></tr>
-	<tr><th valign="top"><%= User.human_attribute_name :last_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.last_name %></td></tr>
-	<tr><th valign="top"><%= User.human_attribute_name :email %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= mail_to @user.email %></td></tr>
-	<tr><th valign="top"><%= User.human_attribute_name :created_at %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= l @user.created_at %></td></tr>
-	<tr><th valign="top"><%= User.human_attribute_name :updated_at %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= l @user.updated_at %></td></tr>
-	<tr><th valign="top"><%= User.human_attribute_name :admin %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.admin %></td></tr>
-	<tr><th valign="top"><%= User.human_attribute_name :followed_personas %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= raw @user.followed_personas.collect{|p| link_to p.name, p}.join(" | ") %></td></tr>
-</table>
 <p>
   <% if @user != current_user %>
     <%= follow_user_link @user %> |
@@ -23,3 +36,5 @@
     | <%= link_to "Back to Listing", users_path %>
   <% end %>
 </p>
+
+
