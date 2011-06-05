@@ -511,4 +511,37 @@ ul#tabs a:hover { /* settings for hover effect */
 
 .user-profile-info {
 	display:inline;
+}    
+
+.user-widget-div { 
+	padding:5px;
+	display:table-row; 
+	height:50px;    
 }
+
+.user-image {
+	display:table-cell;
+	padding:inherit;   
+	vertical-align:top;
+}       
+         
+.user-follow-div {
+	display:table-cell;
+	padding:inherit;   
+	width:225px;
+	vertical-align:top;
+}
+.user-following-personas-div {
+	display:table-cell;
+	padding:inherit;
+	width:225px;
+	vertical-align:top;
+}
+
+.user-following-users-div {
+	display:table-cell;
+	padding:inherit;
+	width:225px;
+	vertical-align:top;
+}
+
