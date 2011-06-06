@@ -46,7 +46,7 @@ function bindRatingControl(control){
   $(control).stars({
     oneVoteOnly: true,
     callback: function(ui, type, value){
-      $.post("/rants/" + rant_id + "/add_vote", {value: value, current_user_id: current_user_id, show_user_icon: $(control).parent(".home-page-rant").data("show-user-icon")});
+      $.post("/rants/" + rant_id + "/add_vote", {value: value, current_user_id: current_user_id, show_user_icon: $(control).parent(".rant-partial").data("show-user-icon")});
     }
   });
 }
