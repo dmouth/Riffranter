@@ -383,17 +383,36 @@ ul#tabs a:hover { /* settings for hover effect */
 	width:auto;
 	padding: 5px 5px 5px;
 	background-color: #C8C8C8;
-	margin: auto;
+	margin: auto;   
+}                      
+.persona-list {
+	display:table-row; 
+}
+.persona-image {
+	display:table-cell;
+	vertical-align:top;
+	padding:5px;
+	width:120px;
 }
 .persona-name {
-	font-size:1.3em;
-	height: 2.6em;
+	display:table-cell;
+	vertical-align:middle;
+	padding:5px;
+	width:200px;   
+	font-size:1.6em;
 }
 .persona-title {
-	font-size: x-small;
+	display:table-cell;
+	vertical-align:middle;
+	padding:5px;
+	width:200px;
+	font-size:1.2em;
 }
 .personal-details {
-	display:table-cell;
+	display:table-cell;   
+	vertical-align:top;
+	padding:5px;
+	width:200px;
 }
 
 #edit-rant {
@@ -544,4 +563,4 @@ ul#tabs a:hover { /* settings for hover effect */
 	width:225px;
 	vertical-align:top;
 }
-
+    

@@ -4,15 +4,13 @@
 <p><%= link_to 'New Persona', new_persona_path %></p>
 <% end %>
 <table cellpadding="5" cellspacing="0" class="index-table">
-	<% for personasOut in @personas.in_groups_of(4, nil) %>
+	<% for personasOut in @personas %>
 	<tr>
-		<% for persona in personasOut %>
 	  <td>      
-			<%= render :partial => 'persona_card', :locals => {:persona => persona} %>
+			<%= render :partial => 'persona_card', :locals => {:persona => personasOut} %>
 			</td> 
 			<% end %>
 		</tr>  	
-	<% end %>	
 </table>
 <%= admin_area do %>
 
