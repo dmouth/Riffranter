@@ -16,7 +16,7 @@ body{
 textarea {
 	border: 3px solid #cccccc;
 	padding: 5px;
-	background-image: url(/images/bg.gif);
+/*  background-image: url(/images/bg.gif);*/
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
