@@ -18,13 +18,6 @@
 
 <div class="clear"></div>
 
-<h2>Latest Rants</h2>
-<div id="latest-rants">
-  <%= paginate @rants %>
-  <%= render :partial => "shared/rant_collection", :locals => {:show_user_icon => false, :rants => @rants} %>
-  <%= paginate @rants %>
-</div>
-
 <p>
   <% if @user != current_user %>
     <%= follow_user_link @user %> |
@@ -39,3 +32,11 @@
 </p>
 
 
+<% if @rants.count > 0 %>
+  <h2>Latest Rants</h2>
+  <div id="latest-rants">
+    <%= paginate @rants %>
+    <%= render :partial => "shared/rant_collection", :locals => {:show_user_icon => false, :rants => @rants} %>
+    <%= paginate @rants %>
+  </div>                
+<% end %>
