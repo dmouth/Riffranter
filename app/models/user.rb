@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
+  validates :handle, :presence => true, :uniqueness => true
   validates :password, :presence => true, :on => :create
 
   validates :email, :presence => true, :uniqueness => true
@@ -49,19 +50,22 @@ class User < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: users
 #
-#  id            :integer(4)      not null, primary key
-#  first_name    :string(255)
-#  last_name     :string(255)
-#  email         :string(255)
-#  password_hash :string(255)
-#  password_salt :string(255)
-#  created_at    :datetime
-#  updated_at    :datetime
-#  admin         :boolean(1)
-#  image         :string(255)
+#  id                :integer(4)      not null, primary key
+#  first_name        :string(255)
+#  last_name         :string(255)
+#  email             :string(255)
+#  password_hash     :string(255)
+#  password_salt     :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#  admin             :boolean(1)
+#  image             :string(255)
+#  handle            :string(255)
+#  send_mail_updates :boolean(1)
 #
 

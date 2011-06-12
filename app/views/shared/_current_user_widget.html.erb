@@ -1,5 +1,5 @@
 <%= content_tag :div, :id => "user-widget", :class  => "shadow-box" do %>
-  <h1><%= current_user.full_name %></h1>
+  <h1><%= current_user.handle %></h1>
   <%#= image_tag current_user.image_url(:tiny).to_s %> 
   
   <%= content_tag :div, :id => "followed-personas", :class => "user-widget-follow" do %>
@@ -12,7 +12,7 @@
   <%= content_tag :div, :id => "followed-users", :class => "user-widget-follow" do %>
     <% if current_user.followed_users.count > 0 %>
       <h2>Following Users</h2>                   
-      <%= raw current_user.followed_users.collect{|u| link_to u.full_name, u}.join(" | ") %>
+      <%= raw current_user.followed_users.collect{|u| link_to u.handle, u}.join(" | ") %>
     <% end %>
   <% end %>  
   

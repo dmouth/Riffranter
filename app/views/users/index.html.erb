@@ -11,7 +11,7 @@
 				<%= entity_image_url(user, :tiny) %>
 		  <% end %>                                     
 			<%= content_tag :div, :class  => "user-follow-div" do %>
-				<b><%= user.name %></b>
+				<b><%= user.handle %></b>
 				<br />
 				<%= follow_user_link(user) %><br>
 				<%= admin_area do %>

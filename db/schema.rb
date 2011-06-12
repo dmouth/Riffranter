@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110525035043) do
+ActiveRecord::Schema.define(:version => 20110612225655) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -91,9 +91,13 @@ ActiveRecord::Schema.define(:version => 20110525035043) do
     t.datetime "updated_at"
     t.boolean  "admin"
     t.string   "image"
+    t.string   "handle"
+    t.boolean  "send_mail_updates"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["handle"], :name => "index_users_on_handle"
+  add_index "users", ["send_mail_updates"], :name => "index_users_on_send_mail_updates"
 
   create_table "users_users", :id => false, :force => true do |t|
     t.integer "follower_id"

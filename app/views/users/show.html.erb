@@ -1,4 +1,4 @@
-<%= page_title "User Profile - #{@user.first_name} #{@user.last_name}" %>
+<%= page_title "User Profile - #{@user.handle}" %>
 
 <% content_tag :div do %>
 	<% content_tag :div, :class  => "shadow-box user-profile" do %>
@@ -6,9 +6,9 @@
 	<% end %> 
 	<% content_tag :div, :class  => "user-profile-info" do %>         
 		<table cellpadding="5" cellspacing="0" class="show-table">
-			<tr><th valign="top"><%= User.human_attribute_name :first_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.first_name %></td></tr>
-			<tr><th valign="top"><%= User.human_attribute_name :last_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.last_name %></td></tr>
+			<tr><th valign="top"><%= User.human_attribute_name :handle %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.handle %></td></tr>
 		  <% if owner_or_admin? @user %>
+  			<tr><th valign="top"><%= User.human_attribute_name :full_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.full_name %></td></tr>
 				<tr><th valign="top"><%= User.human_attribute_name :email %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= mail_to @user.email %></td></tr>
 			<% end %>
 			<tr><th valign="top"><%= User.human_attribute_name :followed_personas %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= raw @user.followed_personas.collect{|p| link_to p.name, p}.join(" | ") %></td></tr>
