@@ -3,7 +3,7 @@
   image_src = show_user_icon ? rant.user : rant.persona
 %>
 
-<div class='rant-partial' data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>">
+<div class="rant-partial" data-rant-id="<%= rant.id %>" data-show-user-icon="<%= show_user_icon %>">
   <div>
   	<div class="rant-title">
    		<% if !show_user_icon %> 
@@ -12,26 +12,26 @@
   			<%= link_to rant.user.name, rant.user %>		  
   		<% end %>
   	</div>
-  	<% if !show_user_icon %>   
-			<div class="rantby-rating-container">
-	  		<div class="rant-by">
-	  			 	By
-	  				<% if rant.user != current_user %>
-	      				<strong><%= link_to rant.user.name, rant.user  %> </strong>
-	  				<% else %>
-	    					<strong><%= link_to "Me", current_user %></strong>
-	  				<% end %>
-	  				&nbsp;
-	  		</div>
-		    <div class="rating">
-		      <% if rant.user != current_user && rant.votes.where(:user_id >> current_user.id).count == 0 %>
-		       <%= render :partial => 'rants/rating_control', :locals => {:rant => rant} %>
-		      <% else %>
-		        Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
-		     <% end %>
-		    </div>
-			</div>
-  	<% end %>
+    <div class="rantby-rating-container">
+      <% if !show_user_icon %>   
+        <div class="rant-by">
+         	By
+        	<% if rant.user != current_user %>
+        			<strong><%= link_to rant.user.name, rant.user  %> </strong>
+        	<% else %>
+        			<strong><%= link_to "Me", current_user %></strong>
+        	<% end %>
+        	&nbsp;
+        </div>
+      <% end %>
+      <div class="rating">   
+        <% if rant.user != current_user && rant.votes.where(:user_id >> current_user.id).count == 0 %>
+          <%= render :partial => 'rants/rating_control', :locals => {:rant => rant} %>
+        <% else %>
+          Rated at <%= rant.votes.average(:stars) || "0" %> after <%= pluralize(rant.votes.count, 'vote') %>.
+        <% end %>
+      </div>
+    </div>
    	<div class="clear"></div>
   </div>
   <div class="clear"></div>
