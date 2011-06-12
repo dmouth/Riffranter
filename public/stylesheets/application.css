@@ -490,6 +490,12 @@ ul#tabs a:hover { /* settings for hover effect */
 	display:inline-block;
 	z-index:10;
 	padding-left:5px;
+}   
+
+.rantby-rating-container {
+	display:inline-block;
+	z-index:10;
+	float:right;
 }
 
 .rant-by {
