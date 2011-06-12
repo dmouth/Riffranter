@@ -284,7 +284,8 @@ ul#tabs a:hover { /* settings for hover effect */
 
 .home-page-rant .rant-body{
   margin: 55px 0 0 0;
-  clear: both;
+  clear: both;      
+	max-width:800px;
 }
 
 .home-page-rant .rant-credit{
@@ -509,7 +510,13 @@ ul#tabs a:hover { /* settings for hover effect */
 	color:#000000;
 	text-align:center; 
 	padding:5px;  
-	font-size:1.3em;
+	font-size:1.3em;   
+	max-width:700px;
+}
+
+.rant-container {
+	width:720px; 
+	overflow:auto;
 }
 
 .clear {

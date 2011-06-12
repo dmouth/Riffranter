@@ -7,7 +7,7 @@
   <% if !@persona %>
     <tr><th>Persona</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @rant.persona.name %></td></tr>
   <% end %>
-  <tr><th>Body</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @rant.body %></td></tr>
+  <tr><th>Body</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><p class="rant-body"><%= @rant.body %></p></td></tr>
   <% if current_user.admin? %>
     <tr><th>IP</th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @rant.ip %></td></tr>
   <% end %>
