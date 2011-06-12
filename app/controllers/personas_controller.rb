@@ -5,7 +5,7 @@ class PersonasController < ApplicationController
   # GET /personas
   # GET /personas.xml
   def index
-    @personas = Persona.all
+    @personas = Persona.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +17,7 @@ class PersonasController < ApplicationController
   # GET /personas/1.xml
   def show
     @persona = Persona.find(params[:id])
+    @rants = @persona.rants.page(params[:page])
 
     respond_to do |format|
       format.html # show.html.erb

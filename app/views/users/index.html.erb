@@ -2,7 +2,9 @@
 
 <%= admin_area do %>
   <p><%= link_to "Create New User", new_user_url %></p>
-<% end %>
+<% end %>      
+
+<%= paginate @users %>
                                    
 <% @users.each do |user| %>
 	<%= content_tag :div, :class => "shadow-box" do %>
@@ -28,6 +30,7 @@
 	<% end %>
 <% end %>
 
+<%= paginate @users %>
  
 <%= admin_area do %>
   <p><%= link_to "Create New User", new_user_url %></p>

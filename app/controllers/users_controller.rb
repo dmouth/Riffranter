@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :logged_in?, :except => [:new, :create]
 
   def index
-    @users = User.order(:last_name).order(:first_name)
+    @users = User.order(:last_name).order(:first_name).page(params[:page])
   end
 
   def new
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @rants = @user.rants.page(params[:page])
   end
 
   def update

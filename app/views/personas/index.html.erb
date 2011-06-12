@@ -1,19 +1,21 @@
 <%= page_title "Personas" %>
 
 <%= admin_area do %>
-<p><%= link_to 'New Persona', new_persona_path %></p>
+  <p><%= link_to 'New Persona', new_persona_path %></p>
 <% end %>
+
+<%= paginate @personas %>
 <table cellpadding="5" cellspacing="0" class="index-table">
-	<% for personasOut in @personas %>
-	<tr>
-	  <td>      
-			<%= render :partial => 'persona_card', :locals => {:persona => personasOut} %>
-			</td> 
-			<% end %>
-		</tr>  	
-</table>
+	<% for personas_out in @personas %>
+  	<%= content_tag :tr do %>
+  	  <%= content_tag :td do %>
+  	    <%= render :partial => 'persona_card', :locals => {:persona => personas_out} %>
+  	  <% end %>
+  	<% end %>
+	<% end %>
+</table>    
+<%= paginate @personas %>
+
 <%= admin_area do %>
-
-<p><%= link_to 'New Persona', new_persona_path %></p>         
-
+  <p><%= link_to 'New Persona', new_persona_path %></p>         
 <% end %>

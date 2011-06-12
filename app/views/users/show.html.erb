@@ -1,10 +1,10 @@
 <%= page_title "User Profile - #{@user.handle}" %>
 
-<% content_tag :div do %>
-	<% content_tag :div, :class  => "shadow-box user-profile" do %>
+<%= content_tag :div do %>
+	<%= content_tag :div, :class  => "shadow-box user-profile" do %>
 		<%= entity_image_url(@user, :medium) %>
 	<% end %> 
-	<% content_tag :div, :class  => "user-profile-info" do %>         
+	<%= content_tag :div, :class  => "user-profile-info" do %>         
 		<table cellpadding="5" cellspacing="0" class="show-table">
 			<tr><th valign="top"><%= User.human_attribute_name :handle %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.handle %></td></tr>
 		  <% if owner_or_admin? @user %>
@@ -15,11 +15,14 @@
 		</table>
 	<% end %>
 <% end %>
-<% content_tag :div, :class  => "clear" do %>
-<% end %>
+
+<div class="clear"></div>
+
 <h2>Latest Rants</h2>
 <div id="latest-rants">
-  <%= render :partial => "shared/rant_collection", :locals => {:show_user_icon => false, :rants => @user.rants.order(:created_at.desc)} %>
+  <%= paginate @rants %>
+  <%= render :partial => "shared/rant_collection", :locals => {:show_user_icon => false, :rants => @rants} %>
+  <%= paginate @rants %>
 </div>
 
 <p>

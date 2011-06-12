@@ -4,8 +4,12 @@
 
 <h2>Latest Rants</h2>
 <div id="latest-rants">
-  <% for rant in @persona.rants.order(:created_at.desc) %>
+  <%= paginate @rants %>
+
+  <% for rant in @rants %>
     <%= render :partial => "rants/rant", :locals => {:show_user_icon => true, :rant => rant} %>
   <% end %>
+
+  <%= paginate @rants %>
 </div>
 
