@@ -1,14 +1,12 @@
 <%= page_title @category.name %>
 
 <table cellpadding="5" cellspacing="0" class="index-table">
-	<% for personasOut in @category.personas.order(:name).in_groups_of(4, nil) %>
+	<% for persona in @category.personas.order(:name) %>
 	<tr>
-		<% for persona in personasOut %>
 	  <td>      
 			<%= render :partial => '/personas/persona_card', :locals => {:persona => persona, :show_new  => false} %>
-			</td> 
-			<% end %>
-		</tr>  	
+		</td> 
+	</tr>  	
 	<% end %>	
 </table>
 
