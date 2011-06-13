@@ -10,6 +10,7 @@
 		  <% if owner_or_admin? @user %>
   			<tr><th valign="top"><%= User.human_attribute_name :full_name %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.full_name %></td></tr>
 				<tr><th valign="top"><%= User.human_attribute_name :email %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= mail_to @user.email %></td></tr>
+				<tr><th valign="top"><%= User.human_attribute_name :send_mail_updates %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= @user.send_mail_updates ? "yes" : "no" %></td></tr>
 			<% end %>
 			<tr><th valign="top"><%= User.human_attribute_name :followed_personas %></th><td valign="top" class="<%= cycle "odd-row", "even-row" %>"><%= raw @user.followed_personas.collect{|p| link_to p.name, p}.join(" | ") %></td></tr>
 		</table>

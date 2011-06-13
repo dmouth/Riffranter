@@ -9,6 +9,10 @@ class Persona < ActiveRecord::Base
   has_and_belongs_to_many :categories, :order => :name
 
   mount_uploader :image, ImageUploader
+  
+  def following_users_for_mail
+    following_users.where(:send_mail_updates >> true)
+  end
 end
 
 # == Schema Information

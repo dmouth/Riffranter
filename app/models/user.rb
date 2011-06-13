@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :admin, :followed_persona_ids, :followed_user_ids, :following_user_ids, :image
+  attr_accessible :email, :password, :password_confirmation, :first_name, :last_name, :admin, :followed_persona_ids, :followed_user_ids, :following_user_ids, :image, :send_mail_updates
   # has_friendly_id :email, :use_slug => true, :approximate_ascii => true, :max_length => 50
 
   mount_uploader :image, ImageUploader
@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :followed_personas, :class_name => "Persona", :join_table => :personas_users
   has_and_belongs_to_many :following_users, :join_table => "users_users", :foreign_key => "followee_id", :class_name => "User", :association_foreign_key => "follower_id"
   has_and_belongs_to_many :followed_users, :join_table => "users_users", :foreign_key => "follower_id", :class_name => "User", :association_foreign_key => "followee_id"
+  
+  def following_users_for_mail
+    following_users.where(:send_mail_updates >> true)  
+  end
 
   def self.authenticate(email, password)
     user = find_by_email(email)

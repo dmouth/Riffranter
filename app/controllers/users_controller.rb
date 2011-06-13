@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.send_mail_updates = true
   end
 
   def edit

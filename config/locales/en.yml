@@ -194,4 +194,10 @@ en:
     submit:
       create: 'Create %{model}'
       update: 'Update %{model}'
-      submit: 'Save %{model}'
+      submit: 'Save %{model}'  
+  activerecord:
+    attributes:
+      user:
+        send_mail_updates: "Send email updates when followed users or personas rant."
+        
+ 
