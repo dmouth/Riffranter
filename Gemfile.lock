@@ -72,6 +72,7 @@ GEM
     mime-types (1.16)
     mysql2 (0.2.7)
     nokogiri (1.4.4)
+    pg (0.11.0)
     polyglot (0.3.1)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -134,6 +135,7 @@ DEPENDENCIES
   kaminari
   meta_where
   mysql2 (= 0.2.7)
+  pg
   rails (= 3.0.8)
   rails3-generators
   rmagick
