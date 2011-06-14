@@ -50,3 +50,17 @@ require 'rails/generators'
 Rails::Generators.fallbacks[:shoulda] = :test_unit                                       
 
 MetaWhere.operator_overload!
+
+# =============================================================================================================================================================================
+# = Fix for escape_javascript in 3.0.8.  If you pull this and the add to cart buttons work fine then this isn't needed any longer. https://github.com/rails/rails/issues/1553 =
+# =============================================================================================================================================================================
+module ActionView::Helpers::JavaScriptHelper
+  def escape_javascript_with_workaround(javascript)
+    escape_javascript_without_workaround(javascript.try(:to_str)).html_safe
+  end
+
+  alias_method_chain :escape_javascript, :workaround
+end
+# ==========================
+# = end 3.0.8 monkey patch =
+# ==========================
