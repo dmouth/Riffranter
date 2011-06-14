@@ -9,11 +9,12 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: users
 #
-#  id                :integer(4)      not null, primary key
+#  id                :integer         not null, primary key
 #  first_name        :string(255)
 #  last_name         :string(255)
 #  email             :string(255)
@@ -21,9 +22,9 @@ end
 #  password_salt     :string(255)
 #  created_at        :datetime
 #  updated_at        :datetime
-#  admin             :boolean(1)
+#  admin             :boolean
 #  image             :string(255)
 #  handle            :string(255)
-#  send_mail_updates :boolean(1)
+#  send_mail_updates :boolean
 #
 

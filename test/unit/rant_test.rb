@@ -7,13 +7,14 @@ class RantTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: rants
 #
-#  id         :integer(4)      not null, primary key
-#  user_id    :integer(4)
-#  persona_id :integer(4)
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  persona_id :integer
 #  body       :text
 #  ip         :string(255)
 #  created_at :datetime

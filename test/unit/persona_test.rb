@@ -6,11 +6,12 @@ class PersonaTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: personas
 #
-#  id         :integer(4)      not null, primary key
+#  id         :integer         not null, primary key
 #  name       :string(255)
 #  title      :string(255)
 #  image      :text

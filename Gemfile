@@ -11,13 +11,10 @@ gem "carrierwave"
 gem "friendly_id", "~> 3.2.1"
 gem "delayed_job"
 gem "kaminari"         
-
-group :production do
-  gem "pg"    
-end
+gem "pg"    
 
 group :development, :test do
-  gem "mysql2", "0.2.7"
+  # gem "mysql2", "0.2.7"
   gem "ruby-debug19"
   gem "ZenTest"
   gem "autotest-rails"
