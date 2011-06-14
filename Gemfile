@@ -13,7 +13,7 @@ gem "delayed_job"
 gem "kaminari"         
 
 group :production do
-  gem "pg"
+  gem "pg"    
 end
 
 group :development, :test do
