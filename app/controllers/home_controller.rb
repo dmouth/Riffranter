@@ -12,7 +12,7 @@ class HomeController < ApplicationController
       @subscribed_rants = current_user.followed_rants
 
       # I'd definitely love to not do it this way, but my Arel chops aren't together enough to pull this one off.
-      @hot_rants = Rant.find_by_sql("SELECT rants.*, avg(votes.stars) as rating FROM 'rants' INNER JOIN 'votes' ON 'votes'.'rant_id' = 'rants'.'id' group by rants.id order by rating desc limit 5")
+      @hot_rants = Rant.find_by_sql("SELECT rants.*, avg(votes.stars) as rating FROM rants INNER JOIN 'votes' ON 'votes'.'rant_id' = 'rants'.'id' group by rants.id order by rating desc limit 5")
     end
   end
 end
