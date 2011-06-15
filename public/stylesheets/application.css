@@ -107,10 +107,11 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 #legal-footer{
-  color:#CCC;
+  color:black;
   font-size:10px;
   width:100%;
-  text-align:center;
+  margin: 0 25px; 
+  text-align: left;
 }
 
 .tent-pole{

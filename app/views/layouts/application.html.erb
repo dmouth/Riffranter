@@ -52,7 +52,10 @@
       </div>
     </div>              
     <div id="legal-footer">
-      <span>Our company accepts no liability for the content of this email, or for the consequences of any actions taken on the basis of the information provided, unless that information is subsequently confirmed in writing. If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.</span>
+      <%= link_to "Terms and Conditions", "#" %>
+      <div class="terms" style="display:none">
+        <%= raw textilize File.open("#{Rails.root}/public/terms.markdown").read %>
+      </div>
     </div>
   </body>
   <%= render :partial => 'layouts/javascripts' %>

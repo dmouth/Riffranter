@@ -11,7 +11,8 @@ gem "rmagick"
 gem "carrierwave"
 gem "friendly_id", "~> 3.2.1"
 gem "delayed_job"
-gem "kaminari"         
+gem "kaminari"      
+gem "RedCloth"   
 
 group :development do
   gem "linecache19"

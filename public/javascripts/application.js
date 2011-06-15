@@ -115,3 +115,13 @@ $(function(){
 $(function(){
   $(".flash-message").fadeOut(2000);
 })
+
+// ==================================
+// = Terms and Conditions accordion =
+// ==================================
+
+$(function(){
+  $("#legal-footer a").click(function(){
+    $("#legal-footer .terms").toggle(200, "linear");
+  })
+})

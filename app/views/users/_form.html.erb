@@ -59,4 +59,10 @@
      </div>  
     <p class="button"><%= f.submit %></p>
   <% end %>
-</div>                       
+</div>                      
+
+<div class="terms">
+  <%= raw textilize File.open("#{Rails.root}/public/terms.markdown").read %>
+</div>
+  
+</div> 
