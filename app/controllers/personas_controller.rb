@@ -5,7 +5,7 @@ class PersonasController < ApplicationController
   # GET /personas
   # GET /personas.xml
   def index
-    @personas = Persona.page(params[:page])
+    @personas_grouped = Persona.order(:name).all.group_by{|p| p.name[0..0]}
 
     respond_to do |format|
       format.html # index.html.erb

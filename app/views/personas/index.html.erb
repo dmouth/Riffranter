@@ -4,17 +4,26 @@
   <p><%= link_to 'New Persona', new_persona_path %></p>
 <% end %>
 
-<%= paginate @personas %>
-<table cellpadding="5" cellspacing="0" class="index-table">
-	<% for personas_out in @personas %>
-  	<%= content_tag :tr do %>
-  	  <%= content_tag :td do %>
-  	    <%= render :partial => 'persona_card', :locals => {:persona => personas_out} %>
-  	  <% end %>
+<%= content_tag :div, :class => "alpha-index" do %>
+  <%= raw @personas_grouped.keys.collect{|k| link_to k.upcase, "##{k}"}.join(" - ") %>
+<% end %>
+
+<% @personas_grouped.each do |alpha, personas| %>
+  <%= content_tag :div, alpha.upcase, :class => "alpha-division", :name => alpha %>
+  <table cellpadding="5" cellspacing="0" class="index-table">
+  	<% for personas_out in personas %>
+    	<%= content_tag :tr do %>
+    	  <%= content_tag :td do %>
+    	    <%= render :partial => 'persona_card', :locals => {:persona => personas_out} %>
+    	  <% end %>
+    	<% end %>
   	<% end %>
-	<% end %>
-</table>    
-<%= paginate @personas %>
+  </table>    
+<% end %>
+
+<%= content_tag :div, :class => "alpha-index" do %>
+  <%= raw @personas_grouped.keys.collect{|k| link_to k.upcase, "##{k}"}.join(" - ") %>
+<% end %>
 
 <%= admin_area do %>
   <p><%= link_to 'New Persona', new_persona_path %></p>         
