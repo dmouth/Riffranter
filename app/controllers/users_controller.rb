@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :logged_in?, :except => [:new, :create]
 
   def index
-    @users = User.order(:last_name).order(:first_name).page(params[:page])
+    @users_grouped = User.order(:handle).group_by{|u| u.handle[0..0]}
   end
 
   def new

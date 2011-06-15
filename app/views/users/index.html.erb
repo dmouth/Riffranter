@@ -4,34 +4,41 @@
   <p><%= link_to "Create New User", new_user_url %></p>
 <% end %>      
 
-<%= paginate @users %>
-                                   
-<% @users.each do |user| %>
-	<%= content_tag :div, :class => "shadow-box" do %>
-		<%= content_tag :div, :id => "user-widget", :class => "user-widget-div" do %>
-			<%= content_tag :div, :class => "user-image" do %>
-				<%= entity_image_url(user, :tiny) %>
-		  <% end %>                                     
-			<%= content_tag :div, :class  => "user-follow-div" do %>
-				<b><%= user.handle %></b>
-				<br />
-				<%= follow_user_link(user) %><br>
-				<%= admin_area do %>
-				  <%= link_to 'Edit', edit_user_path(user) %>
-				<% end %>
-			<% end %>
-			<%= content_tag :div, :id  => "user-following-personas", :class => "user-following-personas-div" do %>
-				<strong>Following Personas</strong><br /> <%= raw user.followed_personas.collect{|p| link_to p.name, p}.join(" | ") %>
-			<% end %>
-			<%= content_tag :div, :id  => "user-following users", :class => "user-following-users-div" do %>
-				<strong>Following Users</strong><br /> <%= raw user.followed_users.collect{|p| link_to p.handle, p}.join(" | ") %>
-			<% end %>
-		<% end %>                                  
+<%= content_tag :div, :class => "alpha-index" do %>
+  <%= raw @users_grouped.keys.collect{|k| link_to k.upcase, "##{k}"}.join(" - ") %>
+<% end %>
+
+<% @users_grouped.each do |alpha, users| %>
+  <%= content_tag :div, alpha.upcase, :class => "alpha-division", :name => alpha %>
+  <% for user in users %>
+  	<%= content_tag :div, :class => "shadow-box" do %>
+  		<%= content_tag :div, :id => "user-widget", :class => "user-widget-div" do %>
+  			<%= content_tag :div, :class => "user-image" do %>
+  				<%= entity_image_url(user, :tiny) %>
+  		  <% end %>                                     
+  			<%= content_tag :div, :class  => "user-follow-div" do %>
+  				<b><%= user.handle %></b>
+  				<br />
+  				<%= follow_user_link(user) %><br>
+  				<%= admin_area do %>
+  				  <%= link_to 'Edit', edit_user_path(user) %>
+  				<% end %>
+  			<% end %>
+  			<%= content_tag :div, :id  => "user-following-personas", :class => "user-following-personas-div" do %>
+  				<strong>Following Personas</strong><br /> <%= raw user.followed_personas.collect{|p| link_to p.name, p}.join(" | ") %>
+  			<% end %>
+  			<%= content_tag :div, :id  => "user-following users", :class => "user-following-users-div" do %>
+  				<strong>Following Users</strong><br /> <%= raw user.followed_users.collect{|p| link_to p.handle, p}.join(" | ") %>
+  			<% end %>
+  		<% end %>                                  
+  	<% end %> 
 	<% end %>
 <% end %>
 
-<%= paginate @users %>
- 
+<%= content_tag :div, :class => "alpha-index" do %>
+  <%= raw @users_grouped.keys.collect{|k| link_to k.upcase, "##{k}"}.join(" - ") %>
+<% end %>
+
 <%= admin_area do %>
   <p><%= link_to "Create New User", new_user_url %></p>
 <% end %>
