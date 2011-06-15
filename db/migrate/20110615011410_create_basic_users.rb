@@ -1,5 +1,5 @@
-class AddBasicUsers < ActiveRecord::Migration
-  def self.up
+class CreateBasicUsers < ActiveRecord::Migration
+  def self.up  
     User.create! do |u|
       u.first_name = "Karl"
       u.last_name = "Parker"
@@ -8,8 +8,9 @@ class AddBasicUsers < ActiveRecord::Migration
       u.password = "morton"
       u.password_confirmation = "morton"
       u.admin = true
-    end
-
+      u.send_mail_updates = true
+    end    
+    
     User.create! do |u|
       u.first_name = "Ray"
       u.last_name = "Parker"
@@ -18,6 +19,7 @@ class AddBasicUsers < ActiveRecord::Migration
       u.password = "decorah"
       u.password_confirmation = "decorah"
       u.admin = true
+      u.send_mail_updates = true
     end
 
     User.create! do |u|
@@ -28,6 +30,7 @@ class AddBasicUsers < ActiveRecord::Migration
       u.password = "password"
       u.password_confirmation = "password"
       u.admin = false
+      u.send_mail_updates = true
     end
   end
 

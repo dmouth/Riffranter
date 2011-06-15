@@ -1,5 +1,5 @@
 <%= page_title "Categories" %>
-<% admin_area do %>
+<%= admin_area do %>
   <p><%= link_to 'New Category', new_category_path %></p>
 <% end %>
 
@@ -13,6 +13,6 @@
   <%= render :partial => "shared/rant_collection", :locals => {:rants => Rant.order(:created_at.desc).where({:persona_id.in => cat.persona_ids}).limit(5)} %>
 <% end %>
 
-<% admin_area do %>
+<%= admin_area do %>
   <p><%= link_to 'New Category', new_category_path %></p>
 <% end %>

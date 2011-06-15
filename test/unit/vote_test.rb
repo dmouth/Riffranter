@@ -8,14 +8,15 @@ class VoteTest < ActiveSupport::TestCase
 end
 
 
+
 # == Schema Information
 #
 # Table name: votes
 #
-#  id         :integer         not null, primary key
-#  rant_id    :integer
-#  user_id    :integer
-#  stars      :integer
+#  id         :integer(4)      not null, primary key
+#  rant_id    :integer(4)
+#  user_id    :integer(4)
+#  stars      :integer(4)
 #  created_at :datetime
 #  updated_at :datetime
 #

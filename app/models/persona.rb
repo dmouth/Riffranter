@@ -16,11 +16,12 @@ class Persona < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: personas
 #
-#  id         :integer         not null, primary key
+#  id         :integer(4)      not null, primary key
 #  name       :string(255)
 #  title      :string(255)
 #  image      :text
