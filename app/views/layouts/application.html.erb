@@ -7,33 +7,37 @@
     <%= csrf_meta_tag %>
   </head>    
   <body>
-    <div id="tabs-page">
-      <div id="tabs-div">
-        <% if current_user? %>
-          <%= render :partial => 'layouts/tabs' %>
-        <% else %>
-          <%= render :partial => "layouts/old_user_nav" %>
-        <% end %>    
-      </div>    
-      <div id="search-bar" class="shadow-box">
-        <%= render :partial => 'layouts/search_bar' %>
-      </div>
+    <div id="tabs-page"> 
+			<div class="floater" style="height:72px;vertical-align:middle;padding-top:3px">
+	      <div id="tabs-div">
+	        <% if current_user? %>
+	          <%= render :partial => 'layouts/tabs' %>
+	        <% else %>
+	          <%= render :partial => "layouts/old_user_nav" %>
+	        <% end %>    
+	      </div>    
+	      <div id="search-bar" class="shadow-box">
+	        <%= render :partial => 'layouts/search_bar' %>
+	      </div>
+			</div>
       <div style="clear:both">
         <div id="body-div">
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr> 
               <!-- left col -->
               <td valign="top" colspan="3">
-                <div id="content"> 
-									<%= render :partial => "layouts/flash_messages" %>         
-                  <% if content_for?(:page_title) %>
-                    <div id="page-title">
-                      <h1><%= yield :page_title %></h1>
-                    </div>
-                  <% end %>
-                  <hr>
-                  <%= yield %>
-                </div>
+                <div id="content">         
+									<div class="floater">
+										<%= render :partial => "layouts/flash_messages" %>         
+	                  <% if content_for?(:page_title) %>
+	                    <div id="page-title">
+	                      <h1><%= yield :page_title %></h1>
+	                    </div>
+	                  <% end %>
+	                  <hr>
+	                  <%= yield %>
+                	</div>
+								</div>
               </td>        
               <!-- right col -->
               <td valign="top" width="25%">

@@ -1,16 +1,39 @@
 <%= content_tag :div, :id => "persona-rant-widget", :class => "rant-widget-div" do %>
   <table border="0" cellspacing="5" cellpadding="5">
     <tr>
-      <td valign="top">
-        <%= content_tag :div, :class => "rant-text" do %>
-          <%= text_area_tag "persona[rant]", nil, :size => "65x5" %>
-          <p><%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %></p>
-        <% end %>
+      <td valign="top">         
+				<table>
+					<tr>
+						<td>
+			        <%= content_tag :div, :class => "rant-text" do %>
+			          <%= text_area_tag "persona[rant]", nil, :size => "65x8" %>
+			        <% end %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+					          <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %> <br>
+									</td>
+									<td align="left">
+					          <%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+		          <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %> <br>
+						</td>
+					</tr>
+				</table>
       </td>
-      <td valign="top"> 
+      <td valign="top" align="center"> 
         <%= content_tag :div, :class => "persona-selector" do %>  
-          <%= entity_image_url(@persona, :medium) %> <br>
-          <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %> <br>
+          <%= entity_image_url(@persona, :profile) %> <br>
           <b><%= @persona.title %></b>
           <br>
           <%= follow_persona_link(@persona) %><br>
