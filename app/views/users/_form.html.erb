@@ -61,8 +61,10 @@
   <% end %>
 </div>                      
 
-<div class="terms">
-  <%= raw textilize File.open("#{Rails.root}/public/terms.markdown").read %>
+<div class="terms">  
+	<div style="text-align:left">
+	  <%= raw textilize File.open("#{Rails.root}/public/terms.markdown").read %>
+	</div>
 </div>
   
 </div> 
