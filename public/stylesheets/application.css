@@ -1,5 +1,5 @@
 html{
-  background-color:#CCC
+  background-color:#015f79
 }
 
 body{
@@ -33,6 +33,11 @@ a:hover{
 #tabs-page{
   min-width:330px;
   min-height:50em;
+}         
+
+#search {
+	                      
+	width:30em;
 }
 
 /* begin css tabs */
@@ -87,10 +92,11 @@ ul#tabs a:hover { /* settings for hover effect */
 
 #search-bar{
   float:left;
-  height:30px;
+  height:50px;
   vertical-align:middle;
   display:table-cell;
-  min-width:30em;
+  min-width:55em;
+/*	width:55em;*/
 	padding-bottom:1em;
 }
 
