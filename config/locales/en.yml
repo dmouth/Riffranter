@@ -15,7 +15,6 @@ en:
   destroy: "Destroy"
   Destroy: "Destroy"
   format_reference: "Refer to <a href=\"http://redcloth.org/textile\" target=\"_blank\"> Textile </a> for formatting.  <i>Use HTML sparingly and only if you are very comfortable with HTML!</i>"
-  image_size_rec: "Please make sure that images are at least X by Y."
 
   date:
     formats:
@@ -198,6 +197,6 @@ en:
   activerecord:
     attributes:
       user:
-        send_mail_updates: "Send email updates when followed users or personas rant."
+        send_mail_updates: "Send email updates"
         
  

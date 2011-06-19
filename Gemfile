@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.8'
+gem 'rails', '3.0.9'
 gem "mongrel", "~> 1.2.0.pre2"
-gem "mysql2", "0.2.7"    
+gem "mysql"
 
 gem "meta_where"
 gem "jquery-rails"
@@ -15,7 +15,7 @@ gem "kaminari"
 gem "RedCloth"   
 
 group :development do
-  gem "linecache19"
-  gem "ruby-debug19"
+  gem "linecache", "0.43"
+  gem "ruby-debug"
   gem "rails3-generators"     
 end

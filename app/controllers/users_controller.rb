@@ -29,8 +29,8 @@ class UsersController < ApplicationController
     @user.followed_persona_ids ||= []
 
     # Stop potential hijinks.
-    @user.admin = false if !current_user.admin?
-
+    @user.admin = false if !current_user.admin?   
+    
     if @user.update_attributes(params[:user])
       redirect_to @user, :notice => "Profile updated successfully."
     else
