@@ -16,6 +16,6 @@ test:
 
 production:
   adapter: mysql
-  database: riff_ranter_production
+  database: riff_ranter_development
   username: riff_ranter
   password: byte_n_nibble
