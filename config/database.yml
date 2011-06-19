@@ -18,4 +18,3 @@ production:
   adapter: mysql
   database: riff_ranter_development
   username: root
-  password: isabella
