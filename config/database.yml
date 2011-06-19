@@ -16,5 +16,5 @@ test:
 
 production:
   adapter: mysql
-  database: riff_ranter_development
+  database: riff_ranter_production
   username: root
