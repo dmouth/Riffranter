@@ -85,29 +85,33 @@ $(function(){
 // = Generic persona rant widget (with selector) =
 // ===============================================
 $(function(){
-  $("#persona-rant-widget select").live("change", function(){
-    $.get("/prw/update_widget", {id: $(this).val()})
-  });
-
   $("#persona-rant-widget .submit-link").live("click", function(){
     $.post("/persona_rant_widget/new_persona_rant", {id: $(this).data("current-user-id"), persona_id: $(this).data("persona-id"), text: $("#persona-rant-widget textarea").val()});
     return false;
+  });
+  
+  // synced dropdown stuff
+  $("#persona-rant-widget-category-select select").live("change", function(){
+    $.get("/prw/category_changed", {id: $(this).val()})
+  });
+  $("#persona-rant-widget-persona-select select").live("change", function(){
+    $.get("/prw/persona_changed", {id: $(this).val()})
   });
 })
 
 // =======================================
 // = Rant widget, on persona detail page =
 // =======================================
-$(function(){
-  $("#rant-widget select").live("change", function(){
-    $.get("/prw/update_widget", {id: $(this).val()})
-  });
-
-  $("#rant-widget .submit-link").live("click", function(){
-    $.post("/persona_rant_widget/new_rant", {id: $(this).data("current-user-id"), persona_id: $(this).data("persona-id"), text: $("#rant-widget textarea").val()});
-    return false;
-  });
-})
+// $(function(){
+//   $("#rant-widget select").live("change", function(){
+//     $.get("/prw/update_widget", {id: $(this).val()})
+//   });
+// 
+//   $("#rant-widget .submit-link").live("click", function(){
+//     $.post("/persona_rant_widget/new_rant", {id: $(this).data("current-user-id"), persona_id: $(this).data("persona-id"), text: $("#rant-widget textarea").val()});
+//     return false;
+//   });
+// })
 
 // =========================
 // = General site behavior =

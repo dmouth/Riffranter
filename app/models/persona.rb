@@ -10,6 +10,8 @@ class Persona < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
   
+  scope :for_category, lambda{|c| joins(:categories).select("distinct personas.*").where("categories.id = #{c.id}")}
+  
   def following_users_for_mail
     following_users.where(:send_mail_updates >> true)
   end

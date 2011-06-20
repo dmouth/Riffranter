@@ -13,9 +13,9 @@
 					<tr>
 						<td>
 							<table border="0" cellspacing="0" cellpadding="0">
-								<tr>
-									<td>
-					          <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %> <br>
+								<tr>                  
+									<td id="persona-rant-widget-category-select">                           
+					          <%= render :partial => 'persona_rant_widget/category_dropdown' %><br>
 									</td>
 									<td align="left">
 					          <%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %>
@@ -25,19 +25,14 @@
 						</td>
 					</tr>
 					<tr>
-						<td>
-		          <%= select "persona", "id", Persona.order(:name).select([:name, :id]).collect{|p| [p.name, p.id]}, :selected => @persona.id %> <br>
+						<td id="persona-rant-widget-persona-select">
+		          <%= render :partial => 'persona_rant_widget/persona_dropdown' %><br>
 						</td>
 					</tr>
 				</table>
       </td>
-      <td valign="top" align="center"> 
-        <%= content_tag :div, :class => "persona-selector" do %>  
-          <%= entity_image_url(@persona, :profile) %> <br>
-          <b><%= @persona.title %></b>
-          <br>
-          <%= follow_persona_link(@persona) %><br>
-        <% end %>
+      <td valign="top" align="center" id="persona-rant-widget-persona-image"> 
+        <%= render :partial => 'persona_rant_widget/persona_img' %>
       </td>
     </tr>
   </table>

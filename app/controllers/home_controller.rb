@@ -4,9 +4,11 @@ class HomeController < ApplicationController
       # Newest rants
       @rants = Rant.order(:created_at.desc).includes(:user, :persona, :votes).limit(5)
 
-      # Randomly select a persona for the rant widget  -- mysql local and postgre prod for now 
-      @persona = current_user.followed_personas.order("rand()").first || Persona.first
-
+      # Collections for synced dropdowns in persona rant widget 
+      @categories = Category.order(:name).all
+      @personas = Persona.order(:name)
+      @persona = Persona.for_category(@categories.first).first
+      
       # All rants for personas and users that the current user is following
       @subscribed_rants = current_user.followed_rants
 

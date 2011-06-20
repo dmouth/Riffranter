@@ -1,2 +1,2 @@
 $("#rant-widget-container").html("<%= escape_javascript(render :partial => "persona_rant_widget") %>");
-$("#page-title h1").html("<%= escape_javascript("Riff Ranter - #{@persona.name}")%>")
+$("#page-title h1").html("<%= escape_javascript("#{@persona.name}")%>")

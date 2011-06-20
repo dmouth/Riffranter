@@ -1,5 +1,7 @@
 RiffRanter::Application.routes.draw do
   match "/prw/update_widget" => "persona_rant_widget#update_widget", :via => :get
+  match "/prw/category_changed" => "persona_rant_widget#category_changed", :via => :get
+  match "/prw/persona_changed" => "persona_rant_widget#persona_changed", :via => :get
 
   match "persona_rant_widget/new_persona_rant(.:format)" => "persona_rant_widget#new_persona_rant", :via => :post
   match "persona_rant_widget/new_rant(.:format)" => "persona_rant_widget#new_rant", :via => :post
@@ -37,7 +39,7 @@ RiffRanter::Application.routes.draw do
   end
 
   resources :sessions
-
+  
   root :to => "home#index"
 
   # The priority is based upon order of creation:

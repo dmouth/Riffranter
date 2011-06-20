@@ -86,6 +86,6 @@ module ApplicationHelper
   # =================================================================================
   def entity_image_url(entity, size)               
     url = entity.image_url(size).nil? ? "default-#{size}.jpg" : entity.image_url(size).to_s   
-    link_to image_tag(url), entity, :border => 0
+    link_to image_tag(url), entity, :border => 0, :id => "persona-rant-widget-image"
   end
 end

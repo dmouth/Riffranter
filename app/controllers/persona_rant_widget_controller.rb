@@ -5,6 +5,16 @@ class PersonaRantWidgetController < ApplicationController
     @persona = Persona.find params[:id]
   end
   
+  def persona_changed
+    @persona = Persona.find params[:id]
+  end
+  
+  def category_changed
+    @category = Category.find params[:id]
+    @personas = Persona.for_category(@category).order(:name).all
+    @persona = @personas.first
+  end
+  
   def new_persona_rant
     create_rant
     @latest_rants = Rant.order(:created_at.desc).includes(:user, :persona).limit(5).all
@@ -27,7 +37,6 @@ class PersonaRantWidgetController < ApplicationController
       r.body = @text    
       r.ip = request.remote_ip
     end                            
-    # This definitely needs to be moved to a outside process
     UserMailer.delay.follower_update(@rant)
   end
 end
