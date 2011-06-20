@@ -1,0 +1,3 @@
+$("#persona-rant-widget-persona-select").html("<%= escape_javascript(render :partial => "persona_rant_widget/persona_dropdown")%>");
+$("#persona-rant-widget-persona-image").html("<%= escape_javascript render(:partial => "persona_rant_widget/persona_img") %>");
+$("#page-title h1").html("<%= escape_javascript("#{@persona.name}")%>")

@@ -1,0 +1,5 @@
+<% 
+  selected_id = @persona ? @persona.id : nil 
+%>
+
+<%= select_tag "persona-rant-widget-persona-select-dd", options_from_collection_for_select(@personas, :id, :name, selected_id) %>

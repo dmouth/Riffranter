@@ -1,0 +1,1 @@
+<%= select_tag "persona-rant-widget-category-select-dd", options_from_collection_for_select(@categories, :id, :name), :selected => @persona.categories.order(:name).first.id %>
