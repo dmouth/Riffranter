@@ -17,7 +17,6 @@ class PersonaRantWidgetController < ApplicationController
   
   def new_persona_rant
     create_rant
-    @latest_rants = Rant.order(:created_at.desc).includes(:user, :persona).limit(5).all
   end
 
   def new_rant

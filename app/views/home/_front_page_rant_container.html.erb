@@ -1,3 +1,6 @@
+<%
+  rants = local_assigns.has_key?(:rants)  ? local_assigns[:rants] : @rants
+ %>
 <div id="rant-container" <%= "#{'class=latest'}" if latest == true %>>
-  <%= render :partial => 'shared/rant_collection', :locals => {:rants => @rants} %>
+  <%= render :partial => 'shared/rant_collection', :locals => {:rants => rants} %>
 </div>
