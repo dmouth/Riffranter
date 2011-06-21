@@ -4,7 +4,17 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.xml
   def index
-    @categories = Category.order(:name).includes(:personas => :following_users).all
+    # keep track of currently selected category via a cookie
+    if cookies[:cat_index_cat_id].nil?
+      @category = Category.order(:name).first
+      cookies[:cat_index_cat_id] = @category.id
+    else         
+      cookies[:cat_index_cat_id] = params[:category_id] if !params[:category_id].nil?
+      @category = Category.find cookies[:cat_index_cat_id]
+    end
+      
+    # All rants for personas that exist in this category
+    @rants = Rant.order(:created_at.desc).where({:persona_id.in => @category.persona_ids}).includes([:persona,:user, :votes]).page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

@@ -3,16 +3,29 @@
   <p><%= link_to 'New Category', new_category_path %></p>
 <% end %>
 
-<h1>Latest Rants by Category</h1>
-<div class="directory">
-  Go to: <%= raw @categories.collect{|c| link_to c.name, "##{c.name.gsub(/\s/, "_").downcase}"}.join(" | ") %>
-</div>
 
-<% for cat in @categories %>
-  <h2 id="<%= cat.name.gsub(/\s/, "_").downcase %>"><%= cat.name %></h2>
-  <%= render :partial => "shared/rant_collection", :locals => {:rants => Rant.order(:created_at.desc).where({:persona_id.in => cat.persona_ids}).limit(5)} %>
-<% end %>
+<table border="0" cellspacing="5" cellpadding="5">
+  <%= content_tag :tr do %>
+    <%= content_tag :td do %>
+      <h1>Latest Rants by Category</h1>
+    <% end %>
+    <%= content_tag :td do %>
+    <%= select_tag "category_dropdown", options_from_collection_for_select(Category.order(:name).select([:name, :id]), :id, :name, @category.id) %>
+    <% end %>
+  <% end %>
+  
+</table>
+
+<h2><%= @category.name %></h2>
+
+<%= paginate @rants %>
+<%= render :partial => "shared/rant_collection", :locals => {:rants => @rants} %>
+<%= paginate @rants %>
 
 <%= admin_area do %>
   <p><%= link_to 'New Category', new_category_path %></p>
+<% end %>        
+
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag "category_index" %>
 <% end %>
