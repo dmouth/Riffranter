@@ -16,16 +16,11 @@
   	<%= page_title "Riff Ranter" %>
   <% end %>
 
-  <h1>Latest Rants</h1>
-  <div id="latest-rants">
-    <%= render :partial => 'shared/rant_collection', :locals => {:rants => @rants} %>
-  </div>
-
-  <h1>Hot Rants</h1>
-  <%= render :partial => 'shared/rant_collection', :locals => {:rants => @hot_rants} %>
-
-  <h1>Subscriber Rants</h1>
-  <%= render :partial => 'shared/rant_collection', :locals => {:rants => @subscribed_rants} %>
+  <div id="rant-tabs">
+    <span id="latest-rants"><%= t "Latest Rants" %></span> - <span id="hot-rants"><%= link_to t("Hot Rants"), "#" %></span> - <span id="subscriber-rants"><%= link_to t("Subscribed Rants"), "#" %></span>
+  </div>                                                                                                         
+  
+  <%= render :partial => 'front_page_rant_container', :locals => {:latest => true} %>
 
   <%= content_for :right_column do %>
     <%= render :partial => 'shared/current_user_widget' %>
@@ -34,4 +29,5 @@
 
 <%= content_for :javascripts do %>
   <%= javascript_include_tag "rants_feed" %>
+  <%= javascript_include_tag "home" %>
 <% end %>

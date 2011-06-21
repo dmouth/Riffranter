@@ -1,0 +1,3 @@
+<div id="rant-container" <%= "#{'class=latest'}" if latest == true %>>
+  <%= render :partial => 'shared/rant_collection', :locals => {:rants => @rants} %>
+</div>

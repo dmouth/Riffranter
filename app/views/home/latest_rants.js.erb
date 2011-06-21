@@ -1,0 +1,7 @@
+$("#latest-rants").html("<%= escape_javascript(t("Latest Rants")) %>");
+$("#hot-rants").html("<%= escape_javascript(link_to t("Hot Rants"), "#") %>");
+$("#subscriber-rants").html("<%= escape_javascript(link_to t("Subscriber Rants"), "#") %>");
+
+$("#rant-container").replaceWith("<%= escape_javascript(render(:partial => 'home/front_page_rant_container', :locals => {:rants => @rants, :latest => true})) %>");
+
+getLatestRants();

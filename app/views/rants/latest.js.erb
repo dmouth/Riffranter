@@ -1,12 +1,12 @@
-$("#latest-rants").html("<%= escape_javascript(render @rants)%>");
+$(".latest-rants").html("<%= escape_javascript(render :partial => "home/front_page_rant_container", :locals => {:rants => @rants, :latest => true})%>");
 
 <% if @flash_rant %>
-  $("#latest-rants .home-page-rant").each(function(){
+  $(".latest-rants .home-page-rant").each(function(){
     if($(this).data("rant-id") > <%= params[:last_id]%>)
       $(this).effect("highlight", {}, 3000);
   });
 <% end %>
 
 <% for rant in @rants %>
-  bindRatingControl($('#latest-rants .rating-control[data-rant-id="<%= rant.id %>"]'));
+  bindRatingControl($('.latest-rants .rating-control[data-rant-id="<%= rant.id %>"]'));
 <% end %>
