@@ -17,16 +17,16 @@
 									<td id="persona-rant-widget-category-select">                           
 					          <%= render :partial => 'persona_rant_widget/category_dropdown' %><br>
 									</td>
-									<td align="left">
-					          <%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %>
-									</td>
+      						<td id="persona-rant-widget-persona-select">
+      		          <%= render :partial => 'persona_rant_widget/persona_dropdown' %><br>
+      						</td>
 								</tr>
 							</table>
 						</td>
 					</tr>
 					<tr>
-						<td id="persona-rant-widget-persona-select">
-		          <%= render :partial => 'persona_rant_widget/persona_dropdown' %><br>
+						<td align="left">
+		          <%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %>
 						</td>
 					</tr>
 				</table>
