@@ -16,7 +16,7 @@
       </td>
       <td valign="top">
         <%= content_tag :div, :class => "rant-text" do %>
-          <%= text_area_tag "persona[rant]", nil, :size => "65x5" %>
+          <%= text_area_tag "persona[rant]", nil, :size => "65x3" %>
           <p><%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %></p>
         <% end %>
       </td>

@@ -85,20 +85,41 @@ $(function(){
 // = Generic persona rant widget (with selector) =
 // ===============================================
 $(function(){
+
+	var rantLimit = 200;
+
   $("#persona-rant-widget .submit-link").live("click", function(){
     id = $("#persona-rant-widget-persona-select-dd").val();
     $.post("/persona_rant_widget/new_persona_rant", {id: $(this).data("current-user-id"), persona_id: id, text: $("#persona-rant-widget textarea").val()});
     return false;
-  });
-  
+  }); 
+
+	function limitRant(control) {
+		if(control.val().length >= rantLimit) {   
+			control.val(control.val().substring(0,rantLimit));
+		}                           
+		counter =	$("#persona-rant-widget-count");
+		counter.text(control.val().length + "/" + rantLimit);
+		return true;
+	}
+
+	$("textarea#persona_rant").live("keydown", function() {
+		return limitRant($(this));
+	});
+	$("#persona-rant-widget textarea").live("keydown", function() {
+		return limitRant($(this));
+	});
+	$("#rant-widget textarea").live("keydown", function() {
+		limitRant($(this));
+	});
   // synced dropdown stuff
   $("#persona-rant-widget-category-select select").live("change", function(){
     $.get("/prw/category_changed", {id: $(this).val()})
   });
   $("#persona-rant-widget-persona-select select").live("change", function(){
     $.get("/prw/persona_changed", {id: $(this).val()})
-  });
-})
+  });        
+});   
 
 // =======================================
 // = Rant widget, on persona detail page =

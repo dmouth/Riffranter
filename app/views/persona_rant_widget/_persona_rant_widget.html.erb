@@ -6,20 +6,23 @@
 					<tr>
 						<td>
 			        <%= content_tag :div, :class => "rant-text" do %>
-			          <%= text_area_tag "persona[rant]", nil, :size => "65x8" %>
+			          <%= text_area_tag "persona[rant]", nil, :size => "65x3" %>
 			        <% end %>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<table border="0" cellspacing="0" cellpadding="0">
+							<table border="0" cellspacing="0" cellpadding="0" width="100%">
 								<tr>                  
-									<td id="persona-rant-widget-category-select">                           
+									<td width="33%" id="persona-rant-widget-category-select">                           
 					          <%= render :partial => 'persona_rant_widget/category_dropdown' %><br>
 									</td>
-      						<td id="persona-rant-widget-persona-select">
+      						<td width="33%" id="persona-rant-widget-persona-select">
       		          <%= render :partial => 'persona_rant_widget/persona_dropdown' %><br>
-      						</td>
+      						</td> 
+									<td width="33%" align="center">
+										<span id="persona-rant-widget-count"></span>
+									</td>
 								</tr>
 							</table>
 						</td>
