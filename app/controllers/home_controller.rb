@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   def index
     if current_user
       # Newest rants
-      @rants = Rant.order(:created_at.desc).includes(:user, :persona, :votes).limit(5)
+      @rants = Rant.order(:created_at.desc).includes(:user, :persona, :votes).limit(25)
 
       # Collections for synced dropdowns in persona rant widget 
       @categories = Category.order(:name).all
@@ -19,11 +19,11 @@ class HomeController < ApplicationController
   end
   
   def latest_rants
-    @rants = Rant.order(:created_at.desc).includes(:user, :persona, :votes).limit(5)
+    @rants = Rant.order(:created_at.desc).includes(:user, :persona, :votes).limit(25)
   end
   
   def subscriber_rants
     # All rants for personas and users that the current user is following
-    @rants = current_user.followed_rants
+    @rants = current_user.followed_rants.limit(25)
   end
 end

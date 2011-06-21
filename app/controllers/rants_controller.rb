@@ -88,7 +88,7 @@ class RantsController < ApplicationController
   end
 
   def latest
-    @rants = Rant.order(:created_at.desc).limit(5);
+    @rants = Rant.order(:created_at.desc).limit(25);
     @flash_rant = @rants.first.id > params[:last_id].to_i
   end
 end
