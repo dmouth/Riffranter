@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    @rants = @user.rants.page(params[:page])
+    @rants = @user.rants.order(:created_at.desc).page(params[:page])
   end
 
   def update

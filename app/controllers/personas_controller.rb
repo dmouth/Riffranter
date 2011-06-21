@@ -17,7 +17,7 @@ class PersonasController < ApplicationController
   # GET /personas/1.xml
   def show
     @persona = Persona.find(params[:id])
-    @rants = @persona.rants.page(params[:page])
+    @rants = @persona.rants.order(:created_at.desc).page(params[:page])
 
     respond_to do |format|
       format.html # show.html.erb
