@@ -92,13 +92,10 @@ ul#tabs a:hover { /* settings for hover effect */
 /* end css tabs */
 
 #search-bar{
-  float:left;
   height:50px;
   vertical-align:middle;
   display:table-cell;
-  min-width:55em;
-/*	width:55em;*/
-	padding-bottom:1em;
+	width:1000px;
 }
 
 #content{
@@ -598,4 +595,15 @@ ul#tabs a:hover { /* settings for hover effect */
 	width:225px;
 	vertical-align:top;
 }
-    
+  
+#user-widget-container {
+	height:100%;
+}             
+
+#right-content {
+	height:100%;
+}
+
+#user-widget {
+	height:100%;
+}  

@@ -145,9 +145,17 @@ $(function(){
 // ==================================
 // = Terms and Conditions accordion =
 // ==================================
+               
+var scroller;
+
+function scrollTerms() {
+	window.scrollBy(0,600);
+	clearTimeout(scroller);   
+}
 
 $(function(){
   $("#legal-footer a").click(function(){
     $("#legal-footer .terms").toggle(200, "linear");
-  })
+		scroller = setTimeout('scrollTerms()',100);		
+ })
 })
