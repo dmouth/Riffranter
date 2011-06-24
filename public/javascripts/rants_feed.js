@@ -8,4 +8,9 @@ function getLatestRants(){
     $.get("/rants/latest", {last_id: newestId});
     setTimeout(getLatestRants, 60000);
   }
+  if($("#rant-container").hasClass("subscriber")){
+    newestId = $("#rant-container.subscriber .rant-partial:first-child").data("rant-id") ;
+    $.get("/rants/subscriber", {last_id: newestId});
+    setTimeout(getLatestRants, 60000);
+  }
 }

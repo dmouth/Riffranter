@@ -91,4 +91,9 @@ class RantsController < ApplicationController
     @rants = Rant.order(:created_at.desc).limit(25);
     @flash_rant = @rants.first.id > params[:last_id].to_i
   end
+
+  def subscriber
+    @rants = current_user.followed_rants 25
+    @flash_rant = @rants.first.id > params[:last_id].to_i
+  end
 end

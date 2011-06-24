@@ -17,6 +17,7 @@ RiffRanter::Application.routes.draw do
 
     collection do
       get :latest
+      get :subscriber
     end
   end
 
