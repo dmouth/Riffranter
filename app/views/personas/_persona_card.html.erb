@@ -10,10 +10,10 @@
 		<div> <%=  entity_image_url(persona, :medium) if persona %> </div>
 	</div>
 	<div class="persona-name">
-		<%= persona ? link_to(persona.name, persona) : link_to('New Persona', new_persona_path)  %>
+		<%= persona ? link_to("Faux #{persona.name}", persona) : link_to('New Persona', new_persona_path)  %>
 	</div>
 	<div class="persona-title">
-		<%= persona.title  if persona %>
+		<%= persona.title if persona %>
 	</div>
 	<% if persona %>
 	<div class="persona-details">

@@ -7,9 +7,9 @@
   <div>
   	<div class="rant-title">
    		<% if !show_user_icon %> 
-   			<%= link_to rant.persona.name, rant.persona %>&nbsp;<%= rant.persona.title %>		  
+   			Faux <%= link_to rant.persona.name, rant.persona %>&nbsp;<%= rant.persona.title %>		  
   		<% else %>
-  			<%= link_to rant.user.name, rant.user %>		  
+  			<%= link_to rant.user.handle, rant.user %>		  
   		<% end %>
   	</div>
     <div class="rantby-rating-container">
