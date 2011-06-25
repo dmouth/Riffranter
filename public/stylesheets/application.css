@@ -607,3 +607,26 @@ ul#tabs a:hover { /* settings for hover effect */
 #user-widget {
 	height:100%;
 }  
+                             
+.alpha-division {
+	background-color: #EEE;
+	font-size:1.6em;
+}    
+
+.a-lexp {
+	background-color:#F2F2F2;
+	display:inline;   
+	padding:5px;
+	font-size:1.6em;
+	width:160px;
+	height:2em;     
+	border-width:1px;
+	border-color:#E2E2E2;
+	border-style:solid;
+}        
+
+.a-lexp:hover{
+	background-color:#C2C2C2;
+
+}
+}

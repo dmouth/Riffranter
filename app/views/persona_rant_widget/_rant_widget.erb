@@ -3,21 +3,19 @@
     <tr>
       <td valign="top">
         <%= content_tag :div, :class => "persona-selector" do %>
-          <%= entity_image_url(@persona, :profile) %>
+          <%= entity_image_url(@persona, :medium) %>
           <br>
-          <b><%= @persona.title %></b><br><br>
-          <%= follow_persona_link(@persona) %><br>
-          <%= admin_area do %>
-            <%= link_to 'Edit', edit_persona_path(@persona) %> |
-            <%= link_to 'New Persona', new_persona_path %>
-          <% end %>
-
+          <b><%= @persona.title %></b>
         <% end %>
       </td>
       <td valign="top">
         <%= content_tag :div, :class => "rant-text" do %>
-          <%= text_area_tag "persona[rant]", nil, :size => "65x3" %>
-          <p><%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %></p>
+          <%= text_area_tag "persona[rant]", nil, :size => "65x5" %>
+          <p><%= admin_area do %>
+            <%= link_to 'Edit', edit_persona_path(@persona) %> |
+            <%= link_to 'New Persona', new_persona_path %> &nbsp;&nbsp;
+          <% end %>
+          <%= follow_persona_link(@persona) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %></p>
         <% end %>
       </td>
     </tr>
