@@ -5,10 +5,11 @@
 <% end %>      
 
 <%= content_tag :div, :class => "alpha-index" do %>
-  <%= raw @users_grouped.keys.collect{|k| link_to k.upcase, "##{k}"}.join(" - ") %>
+  <%= raw @users_grouped.keys.collect{|k| content_tag(:div, link_to(k.upcase, "##{k}"), :class => "a-lexp")}.join("") %>
 <% end %>
 
 <% @users_grouped.each do |alpha, users| %>
+	<%= content_tag :a, "",:name => alpha %>
   <%= content_tag :div, alpha.upcase, :class => "alpha-division", :name => alpha %>
   <% for user in users %>
   	<%= content_tag :div, :class => "shadow-box" do %>
