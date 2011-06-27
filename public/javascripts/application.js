@@ -91,6 +91,7 @@ $(function(){
   $("#persona-rant-widget .submit-link").live("click", function(){
     id = $("#persona-rant-widget-persona-select-dd").val();
     $.post("/persona_rant_widget/new_persona_rant", {id: $(this).data("current-user-id"), persona_id: id, text: $("#persona-rant-widget textarea").val()});
+		$("#persona-rant-widget-count").text("");
     return false;
   }); 
 
@@ -101,15 +102,21 @@ $(function(){
 		counter =	$("#persona-rant-widget-count");
 		counter.text(control.val().length + "/" + rantLimit);
 		return true;
-	}
+		}
 
-	$("textarea#persona_rant").live("keydown", function() {
-		return limitRant($(this));
-	});
+	// $("textarea#persona_rant").live("keydown", function() {
+	// 	return limitRant($(this));
+	// });
 	$("#persona-rant-widget textarea").live("keydown", function() {
 		return limitRant($(this));
 	});
+	$("#persona-rant-widget textarea").live("keyup", function() {
+		return limitRant($(this));
+	});
 	$("#rant-widget textarea").live("keydown", function() {
+		limitRant($(this));
+	});
+	$("#rant-widget textarea").live("keyup", function() {
 		limitRant($(this));
 	});
   // synced dropdown stuff
@@ -131,6 +138,7 @@ $(function(){
 
   $("#rant-widget .submit-link").live("click", function(){
     $.post("/persona_rant_widget/new_rant", {id: $(this).data("current-user-id"), persona_id: $(this).data("persona-id"), text: $("#rant-widget textarea").val()});
+		$("#persona-rant-widget-count").text("");
     return false;
   });
 })
