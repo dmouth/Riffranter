@@ -124,12 +124,20 @@ ul#tabs a:hover { /* settings for hover effect */
   padding:15px;
 }
 
+.divider {
+	height:10px;
+	background-color: #015F79;
+}
+
 #legal-footer{
   color:black;
-  font-size:10px;
+  font-size:14px;
   width:90%;
-  margin: 0 25px; 
   text-align: center;
+}        
+
+#legal-footer a {
+	color:red;
 }
 
 .tent-pole{
@@ -151,6 +159,9 @@ ul#tabs a:hover { /* settings for hover effect */
 .textwrapper {
 	margin:5px 0;
 	padding:3px;
+}           
+.alpha-index {
+	padding:10px;
 }
 
 /* =================================================================================================================== */
@@ -629,4 +640,4 @@ ul#tabs a:hover { /* settings for hover effect */
 	background-color:#C2C2C2;
 
 }
-}
+

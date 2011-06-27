@@ -52,13 +52,17 @@
           <div class="tent-pole"></div>
         </div>
       </div>
-    </div>              
+    </div>                                    
+		<div class="divider">
+		</div>
     <div id="legal-footer">
-      <%= link_to "Terms and Conditions", "#", :onclick => "return false;" %>
+      <%= link_to ">> Terms and Conditions <<", "#", :onclick => "return false;" %>
       <div class="terms" style="display:none;text-align:left">
         <%= raw textilize File.open("#{Rails.root}/public/terms.markdown").read %>
       </div>
     </div>
+		<div class="divider">
+		</div>
   </body>
   <%= render :partial => 'layouts/javascripts' %>
 </html>
