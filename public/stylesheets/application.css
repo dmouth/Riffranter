@@ -509,7 +509,8 @@ ul#tabs a:hover { /* settings for hover effect */
 .rant-title a 
 {
 	color:#000000;        
-	font-weight:bold;
+	font-weight:bold;        
+	display:inline;
 }
      
 
@@ -520,15 +521,17 @@ ul#tabs a:hover { /* settings for hover effect */
 }    
 
 .rating {
-	display:inline-block;
+/*	display:inline-block;*/
 	z-index:10;
 	padding-left:5px;
+	float:right;
 }   
 
 .rantby-rating-container {
-	display:inline-block;
+	display:inline;
 	z-index:10;
-	float:float;
+	float:float; 
+	width: 100%;
 }
 
 .rant-by {
