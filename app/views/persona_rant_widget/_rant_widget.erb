@@ -10,13 +10,29 @@
       </td>
       <td valign="top">
         <%= content_tag :div, :class => "rant-text" do %>
-          <%= text_area_tag "persona[rant]", nil, :size => "65x5" %>
-          <p><%= admin_area do %>
-            <%= link_to 'Edit', edit_persona_path(@persona) %> |
-            <%= link_to 'New Persona', new_persona_path %> &nbsp;&nbsp;
-          <% end %>
-          <%= follow_persona_link(@persona) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %></p>
+					<%= content_tag :div do %>
+          	<%= text_area_tag "persona[rant]", nil, :size => "65x5" %>
+					<% end %> 
+					<table width="100%">
+						<tr>
+	          <%= admin_area do %>
+							<td align="center">
+	            	<%= link_to 'Edit', edit_persona_path(@persona) %> |
+		            <%= link_to 'New Persona', new_persona_path %> &nbsp;&nbsp;
+							</td>
+         		<% end %>
+							<td align="center">
+			          <%= follow_persona_link(@persona) %>
+							</td>
+							<td align="center">
+								<%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %>
+							</td>
+							<td align="center">
+								<span id="persona-rant-widget-count"></span>
+						 	</td>
         <% end %>
+						</tr>
+		     </table>
       </td>
     </tr>
   </table>
