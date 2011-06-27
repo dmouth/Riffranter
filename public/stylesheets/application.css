@@ -417,7 +417,8 @@ ul#tabs a:hover { /* settings for hover effect */
 	margin: auto;   
 }                      
 .persona-list {
-	display:table-row; 
+	display:table-row;  
+	width:100%;
 }
 .persona-image {
 	display:table-cell;
@@ -439,7 +440,7 @@ ul#tabs a:hover { /* settings for hover effect */
 	width:200px;
 	font-size:1.2em;
 }
-.personal-details {
+.persona-details {
 	display:table-cell;   
 	vertical-align:top;
 	padding:5px;
