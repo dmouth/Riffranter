@@ -9,6 +9,7 @@ RiffRanter::Application.routes.draw do
 
   match "persona_rant_widget/new_persona_rant(.:format)" => "persona_rant_widget#new_persona_rant", :via => :post
   match "persona_rant_widget/new_rant(.:format)" => "persona_rant_widget#new_rant", :via => :post
+
   resources :rants, :except => :index do
     member do
       post :add_vote
@@ -18,6 +19,8 @@ RiffRanter::Application.routes.draw do
     collection do
       get :latest
       get :subscriber
+      get :more_latest
+      get :more_subscriber
     end
   end
 

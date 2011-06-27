@@ -1,13 +1,7 @@
 <%
-  rants = local_assigns.has_key?(:rants)  ? local_assigns[:rants] : @rants
-  if local_assigns.has_key?(:latest)
-    div_class = "#{'class=latest'}"   
-  elsif local_assigns.has_key?(:subscriber)
-    div_class = "#{'class=subscriber'}" 
-  else
-    div_class = nil
-  end
+  rants = local_assigns.has_key?(:rants) ? local_assigns[:rants] : @rants
+  css_class = local_assigns.has_key?(:css_class) ? local_assigns[:css_class] : nil
  %>
-<div id="rant-container" <%= div_class %>>
+<div id="rant-container" class="<%= css_class %>">
   <%= render :partial => 'shared/rant_collection', :locals => {:rants => rants} %>
-</div>
+</div>   

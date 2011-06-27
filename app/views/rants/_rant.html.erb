@@ -21,7 +21,7 @@
         	<% else %>
         			<strong><%= link_to "Me", current_user %></strong>
         	<% end %>
-        	about <%= time_ago_in_words rant.created_at %> ago.
+        	<%= time_ago_in_words rant.created_at %> ago.
         </div>
       <% end %>
       <div class="rating">   

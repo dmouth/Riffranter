@@ -6,6 +6,6 @@
   <% end %>
 
   <% for rant in @rants %>
-    bindRatingControl($('.latest-rants .rating-control[data-rant-id="<%= rant.id %>"]'));
+    bindRatingControl($('.rating-control[data-rant-id="<%= rant.id %>"]'));
   <% end %>           
 <% end %>

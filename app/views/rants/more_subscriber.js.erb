@@ -1,0 +1,9 @@
+<% if @rants.count != 0 %>
+  $("#rant-container.subscriber").append("<%= escape_javascript(@html)%>");
+
+  <% for rant in @rants %>
+    bindRatingControl($('.rating-control[data-rant-id="<%= rant.id %>"]'));
+  <% end %>           
+<% else %>
+  alert("No more rants!");
+<% end %>

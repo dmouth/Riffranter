@@ -20,7 +20,11 @@
     <span id="latest-rants"><%= t "Latest Rants" %></span> - <span id="hot-rants"><%= link_to t("Hot Rants"), "#" %></span> - <span id="subscriber-rants"><%= link_to t("Subscribed Rants"), "#" %></span>
   </div>                                                                                                         
   
-  <%= render :partial => 'front_page_rant_container', :locals => {:latest => true} %>
+  <%= render :partial => 'front_page_rant_container', :locals => {:css_class => :latest} %>
+  <div id="more-rants-div" >
+    <%= link_to "More...", "#", :id => "more-rants", :class => "latest" %>
+  </div>
+  
 
   <%= content_for :right_column do %>
     <%= render :partial => 'shared/current_user_widget' %>

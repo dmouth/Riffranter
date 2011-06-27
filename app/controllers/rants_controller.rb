@@ -88,7 +88,7 @@ class RantsController < ApplicationController
   end
 
   def latest    
-    @rants = Rant.order(:created_at.desc).where(:id > params[:last_id])
+    @rants = Rant.order(:created_at.desc).where(:id > params[:last_id]).limit(25)
     if @rants
       @html = ""
       for rant in @rants
@@ -98,12 +98,32 @@ class RantsController < ApplicationController
   end
 
   def subscriber
-    @rants = current_user.followed_rants.where(:id > params[:last_id])
+    @rants = current_user.followed_rants.where(:id > params[:last_id]).limit(25)
     if @rants
       @html = ""
       for rant in @rants
         @html += render_to_string rant, :locals => {:latest => true}
       end
     end
+  end
+  
+  def more_latest
+    @rants = Rant.order(:created_at.desc).where(:id < params[:last_id]).limit(25)
+    if @rants
+      @html = ""
+      for rant in @rants
+        @html += render_to_string rant, :locals => {:latest => true}
+      end
+    end 
+  end
+
+  def more_subscriber                                                            
+    @rants = current_user.followed_rants.order(:created_at.desc).where(:id < params[:last_id]).limit(25)    
+    if @rants
+      @html = ""
+      for rant in @rants
+        @html += render_to_string rant, :locals => {:latest => true}
+      end
+    end 
   end
 end
