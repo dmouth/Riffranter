@@ -114,7 +114,9 @@ ul#tabs a:hover { /* settings for hover effect */
 	border-bottom-right-radius: 8px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
-	padding:0px;
+	margin-top:5px;
+	margin-bottom:5px;
+	padding:5px;
 	background-color:#FFF;
 }
 
@@ -124,12 +126,20 @@ ul#tabs a:hover { /* settings for hover effect */
   padding:15px;
 }
 
+.divider {
+	height:10px;
+	background-color: #015F79;
+}
+
 #legal-footer{
   color:black;
-  font-size:10px;
+  font-size:14px;
   width:90%;
-  margin: 0 25px; 
   text-align: center;
+}
+
+#legal-footer a {
+	color:red;
 }
 
 .tent-pole{
@@ -151,6 +161,9 @@ ul#tabs a:hover { /* settings for hover effect */
 .textwrapper {
 	margin:5px 0;
 	padding:3px;
+}
+.alpha-index {
+	padding:10px;
 }
 
 /* =================================================================================================================== */
@@ -391,10 +404,10 @@ ul#tabs a:hover { /* settings for hover effect */
 	border-right-style: solid;
 	border-right-width: 1px;
 	border-top-color: #D6D9D9;
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 	border-top-style: solid;
 	border-top-width: 1px;  
 	margin-bottom: 9px;
@@ -407,6 +420,7 @@ ul#tabs a:hover { /* settings for hover effect */
 }                      
 .persona-list {
 	display:table-row; 
+	width:100%;
 }
 .persona-image {
 	display:table-cell;
@@ -428,7 +442,7 @@ ul#tabs a:hover { /* settings for hover effect */
 	width:200px;
 	font-size:1.2em;
 }
-.personal-details {
+.persona-details {
 	display:table-cell;   
 	vertical-align:top;
 	padding:5px;
@@ -473,8 +487,8 @@ ul#tabs a:hover { /* settings for hover effect */
 	vertical-align:baseline;
 	background-color: #E8E8E8;
 	border-bottom-color: #FFFFFF;
-	border-bottom-left-radius: 2px;
-	border-bottom-right-radius: 2px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	border-collapse: separate;
@@ -485,8 +499,8 @@ ul#tabs a:hover { /* settings for hover effect */
 	border-right-style: solid;
 	border-right-width: 1px;
 	border-top-color: #C6C9C9;
-	border-top-left-radius: 2px;
-	border-top-right-radius: 2px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 	border-top-style: solid;
 	border-top-width: 1px;      
 	
@@ -496,6 +510,7 @@ ul#tabs a:hover { /* settings for hover effect */
 {
 	color:#000000;        
 	font-weight:bold;
+	display:inline;
 }
      
 
@@ -506,15 +521,17 @@ ul#tabs a:hover { /* settings for hover effect */
 }    
 
 .rating {
-	display:inline-block;
+/*	display:inline-block;*/
 	z-index:10;
 	padding-left:5px;
+	float:right;
 }   
 
 .rantby-rating-container {
-	display:inline-block;
+	display:inline;
 	z-index:10;
 	float:float;
+	width: 100%;
 }
 
 .rant-by {
@@ -623,13 +640,15 @@ ul#tabs a:hover { /* settings for hover effect */
 	border-width:1px;
 	border-color:#E2E2E2;
 	border-style:solid;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 }        
 
 .a-lexp:hover{
 	background-color:#C2C2C2;
 
 }
-
-#more-rants.hot{
-  display: none;
 }
+           
