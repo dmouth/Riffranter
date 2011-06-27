@@ -648,3 +648,9 @@ ul#tabs a:hover { /* settings for hover effect */
 
 }
 
+#rant-tabs {
+	font-size:1.6em;
+	text-align:center;  
+	margin:5px;
+}
+           
