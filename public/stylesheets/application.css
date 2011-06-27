@@ -114,7 +114,8 @@ ul#tabs a:hover { /* settings for hover effect */
 	border-bottom-right-radius: 8px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
-	padding:0px;
+	margin:5px;
+	padding:5px;
 	background-color:#FFF;
 }
 
