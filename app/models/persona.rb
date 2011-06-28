@@ -4,7 +4,7 @@ class Persona < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
   validates :title, :presence => true
   
-  has_many :rants
+  has_many :rants, :dependent => :destroy
   has_and_belongs_to_many :following_users, :class_name => "User", :join_table => :personas_users
   has_and_belongs_to_many :categories, :order => :name
 

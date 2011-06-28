@@ -1,7 +1,7 @@
 class Rant < ActiveRecord::Base
   belongs_to :user
   belongs_to :persona
-  has_many :votes
+  has_many :votes, :dependent => :destroy
 
   validates :user_id, :presence => true
   validates :persona_id, :presence => true
