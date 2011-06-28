@@ -1,7 +1,10 @@
 <%= page_title "Categories" %>
 <%= admin_area do %>
-  <p><%= link_to 'New Category', new_category_path %></p>
-<% end %>
+  <p>
+    <%= link_to 'New Category', new_category_path %> |
+    <%= link_to 'Delete Category', @category, :confirm => 'Are you sure?', :method => :delete %>
+  </p>
+<% end %>        
 
 
 <table border="0" cellspacing="5" cellpadding="5">
@@ -23,7 +26,10 @@
 <%= paginate @rants %>
 
 <%= admin_area do %>
-  <p><%= link_to 'New Category', new_category_path %></p>
+  <p>
+    <%= link_to 'New Category', new_category_path %> |
+    <%= link_to 'Delete Category', @category, :confirm => 'Are you sure?', :method => :delete %>
+  </p>
 <% end %>        
 
 <%= content_for :javascripts do %>

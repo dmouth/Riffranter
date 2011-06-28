@@ -86,6 +86,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
+    cookies.delete :cat_index_cat_id 
 
     respond_to do |format|
       format.html { redirect_to(categories_url) }
