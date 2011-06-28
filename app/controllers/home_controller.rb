@@ -7,7 +7,7 @@ class HomeController < ApplicationController
       @rants = Rant.order(:created_at.desc).includes(:user, :persona, :votes).limit(25)
 
       # Collections for synced dropdowns in persona rant widget 
-      @categories = Category.order(:name).all
+      @categories = Category.order(:name).joins(:personas).select("distinct categories.*").all
       @personas = Persona.order(:name)
       @persona = Persona.for_category(@categories.first).first
     end    
