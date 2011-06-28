@@ -4,9 +4,11 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.xml
   def index
+    @categories = Category.order("categories.name").select("distinct categories.*").joins(:personas)
+ 
     # keep track of currently selected category via a cookie
     if cookies[:cat_index_cat_id].nil?
-      @category = Category.order(:name).first
+      @category = @categories.first
       cookies[:cat_index_cat_id] = @category.id
     else         
       cookies[:cat_index_cat_id] = params[:category_id] if !params[:category_id].nil?
