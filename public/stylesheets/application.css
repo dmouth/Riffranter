@@ -123,7 +123,9 @@ ul#tabs a:hover { /* settings for hover effect */
 #right-content{
   vertical-align:top;
   text-align: left;
-  padding:15px;
+  padding:5px;
+	padding-left:0px;
+	width:100%;
 }
 
 .divider {
@@ -136,10 +138,19 @@ ul#tabs a:hover { /* settings for hover effect */
   font-size:14px;
   width:90%;
   text-align: center;
+	padding:15px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 }
 
 #legal-footer a {
 	color:red;
+}                                     
+
+#page-title h1 {
+	padding-left:7px;
 }
 
 .tent-pole{
@@ -334,8 +345,8 @@ ul#tabs a:hover { /* settings for hover effect */
 
 #user-widget{
   border: 1px solid #EEEEEE;
-  padding: 0 5px 0 5px;
-  width: 165px;
+  padding: 0 5px 0 0px;
+  width: 223px;
 }
 
 #user-widget h1{
@@ -628,7 +639,19 @@ ul#tabs a:hover { /* settings for hover effect */
 .alpha-division {
 	background-color: #EEE;
 	font-size:1.6em;
-}    
+}      
+
+#more-rants-div {
+	background-color: #EEE;
+	font-size:1.6em;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	margin-left: 8px;
+	margin-right:8px;
+	padding-left:10px;
+}
 
 .a-lexp {
 	background-color:#F2F2F2;
