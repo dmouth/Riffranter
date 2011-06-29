@@ -3,7 +3,6 @@ html{
 }
 
 body{
-  font-size:.75em;
   width:1000px;
   text-align:center;
   margin:auto;
@@ -11,6 +10,10 @@ body{
 /*	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif; */
 	font: normal 87.5%/1.428 "Georgia", Georgia, sans-serif;
   font-size: .70em;
+}
+
+h2{
+  margin-left: 10px;
 }
 
 textarea {
@@ -34,10 +37,10 @@ a:hover{
   min-width:330px;
   min-height:50em;
   background-color:#015f79
-}         
+}
 
 #search {
-	                      
+
 	width:30em;
 }
 
@@ -103,10 +106,10 @@ ul#tabs a:hover { /* settings for hover effect */
   text-align: left;
   padding:0px;
   background-color:#015f79
-}         
+}
 
 #body-div {
-	  background-color:#015f79 
+	  background-color:#015f79
 }
 
 .floater {
@@ -147,7 +150,7 @@ ul#tabs a:hover { /* settings for hover effect */
 
 #legal-footer a {
 	color:red;
-}                                     
+}
 
 #page-title h1 {
 	padding-left:7px;
@@ -327,7 +330,7 @@ ul#tabs a:hover { /* settings for hover effect */
 
 .home-page-rant .rant-body{
   margin: 55px 0 0 0;
-  clear: both;      
+  clear: both;
 	max-width:800px;
 }
 
@@ -420,17 +423,17 @@ ul#tabs a:hover { /* settings for hover effect */
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	border-top-style: solid;
-	border-top-width: 1px;  
+	border-top-width: 1px;
 	margin-bottom: 9px;
 }
 .padded-image {
 	width:auto;
 	padding: 5px 5px 5px;
 	background-color: #C8C8C8;
-	margin: auto;   
-}                      
+	margin: auto;
+}
 .persona-list {
-	display:table-row; 
+	display:table-row;
 	width:100%;
 }
 .persona-image {
@@ -443,7 +446,7 @@ ul#tabs a:hover { /* settings for hover effect */
 	display:table-cell;
 	vertical-align:middle;
 	padding:5px;
-	width:200px;   
+	width:200px;
 	font-size:1.6em;
 }
 .persona-title {
@@ -454,7 +457,7 @@ ul#tabs a:hover { /* settings for hover effect */
 	font-size:1.2em;
 }
 .persona-details {
-	display:table-cell;   
+	display:table-cell;
 	vertical-align:top;
 	padding:5px;
 	width:200px;
@@ -480,11 +483,11 @@ ul#tabs a:hover { /* settings for hover effect */
 
 /*   Clean from here down */
 .rant-display {
-}           
+}
 .rant-title {
 	position:relative;
 	top:3px;
-	left:9px;       
+	left:9px;
 	display:inline;
    z-index:10;
 	font-size:1.2em;
@@ -513,30 +516,30 @@ ul#tabs a:hover { /* settings for hover effect */
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	border-top-style: solid;
-	border-top-width: 1px;      
-	
+	border-top-width: 1px;
+
 }
 
-.rant-title a 
+.rant-title a
 {
-	color:#000000;        
+	color:#000000;
 	font-weight:bold;
 	display:inline;
 }
-     
+
 
 .rant-controls {
 	z-index:10;
 	float:right;
 	display:none;
-}    
+}
 
 .rating {
 /*	display:inline-block;*/
 	z-index:10;
 	padding-left:5px;
 	float:right;
-}   
+}
 
 .rantby-rating-container {
 	display:inline;
@@ -552,61 +555,61 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 
-.rant-photo {          
-	display:block;  
-	float:left;  
+.rant-photo {
+	display:block;
+	float:left;
 	margin:-5px;
 }
 
-.rant-body {   
+.rant-body {
 	display:inline;
 	color:#000000;
-	text-align:center; 
-	padding:5px;  
-	font-size:1.3em;   
+	text-align:center;
+	padding:5px;
+	font-size:1.3em;
 	max-width:700px;
 }
 
 .rant-container {
-	width:720px; 
+	width:720px;
 	overflow:auto;
 }
 
 .clear {
 	clear:both;
-}       
+}
 
 .controlsOn {
 	display:inline;
-}              
+}
 
 .controlsOff {
 	display:none;
-}                      
-      
-.user-profile { 
+}
+
+.user-profile {
 	float:left;
-} 
+}
 
 .user-profile-info {
 	display:inline;
-}    
+}
 
-.user-widget-div { 
+.user-widget-div {
 	padding:5px;
-	display:table-row; 
-	height:50px;    
+	display:table-row;
+	height:50px;
 }
 
 .user-image {
 	display:table-cell;
-	padding:inherit;   
+	padding:inherit;
 	vertical-align:top;
-}       
-         
+}
+
 .user-follow-div {
 	display:table-cell;
-	padding:inherit;   
+	padding:inherit;
 	width:225px;
 	vertical-align:top;
 }
@@ -623,10 +626,10 @@ ul#tabs a:hover { /* settings for hover effect */
 	width:225px;
 	vertical-align:top;
 }
-  
+
 #user-widget-container {
 	height:100%;
-}             
+}
 
 #right-content {
 	height:100%;
@@ -634,12 +637,12 @@ ul#tabs a:hover { /* settings for hover effect */
 
 #user-widget {
 	height:100%;
-}  
-                             
+}
+
 .alpha-division {
 	background-color: #EEE;
 	font-size:1.6em;
-}      
+}
 
 #more-rants-div {
 	background-color: #EEE;
@@ -655,11 +658,11 @@ ul#tabs a:hover { /* settings for hover effect */
 
 .a-lexp {
 	background-color:#F2F2F2;
-	display:inline;   
+	display:inline;
 	padding:5px;
 	font-size:1.6em;
 	width:160px;
-	height:2em;     
+	height:2em;
 	border-width:1px;
 	border-color:#E2E2E2;
 	border-style:solid;
@@ -667,7 +670,7 @@ ul#tabs a:hover { /* settings for hover effect */
 	border-bottom-right-radius: 8px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
-}        
+}
 
 .a-lexp:hover{
 	background-color:#C2C2C2;
@@ -676,4 +679,4 @@ ul#tabs a:hover { /* settings for hover effect */
 #more-rants.hot{
   display: none;
 }
-           
+

@@ -4,7 +4,7 @@
     <%= link_to 'New Category', new_category_path %> |
     <%= link_to 'Delete Category', @category, :confirm => 'Are you sure?', :method => :delete %>
   </p>
-<% end %>        
+<% end %>
 
 
 <table border="0" cellspacing="5" cellpadding="5">
@@ -16,7 +16,7 @@
     <%= select_tag "category_dropdown", options_from_collection_for_select(@categories, :id, :name, @category.id) %>
     <% end %>
   <% end %>
-  
+
 </table>
 
 <h2><%= @category.name %></h2>
@@ -30,7 +30,7 @@
     <%= link_to 'New Category', new_category_path %> |
     <%= link_to 'Delete Category', @category, :confirm => 'Are you sure?', :method => :delete %>
   </p>
-<% end %>        
+<% end %>
 
 <%= content_for :javascripts do %>
   <%= javascript_include_tag "category_index" %>
