@@ -12,13 +12,14 @@
         <%= content_tag :div, :class => "rant-text" do %>
 					<%= content_tag :div do %>
           	<%= text_area_tag "persona[rant]", nil, :size => "65x5" %>
-					<% end %> 
+					<% end %>
 					<table width="100%">
 						<tr>
 	          <%= admin_area do %>
 							<td align="center">
 	            	<%= link_to 'Edit', edit_persona_path(@persona) %> |
-		            <%= link_to 'New Persona', new_persona_path %> &nbsp;&nbsp;
+                <%= link_to 'Delete', @persona, :confirm => 'Are you sure?', :method => :delete %> |
+		            <%= link_to 'New Persona', new_persona_path %>
 							</td>
          		<% end %>
 							<td align="center">
