@@ -4,17 +4,17 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.xml
   def index
-    @categories = Category.order("categories.name").select("distinct categories.*").joins(:personas)
- 
+    @categories = Category.order("categories.name").select("distinct categories.*").joins(:personas => :rants).all
+
     # keep track of currently selected category via a cookie
     if cookies[:cat_index_cat_id].nil?
       @category = @categories.first
       cookies[:cat_index_cat_id] = @category.id
-    else         
+    else
       cookies[:cat_index_cat_id] = params[:category_id] if !params[:category_id].nil?
       @category = Category.find cookies[:cat_index_cat_id]
     end
-      
+
     # All rants for personas that exist in this category
     @rants = Rant.order(:created_at.desc).where({:persona_id.in => @category.persona_ids}).includes([:persona,:user, :votes]).page(params[:page])
 
@@ -88,7 +88,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    cookies.delete :cat_index_cat_id 
+    cookies.delete :cat_index_cat_id
 
     respond_to do |format|
       format.html { redirect_to(categories_url) }
