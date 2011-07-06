@@ -5,7 +5,7 @@ en:
   Hot Rants: "Hot Rants"
   Subscriber Rants: "Subscriber Rants"
   Latest Rants: "Latest Rants"
-  
+
   created_at: "Created"
   updated_at: "Updated"
   id: "ID"
@@ -14,7 +14,7 @@ en:
   show: "Show"
   Show: "Show"
   edit: "Edit"
-  Edit: "Edit" 
+  Edit: "Edit"
   Back: "Back to Listing"
   destroy: "Destroy"
   Destroy: "Destroy"
@@ -38,7 +38,7 @@ en:
       short:   "%m/%d/%y"
       long:    "%A, %B %d, %I:%M:%S%p"
     am: "am"
-    pm: "pm" 
+    pm: "pm"
 
 
   activerecord:
@@ -197,10 +197,9 @@ en:
     submit:
       create: 'Create %{model}'
       update: 'Update %{model}'
-      submit: 'Save %{model}'  
+      submit: 'Save %{model}'
   activerecord:
     attributes:
       user:
         send_mail_updates: "Send email updates"
-        
- 
+
