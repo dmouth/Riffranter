@@ -7,9 +7,8 @@ body{
   text-align:center;
   margin:auto;
   background-color:white;
-/*	font: normal 87.5%/1.428 "Helvetica Neue", Helvetica, sans-serif; */
-	font: normal 87.5%/1.428 "Georgia", Georgia, sans-serif;
-  font-size: .70em;
+	font: normal "Georgia", Georgia, sans-serif;
+  font-size: .75em;
 }
 
 h2{
@@ -19,9 +18,7 @@ h2{
 textarea {
 	border: 3px solid #cccccc;
 	padding: 5px;
-/*  background-image: url(/images/bg.gif);*/
-	background-position: bottom right;
-	background-repeat: no-repeat;
+  background: no-repeat bottom right;
 }
 
 a, a:visited{
@@ -83,7 +80,7 @@ ul#tabs li a { /* settings for all tab links */
   border: 1px solid #EEEEEE; /* set border COLOR as desired; usually matches border color specified in #tabnav */
   background-color: #EEEEEE; /* set unselected tab background color as desired */
   color: black; /* set unselected tab link color as desired */
-  margin-right: 0px; /* set additional spacing between tabs as desired */
+  margin-right: 0; /* set additional spacing between tabs as desired */
   text-decoration: none;
   border-bottom: none;
 }
@@ -104,7 +101,7 @@ ul#tabs a:hover { /* settings for hover effect */
 #content{
   vertical-align:top;
   text-align: left;
-  padding:0px;
+  padding: 0;
   background-color:#015f79
 }
 
@@ -113,11 +110,8 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 .floater {
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	margin-top:5px;
+  border-radius: 8px;
+  margin-top:5px;
 	margin-bottom:5px;
 	padding:5px;
 	background-color:#FFF;
@@ -126,9 +120,8 @@ ul#tabs a:hover { /* settings for hover effect */
 #right-content{
   vertical-align:top;
   text-align: left;
-  padding:5px;
-	padding-left:0px;
-	width:100%;
+  padding: 5px 5px 5px 0;
+  width:100%;
 }
 
 .divider {
@@ -142,10 +135,7 @@ ul#tabs a:hover { /* settings for hover effect */
   width:90%;
   text-align: center;
 	padding:15px;
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
+  border-radius: 8px;
 }
 
 #legal-footer a {
@@ -205,8 +195,7 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 .default-form p{
-  margin:0;
-  margin-top: 15px;
+  margin: 15px 0 0;
 }
 
 #flash_notice{
@@ -245,11 +234,10 @@ ul#tabs a:hover { /* settings for hover effect */
 
 #admin-menu{
   float: left;
-  margin: 5px 0;
+  margin: 5px 0 5px 15px;
   background: #EEEEEE;
   padding: 3px;
   clear: both;
-  margin-left: 15px;
   width: 100%;
 }
 
@@ -279,7 +267,7 @@ ul#tabs a:hover { /* settings for hover effect */
 .home-page-rant{
   border: 1px solid #EEEEEE;
   margin-bottom: 5px;
-  padding: 0px 5px 5px 5px;
+  padding: 0 5px 5px 5px;
 	display:block;
 }
 
@@ -318,14 +306,12 @@ ul#tabs a:hover { /* settings for hover effect */
 }
 
 .home-page-rant .title{
-  padding: 0px;
+  padding: 0;
 	margin-right:5px;
   float: left;
-	border-right-style:solid;
-	border-right-width: thin;
-	border-bottom-style:solid;
-	border-bottom-width: thin;
-	width:120px;
+  border-right: thin solid;
+  border-bottom: thin solid;
+  width:120px;
 }
 
 .home-page-rant .rant-body{
@@ -348,7 +334,7 @@ ul#tabs a:hover { /* settings for hover effect */
 
 #user-widget{
   border: 1px solid #EEEEEE;
-  padding: 0 5px 0 0px;
+  padding: 0 5px 0 0;
   width: 223px;
 }
 
@@ -398,33 +384,17 @@ ul#tabs a:hover { /* settings for hover effect */
 .shadow-box {
 	text-align:center;
 	padding: 5px 5px 5px 5px;
-	border:thin solid #666;
-	color: #37414B;
-	border-top: 1px solid #DDD;
-	text-shadow: #FBFBFB 0px 1px 0px;
+  border: 1px solid #D6D9D9;
+  color: #37414B;
+  text-shadow: #FBFBFB 0 1px 0;
 	margin-right:9px;
 	margin-left:9px;
-	-webkit-box-shadow: white 0px 1px 0px 0px inset;
+	-webkit-box-shadow: white 0 1px 0 0 inset;
 	vertical-align:baseline;
 	background-color: #F8F8F8;
-	border-bottom-color: #D6D9D9;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	border-collapse: separate;
-	border-left-color: #D6D9D9;
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-color: #D6D9D9;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-color: #D6D9D9;
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	border-top-style: solid;
-	border-top-width: 1px;
-	margin-bottom: 9px;
+  border-collapse: separate;
+  border-radius: 8px;
+  margin-bottom: 9px;
 }
 .padded-image {
 	width:auto;
@@ -477,7 +447,7 @@ ul#tabs a:hover { /* settings for hover effect */
 .directory{
   width: 100%;
   text-align: center;
-  padding: 0px 15px 15px 15px;
+  padding: 0 15px 15px 15px;
 }
 
 
@@ -492,32 +462,16 @@ ul#tabs a:hover { /* settings for hover effect */
    z-index:10;
 	font-size:1.2em;
 	padding: 1px 1px 1px 1px;
-	border:thin solid #666;
-	border-top: 1px solid #DDD;
-	text-shadow: #FBFBFB 0px 1px 0px;
+  border: 1px solid #C6C9C9;
+  border-bottom-color: #FFFFFF;
+  text-shadow: #FBFBFB 0 1px 0;
 	margin-right:9px;
-	margin-left:0px;
-	-webkit-box-shadow: white 0px 1px 0px 0px inset;
+	margin-left: 0;
+	-webkit-box-shadow: white 0 1px 0 0 inset;
 	vertical-align:baseline;
 	background-color: #E8E8E8;
-	border-bottom-color: #FFFFFF;
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	border-collapse: separate;
-	border-left-color: #C6C9C9;
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-color: #C6C9C9;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-color: #C6C9C9;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	border-top-style: solid;
-	border-top-width: 1px;
-
+  border-radius: 8px;
+  border-collapse: separate;
 }
 
 .rant-title a
@@ -544,7 +498,6 @@ ul#tabs a:hover { /* settings for hover effect */
 .rantby-rating-container {
 	display:inline;
 	z-index:10;
-	float:float;
 	width: 100%;
 }
 
