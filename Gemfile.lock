@@ -112,7 +112,6 @@ DEPENDENCIES
   friendly_id (~> 3.2.1)
   jquery-rails
   kaminari
-  linecache (= 0.43)
   meta_where
   mongrel (~> 1.2.0.pre2)
   mysql

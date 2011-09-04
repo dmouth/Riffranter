@@ -11,11 +11,10 @@ gem "rmagick"
 gem "carrierwave"
 gem "friendly_id", "~> 3.2.1"
 gem "delayed_job"
-gem "kaminari"      
-gem "RedCloth"   
+gem "kaminari"
+gem "RedCloth"
 
 group :development do
-  gem "linecache", "0.43"
   gem "ruby-debug"
-  gem "rails3-generators"     
+  gem "rails3-generators"
 end

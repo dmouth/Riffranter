@@ -3,7 +3,7 @@
 development:
   adapter: mysql
   database: riff_ranter_development
-  username: root   
+  username: root
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -12,7 +12,7 @@ test:
   adapter: mysql
   database: riff_ranter_test
   username: app
-  username: root   
+  username: root
 
 production:
   adapter: mysql
