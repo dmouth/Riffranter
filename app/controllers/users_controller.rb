@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :logged_in?, :except => [:new, :create]
 
   def index
-    @users_grouped = User.order(:handle).group_by{|u| u.handle[0..0]}
+    @users_grouped = User.order(:handle).group_by{|u| u.handle[0..0].downcase}
   end
 
   def new
@@ -29,8 +29,8 @@ class UsersController < ApplicationController
     @user.followed_persona_ids ||= []
 
     # Stop potential hijinks.
-    @user.admin = false if !current_user.admin?   
-    
+    @user.admin = false if !current_user.admin?
+
     if @user.update_attributes(params[:user])
       redirect_to @user, :notice => "Profile updated successfully."
     else
