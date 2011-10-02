@@ -5,28 +5,28 @@
     <%= stylesheet_link_tag "application", "jquery-ui-1.8.12", "jquery.ui.stars" %>
     <%= yield(:stylesheets) %>
     <%= csrf_meta_tag %>
-  </head>    
+  </head>
   <body>
-    <div id="tabs-page"> 
+    <div id="tabs-page">
       <div id="search-bar" class="shadow-box">
 	      <div id="tabs-div">
 	        <% if current_user? %>
 	          <%= render :partial => 'layouts/tabs' %>
 	        <% else %>
 	          <%= render :partial => "layouts/old_user_nav" %>
-	        <% end %>    
-	      </div>    
+	        <% end %>
+	      </div>
         <%= render :partial => 'layouts/search_bar' %>
       </div>
       <div style="clear:both">
         <div id="body-div">
           <table width="100%" cellpadding="0" cellspacing="0">
-            <tr> 
+            <tr>
               <!-- left col -->
               <td valign="top" colspan="3">
-                <div id="content">         
+                <div id="content">
 									<div class="floater">
-										<%= render :partial => "layouts/flash_messages" %>         
+										<%= render :partial => "layouts/flash_messages" %>
 	                  <% if content_for?(:page_title) %>
 	                    <div id="page-title">
 	                      <h1><%= yield :page_title %></h1>
@@ -36,10 +36,10 @@
 	                  <%= yield %>
                 	</div>
 								</div>
-              </td>        
+              </td>
               <!-- right col -->
               <td valign="top" width="25%">
-                <div id="right-content">                                
+                <div id="right-content">
                   <% if current_user? %>
                     <div id="user-widget-container">
                       <%= render :partial => 'shared/current_user_widget' %>
@@ -52,14 +52,11 @@
           <div class="tent-pole"></div>
         </div>
       </div>
-    </div>                                    
+    </div>
 		<div class="divider">
 		</div>
     <div id="legal-footer">
-      <%= link_to ">> Terms and Conditions <<", "#", :onclick => "return false;" %>
-      <div class="terms" style="display:none;text-align:left">
-        <%= raw textilize File.open("#{Rails.root}/public/terms.markdown").read %>
-      </div>
+      <%= link_to "Terms and Conditions", terms_path %>
     </div>
 		<div class="divider">
 		</div>

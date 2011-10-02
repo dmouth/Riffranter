@@ -1,5 +1,3 @@
-h1. RIFFRANTER TERMS OF SERVICE
-
 Last Updated: 6.15.2011
 
 h2. Basic Terms
@@ -10,7 +8,7 @@ Access and usage of the Services is conditional upon acceptance and continued co
 
 ALL OF THE CONTENT POSTED ON RIFFRANTER, UNLESS OTHERWISE NOTED, IS COPYRIGHTED BY RIFFRANTER, LLC. NO PART OF THIS WEBSITE MAY BE REPRODUCED OR COPIED IN ANY MANNER WITHOUT THE EXPRESS WRITTEN PERMISSION OF THE COPYRIGHT HOLDER.
 
-As a user of Riffranter, you are responsible for any Content you post to the Services, and for any consequences thereof. Content posted on Riffranter will be made available to other users and third-party services. 
+As a user of Riffranter, you are responsible for any Content you post to the Services, and for any consequences thereof. Content posted on Riffranter will be made available to other users and third-party services.
 
 h2. Content
 
