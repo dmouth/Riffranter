@@ -1,14 +1,7 @@
 development:
   adapter: mysql
-  database: p1r99127_prod
-  username: p1r99127
-  password: brooklyn11226
-
-# Ionian creds
-#development:
-#  adapter: mysql
-#  database: riff_ranter_development
-#  username: root
+  database: riff_ranter_development
+  username: root
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -19,7 +12,14 @@ test:
   username: app
   username: root
 
+# Ionian creds
+#production:
+#  adapter: mysql
+#  database: riff_ranter_production
+#  username: root
+
 production:
   adapter: mysql
-  database: riff_ranter_production
-  username: root
+  database: p1r99127_prod
+  username: p1r99127
+  password: brooklyn11226

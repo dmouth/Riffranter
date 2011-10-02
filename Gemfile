@@ -15,6 +15,6 @@ gem "kaminari"
 gem "RedCloth"
 
 group :development do
-  gem "ruby-debug"
+  gem "ruby-debug19"
   gem "rails3-generators"
 end
