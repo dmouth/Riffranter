@@ -1,5 +1,5 @@
 rvm ruby-1.9.2-p0
-GEM_HOME=GEM_HOME:"vendor/cache"
-GEM_PATH=GEM_PATH:"vendor/cache"
-BUNDLE_PATH="./vendor_cache"
+GEM_HOME=GEM_HOME:./vendor/cache
+GEM_PATH=GEM_PATH:./vendor/cache:GEM_PATH
+BUNDLE_PATH=./vendor_cache
 
