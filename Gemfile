@@ -7,7 +7,7 @@ gem "mysql"
 gem "meta_where"
 gem "jquery-rails"
 gem "bcrypt-ruby", :require => "bcrypt"
-gem "rmagick"
+gem "rmagick", '1.15'
 gem "carrierwave"
 gem "friendly_id", "~> 3.2.1"
 gem "delayed_job"
