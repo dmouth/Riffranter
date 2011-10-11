@@ -92,7 +92,6 @@ GEM
       thor (~> 0.14.4)
     rake (0.9.2)
     rdoc (3.6.1)
-    rmagick (2.13.1)
     ruby-debug-base19 (0.11.25)
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
@@ -124,5 +123,4 @@ DEPENDENCIES
   mysql
   rails (= 3.0.9)
   rails3-generators
-  rmagick
   ruby-debug19
