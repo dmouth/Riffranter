@@ -13,7 +13,7 @@ gem "delayed_job"
 gem "kaminari"
 gem "RedCloth"
 
-group :hosting_rails
+group :hosting_rails do
   gem "rmagick", "1.15"
 end
 
