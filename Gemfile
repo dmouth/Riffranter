@@ -12,12 +12,8 @@ gem "friendly_id", "~> 3.2.1"
 gem "delayed_job"
 gem "kaminari"
 gem "RedCloth"
+gem "rmagick"
 
-group :hosting_rails do
-  gem "rmagick", "1.15"
-end
-
-group :development do
-  gem "ruby-debug19"
+group :development, :test do
   gem "rails3-generators"
 end
