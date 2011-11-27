@@ -20,6 +20,5 @@ test:
 
 production:
   adapter: mysql
-  database: p1r99127_prod
-  username: p1r99127
-  password: brooklyn11226
+  database: riff_ranter_production
+  username: root

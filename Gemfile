@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 gem "mongrel", "~> 1.2.0.pre2"
-gem "mysql2"
+gem "mysql"
 
 gem "meta_where"
 gem "jquery-rails"
