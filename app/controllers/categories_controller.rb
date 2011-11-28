@@ -9,14 +9,16 @@ class CategoriesController < ApplicationController
     # keep track of currently selected category via a cookie
     if cookies[:cat_index_cat_id].nil?
       @category = @categories.first
-      cookies[:cat_index_cat_id] = @category.id
+      cookies[:cat_index_cat_id] = @category.id if @category
     else
       cookies[:cat_index_cat_id] = params[:category_id] if !params[:category_id].nil?
       @category = Category.find cookies[:cat_index_cat_id]
     end
 
     # All rants for personas that exist in this category
-    @rants = Rant.order(:created_at.desc).where({:persona_id.in => @category.persona_ids}).includes([:persona,:user, :votes]).page(params[:page])
+    if @categories.count > 0
+      @rants = Rant.order(:created_at.desc).where({:persona_id.in => @category.persona_ids}).includes([:persona,:user, :votes]).page(params[:page])
+    end
 
     respond_to do |format|
       format.html # index.html.erb

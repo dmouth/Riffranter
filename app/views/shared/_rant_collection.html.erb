@@ -2,6 +2,8 @@
   show_user_icon = local_assigns.has_key?(:show_user_icon) ? local_assigns[:show_user_icon] : false
 %>
 
-<% for rant in rants %>
-  <%= render :partial => "rants/rant", :locals => {:show_user_icon => show_user_icon, :rant => rant} %>
+<% if rants %>
+  <% for rant in rants %>
+    <%= render :partial => "rants/rant", :locals => {:show_user_icon => show_user_icon, :rant => rant} %>
+  <% end %>
 <% end %>

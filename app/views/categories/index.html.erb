@@ -13,17 +13,17 @@
       <h1>Latest Rants by Category</h1>
     <% end %>
     <%= content_tag :td do %>
-    <%= select_tag "category_dropdown", options_from_collection_for_select(@categories, :id, :name, @category.id) %>
+    <%= select_tag "category_dropdown", @categories.count > 0 ? options_from_collection_for_select(@categories, :id, :name, @category.id) : [] %>
     <% end %>
   <% end %>
 
 </table>
 
-<h2><%= @category.name %></h2>
+<h2><%= @category.name if @category %></h2>
 
-<%= paginate @rants %>
+<%= paginate(@rants) if @rants && @rants.count > 0 %>
 <%= render :partial => "shared/rant_collection", :locals => {:rants => @rants} %>
-<%= paginate @rants %>
+<%= paginate @rants if @rants %>
 
 <%= admin_area do %>
   <p>
