@@ -14,22 +14,20 @@
 						<td>
 							<table border="0" cellspacing="0" cellpadding="0" width="100%">
 								<tr>                  
-									<td width="33%" id="persona-rant-widget-category-select">                           
+									<td id="persona-rant-widget-category-select">
 					          <%= render :partial => 'persona_rant_widget/category_dropdown' %><br>
 									</td>
-      						<td width="33%" id="persona-rant-widget-persona-select">
+      						<td id="persona-rant-widget-persona-select">
       		          <%= render :partial => 'persona_rant_widget/persona_dropdown' %><br>
       						</td> 
-									<td width="33%" align="center">
+                  <td align="left">
+                    <%= button_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %>
+                  </td>
+									<td align="center">
 										<span id="persona-rant-widget-count"></span>
 									</td>
 								</tr>
 							</table>
-						</td>
-					</tr>
-					<tr>
-						<td align="left">
-		          <%= link_to "Create Rant", "#", "data-current-user-id" => current_user.id, "data-persona-id" => @persona.id, :class => "submit-link" %>
 						</td>
 					</tr>
 				</table>
