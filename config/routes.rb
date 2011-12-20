@@ -1,5 +1,8 @@
 RiffRanter::Application.routes.draw do
   match "/terms" => "static_content#terms", :as => :terms
+  match "/about" => "static_content#about", :as => :about
+  match "/privacy" => "static_content#privacy", :as => :privacy
+  match "/contact" => "static_content#contact", :as => :contact
 
   match "/prw/update_widget" => "persona_rant_widget#update_widget", :via => :get
   match "/prw/category_changed" => "persona_rant_widget#category_changed", :via => :get

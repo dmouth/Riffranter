@@ -133,7 +133,7 @@ ul#tabs a:hover { /* settings for hover effect */
   color:black;
   font-size:14px;
   width:90%;
-  text-align: center;
+  text-align: left;
 	padding:15px;
   border-radius: 8px;
 }
